@@ -11,7 +11,7 @@ html{
 }
 
 body{
-    background: rgba(155, 155, 155, 0.248);
+    background: rgba(194, 194, 194, 0.248);
 }
 
 /* -------------NavBar-------------- */
@@ -32,9 +32,11 @@ body{
     color: #ffc800 !important;
 }
 .searchBtn:hover{
-    background: rgb(91, 91, 91) !important;
+    /* background: rgb(91, 91, 91) !important; */
     color: #ffe100 !important;
-    /* border: 1px solid black; */
+    border: 1px solid transparent;
+    background: #ffc400 !important;
+    color: black !important;
     box-shadow: 0px 0px 7px black !important;
 }
 
@@ -71,11 +73,12 @@ body{
     margin: 10px auto;
     width: 20rem !important;
     /* border: 2px solid green; */
+    width: 22rem !important;
 }
 
 .back {
     height: 95vh !important;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/public/pexels-johannes-plenio-1423600.jpg') no-repeat center/cover;
+    background: linear-gradient( rgba(0, 0, 0,0.3), rgba(0, 0, 0, .3) ), url('/public/pexels-johannes-plenio-1423600.jpg') no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
