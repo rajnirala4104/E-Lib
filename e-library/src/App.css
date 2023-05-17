@@ -78,7 +78,7 @@ body{
 
 .back {
     height: 95vh !important;
-    background: linear-gradient( rgba(0, 0, 0,0.3), rgba(0, 0, 0, .3) ), url('/public/pexels-johannes-plenio-1423600.jpg') no-repeat center/cover;
+    background: linear-gradient( rgba(0, 0, 0,0.3), rgba(0, 0, 0, .3) ), url('/public/backgroundImage.jpg') no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
