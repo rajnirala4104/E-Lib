@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: rgba(155, 155, 155, 0.248);
+}
+
+/* -------------NavBar-------------- */
+.navbar {
+    background: rgba(31, 31, 31, 0.681) !important;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 23 !important;
+}
+
+.libText {
+    color: red;
+}
+
+.searchBtn {
+    /* background: rgb(49, 49, 49) !important; */
+    color: #ffc800 !important;
+}
+.searchBtn:hover{
+    background: rgb(91, 91, 91) !important;
+    color: #ffe100 !important;
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 7px black !important;
+}
+
+
+/* -----------------FrontPageImage----------- */
+.liText {
+    font-family: 'Dancing Script', cursive;
+}
+
+.webContext{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50%;
+    height: 40%;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.exloreBtn{
+    
+}
+
+.productsCardContainer {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.productsCardContainer .card {
+    margin: 10px auto;
+    width: 20rem !important;
+    /* border: 2px solid green; */
+}
+
+.back {
+    height: 95vh !important;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/public/pexels-johannes-plenio-1423600.jpg') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
