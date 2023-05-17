@@ -78,13 +78,18 @@ body{
 
 .back {
     height: 95vh !important;
-    background: linear-gradient( rgba(0, 0, 0,0.3), rgba(0, 0, 0, .3) ), url('/public/backgroundImage.jpg') no-repeat center/cover;
+    background: linear-gradient( rgba(0, 0, 0,0.3), rgba(0, 0, 0, .3) ), url('./components/backgroundImage.jpg') no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
+.booksImage{
+  background: url('./components/books.png') no-repeat center/cover !important;
+  height: 30vh;
+  width: 100%;
+}
 
 @keyframes App-logo-spin {
   from {
