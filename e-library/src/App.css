@@ -126,16 +126,33 @@ body {
 /* ----------- responsive ----------- */
 @media only screen and (max-width: 995px) {
     .categorySection{
-        width: 100%;
+        width: 55rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 0 15%;
+        /* padding: 0 15%; */
         margin: 10px auto;
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
     .categorySection button{
         margin: 0px 4px;
+        width: 20rem !important;
+        /* border: 2px solid green; */
+    }
+
+    .onlyCards{
+        /* border: 2px solid blue; */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        /* border: 2px sold red; */
+        width: 30%;
     }
   }
 
