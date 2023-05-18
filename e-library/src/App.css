@@ -118,7 +118,25 @@ body {
     align-items: center;
     padding: 0 15%;
     margin: 10px auto;
-    
+
 }
+
+
+
+/* ----------- responsive ----------- */
+@media only screen and (max-width: 995px) {
+    .categorySection{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 15%;
+        margin: 10px auto;
+        border: 2px solid red;
+    }
+    .categorySection button{
+        margin: 0px 4px;
+    }
+  }
 
 

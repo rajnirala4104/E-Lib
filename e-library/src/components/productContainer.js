@@ -2,7 +2,7 @@ import Card from "./BooksCard";
 import Category from "./categorySection";
 import images from "./images/allImages"
 function ProductsContainer(props) {
-    console.log(images.book_1)
+    // console.log(images.book_1)
     return (
         <>
             <div className="container productsCardContainer" id="booksContainer">
@@ -11,13 +11,15 @@ function ProductsContainer(props) {
                 </div>
                 <br />
                 <Category/>
-                <div class="productsCardContainer">
+                <div className="productsCardContainer">
                     <Card imageSrc={images.book_1}/>
                     <Card imageSrc={images.book_2}/>
                     <Card imageSrc={images.book_3}/> 
                     <Card imageSrc={images.book_4}/>
                     <Card imageSrc={images.book_5}/>
                     <Card imageSrc={images.book_6}/>
+                    <Card imageSrc={images.book_7}/>
+                    <Card imageSrc={images.book_7}/>
                     <Card imageSrc={images.book_7}/>
                 </div>
             </div>
