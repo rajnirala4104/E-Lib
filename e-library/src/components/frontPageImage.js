@@ -4,7 +4,7 @@ function ImageSection(props) {
             <div id="carouselExampleSlidesOnly" className="carousel back slide" data-ride="carousel">
                 <div className="webContext">
                     <div className="webTitle display-4">
-                        E-<span className="liText">Library</span>
+                       <span className="e_text">E-</span><span className="liText">Library</span>
                     </div>
                     <div className="webTheme">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum voluptatum, iure ut nulla magni sint

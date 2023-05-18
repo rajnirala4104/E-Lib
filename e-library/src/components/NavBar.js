@@ -8,7 +8,6 @@ function NavBar(props) {
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
@@ -28,11 +27,8 @@ function NavBar(props) {
                                 <a className="dropdown-item" href="/">Business</a>
                                 <a className="dropdown-item" href="/">Self Development</a>
                                 <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="/">College or School</a>
+                                <a className="dropdown-item" href="/">Educational</a>
                             </div>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">

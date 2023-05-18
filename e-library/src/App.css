@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Mono:wght@200&display=swap');
 
 
 * {
@@ -6,11 +7,11 @@
     padding: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: rgba(194, 194, 194, 0.248);
 }
 
@@ -31,7 +32,8 @@ body{
     /* background: rgb(49, 49, 49) !important; */
     color: #ffc800 !important;
 }
-.searchBtn:hover{
+
+.searchBtn:hover {
     /* background: rgb(91, 91, 91) !important; */
     color: #ffe100 !important;
     border: 1px solid transparent;
@@ -46,7 +48,12 @@ body{
     font-family: 'Dancing Script', cursive;
 }
 
-.webContext{
+.e_text{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 900;
+}
+
+.webContext {
     /* border: 2px solid red; */
     display: flex;
     justify-content: space-around;
@@ -57,9 +64,8 @@ body{
     color: white;
     text-align: center;
 }
-.exloreBtn{
-    
-}
+
+.exloreBtn {}
 
 .productsCardContainer {
     /* border: 2px solid red; */
@@ -78,24 +84,41 @@ body{
 
 .back {
     height: 95vh !important;
-    background: linear-gradient( rgba(0, 0, 0,0.3), rgba(0, 0, 0, .3) ), url('./components/backgroundImage.jpg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./components/images/backgroundImage.jpg') no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.booksImage{
-  background: url('./components/books.png') no-repeat center/cover !important;
-  height: 30vh;
-  width: 100%;
+.booksImage {
+    background: url('./components/images/testImage.png') no-repeat center/cover !important;
+    height: 30vh;
+    width: 100%;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
+
+
+/* ---------------- Raj Nirala ----------------- */
+
+.categorySection{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 15%;
+    margin: 10px auto;
+    
+}
+
+

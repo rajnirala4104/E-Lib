@@ -6,9 +6,11 @@ import ProductsContainer from './components/productContainer';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ImageSection/>
-      <ProductsContainer/>
+      <NavBar />
+      <ImageSection />
+      <div className="container">
+        <ProductsContainer />
+      </div>
     </div>
   );
 }
