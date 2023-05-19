@@ -1,8 +1,65 @@
+import NavBar from "./NavBar";
+import './css/buyNowPage.css'
+
 function BuyNowPage(props) {
-    return(
+
+    const paymentMethod = () => {
+        alert("Oops!! Backend developer ne kuchh galti ki hai")
+    }
+
+    return (
         <>
+            <NavBar />
             <div className="buyknow">
-                <h1>Buy Now</h1>
+                <div className="container showBookDetailsContainer ">
+                    <div className="bookDetails">
+                        <div className="bookImg"></div>
+                        <div className="bookContent">
+                            <div className="bookName display-4">{"{ Name }"}</div>
+                            <div className="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim dolor fugiat placeat facilis atque temporibus tenetur, quae esse iure neque!</div>
+                            <div className="spacificDetails">
+                                <strong>Author</strong>: {"{ AuthorName }"}<br />
+                                <strong>Publish Data</strong>: {"{ PublicshData }"}<br />
+                                <strong>Type</strong>  : {"{ Type }"}<br />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="paymentMethod">
+                        <div className="paymentContent">
+                            <h2>Payment Details</h2>
+                            <div className="paymentElements">
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <input type="number" class="form-control" id="inputPassword2" placeholder="Card Number" />
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <input type="text" class="form-control" id="inputPassword2" placeholder="Cardholder Name" />
+                                </div>
+                                <div className="cardDateDetails">
+
+                                    <div class="form-group mx-sm-3 mb-2">
+                                        <input type="password" class="form-control" id="inputPassword2" placeholder="12" />
+                                    </div>
+
+
+                                    <div class="form-group mx-sm-3 mb-2">
+                                        <input type="password" class="form-control" id="inputPassword2" placeholder="2023" />
+                                    </div>
+
+
+                                    <div class="form-group mx-sm-3 mb-2">
+                                        <label for="inputPassword2" class="sr-only">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword2" placeholder="CVV" />
+                                    </div>
+
+                                </div>
+                                <div className="paymentBtns">
+                                    <button className="btn btn-warning" onClick={paymentMethod}>Confirm and Pay 300₹</button>
+                                    <button className="btn btn-outline-warning">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
