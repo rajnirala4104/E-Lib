@@ -14,14 +14,6 @@ function ProductsContainer(props) {
                 <Category />
                 <div className="productsCardContainer onlyCards">
                     <Card imageSrc={images.book_1} />
-                    <Card imageSrc={images.book_2} />
-                    <Card imageSrc={images.book_3} />
-                    <Card imageSrc={images.book_4} />
-                    <Card imageSrc={images.book_5} />
-                    <Card imageSrc={images.book_6} />
-                    <Card imageSrc={images.book_7} />
-                    <Card imageSrc={images.book_7} />
-                    <Card imageSrc={images.book_7} />
                 </div>
             </div>
         </>

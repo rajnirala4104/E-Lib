@@ -19,15 +19,40 @@
             "BookImage": "https://m.media-amazon.com/images/I/51nA8+LsIlL._SY344_BO1,204,203,200_.jpg"
         },
         {
-            "BokName": "Harry Portter",
-            "BookAuthor" : "J. K. Rowling",
-            "BookType": "Fictional Story",
-            "Bookimage": "https://m.media-amazon.com/images/I/41I7sX7X5mL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+            "BokName": "Mathmetics Class 9th NCERT",
+            "BookAuthor" : "Seth Godin",
+            "BookType": "Education",
+            "BookImage": "https://m.media-amazon.com/images/I/51WJ0DfTm7L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg"
         },
         {
-            "BokName": "Do Epic Shit",
-            "BookAuthor" : "Ankur Warikoo",
-            "BookType": "Self Developmet"
+            "BokName": "Eight Hours Five Six Friends Survive One Sniper",
+            "BookAuthor" : "Unknown",
+            "BookType": "Fictional Story",
+            "BookImage": "https://m.media-amazon.com/images/P/B0B1TCK9NC.01._SCLZZZZZZZ_SX500_.jpg"
+        },
+        {
+            "BokName": "The Last Town Wayward Pines Book Three Block Crouch",
+            "BookAuthor" : "Unknown",
+            "BookType": "Fictional Story",
+            "BookImage": "https://m.media-amazon.com/images/P/B0BHTHXTWF.01._SCLZZZZZZZ_SX500_.jpg"
+        },
+        {
+            "BokName": "Think Like a Monk",
+            "BookAuthor" : "Jay Shetty",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/41DtkrHawXL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg"
+        },
+        {
+            "BokName": "Physics Class 12 NCERT",
+            "BookAuthor" : "Jay Shetty",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/91MGjnYsatL._AC_UY218_.jpg"
+        },
+        {
+            "BokName": "The Monk Who Sold His Ferrarri",
+            "BookAuthor" : "Robien Sharma",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg"
         }
     ]
 }

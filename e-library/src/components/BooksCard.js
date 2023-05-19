@@ -1,24 +1,30 @@
 import { Link } from "react-router-dom"
 // import IMAGES from "./images/allImages"
+import bookData from '../mybooks.json'
 
 
 function Card(props) {
-
+    console.log(bookData.Books)
     const addToCart = () => alert("ADDED TO CART")
     // const buyNow = () => alert("This is not Availible")
 
     return (
         <>
-            <div className="card shadow">
-                <div className="card-img-top booksImage" alt="Oops!!"></div>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <Link className="btn btn-warning" to="/buynow" >Buy Now</Link>
-                    <Link className="btn btn-outline-warning mx-2" to="addtocart" onClick={addToCart}>Add to card</Link>
-                </div>
-            </div>
+            {bookData.Books.map((bookDic, index)=> {
+                console.log(bookDic)
+                return (
+                    <div className="card shadow" key={index}>
+                        <img className="card-img-top booksImage" src={bookDic.BookImage} alt="Oops!!"/>
+                        <div className="card-body">
+                            <h5 className="card-title">{bookDic.BokName}</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                card's content.</p>
+                            <Link className="btn btn-warning" to="/buynow" >Buy Now</Link>
+                            <Link className="btn btn-outline-warning mx-2" to="addtocart" onClick={addToCart}>Add to card</Link>
+                        </div>
+                    </div>
+                )
+            })}
         </>
     )
 }
