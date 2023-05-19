@@ -6,11 +6,9 @@ import ProductsContainer from "./components/productContainer";
 const Home = () => {
     return (
         <>
-            <NavBar/>
+            <NavBar />
             <ImageSection />
-            <div className="container">
-                <ProductsContainer />
-            </div>
+            <ProductsContainer />
         </>
     )
 }

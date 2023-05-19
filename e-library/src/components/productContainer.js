@@ -6,7 +6,7 @@ function ProductsContainer(props) {
    
     return (
         <>
-            <div className="container productsCardContainer" id="booksContainer">
+            <div className="productsCardContainer" id="booksContainer">
                 <div className="productsSectionHeading display-4">
                     Books
                 </div>

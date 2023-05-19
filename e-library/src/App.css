@@ -65,21 +65,25 @@ body {
     text-align: center;
 }
 
-.exloreBtn {}
 
 .productsCardContainer {
     /* border: 2px solid red; */
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.productsSectionHeading{
+    margin: auto;
 }
 
 .productsCardContainer .card {
-    margin: 10px auto;
+    margin: 30px auto;
     width: 20rem !important;
-    /* border: 2px solid green; */
-    width: 22rem !important;
+    /* border: 2px  green; */
 }
 
 .back {
