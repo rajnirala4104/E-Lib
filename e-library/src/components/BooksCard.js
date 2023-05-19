@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom"
 import IMAGES from "./images/allImages"
-// import {Link} from "react-router-dom"
 
 
 function Card(props) {
@@ -15,8 +15,8 @@ function Card(props) {
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a className="btn btn-warning" href="buynow" >Buy Now</a>
-                    <a className="btn btn-outline-warning mx-2" href="addtocart" onClick={addToCart}>Add to card</a>
+                    <Link className="btn btn-warning" to="/buynow" >Buy Now</Link>
+                    <Link className="btn btn-outline-warning mx-2" to="addtocart" onClick={addToCart}>Add to card</Link>
                 </div>
             </div>
         </>

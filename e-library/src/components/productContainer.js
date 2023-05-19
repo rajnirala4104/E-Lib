@@ -1,15 +1,9 @@
 import Card from "./BooksCard";
 import Category from "./categorySection";
 import images from "./images/allImages"
-// import { useState } from 'react'
 
 function ProductsContainer(props) {
-    // console.log(images.book_1)
-    // const [catTitleMessage, setCatTitleMessage] = useState(null)
-    // const catBtn = messageTitle => {
-    //     setCatTitleMessage(messageTitle)
-    //     console.log(catTitleMessage)
-    // }
+   
     return (
         <>
             <div className="container productsCardContainer" id="booksContainer">

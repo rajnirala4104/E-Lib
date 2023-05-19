@@ -1,10 +1,10 @@
-
+import { Link } from "react-router-dom"
 function NavBar(props) {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/">E<span className="libText">.Lib</span>
-                </a>
+                <Link className="navbar-brand" to="/">E<span className="libText">.Lib</span>
+                </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -12,22 +12,22 @@ function NavBar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                            <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">About</a>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Dropdown
-                            </a>
+                            </Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="/">Fictional Story</a>
-                                <a className="dropdown-item" href="/">Love Story</a>
-                                <a className="dropdown-item" href="/">Business</a>
-                                <a className="dropdown-item" href="/">Philosophy</a>
-                                <a className="dropdown-item" href="/">Self Development</a>
-                                <a className="dropdown-item" href="/">Edicational</a>
+                            <Link className="dropdown-item" to="/">Fictional Story</Link>
+                                <Link className="dropdown-item" to="/">Love Story</Link>
+                                <Link className="dropdown-item" to="/">Business</Link>
+                                <Link className="dropdown-item" to="/">Philosophy</Link>
+                                <Link className="dropdown-item" to="/">Self Development</Link>
+                                <Link className="dropdown-item" to="/">Edicational</Link>
                             </div>
                         </li>
                     </ul>

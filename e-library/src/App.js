@@ -1,16 +1,19 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import ImageSection from './components/frontPageImage';
-import ProductsContainer from './components/productContainer';
+import About from './components/About'
+import BuyNowPage from './components/BuyNow';
+import NoPage from './components/NoPage';
+import { Routes, Route } from "react-router-dom";
+import Home from './Home';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <ImageSection />
-      <div className="container">
-        <ProductsContainer />
-      </div>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route exact path="/buynow" element={<BuyNowPage />} />
+        <Route exact path="/*" element={<NoPage />} />
+        <Route exact path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
