@@ -1,0 +1,33 @@
+{
+    "Books": [
+        {
+            "BokName": "Do Epic Shit",
+            "BookAuthor" : "Ankur Warikoo",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/P/9391165486.01._SCLZZZZZZZ_SX500_.jpg"
+        },
+        {
+            "BokName": "Get Epic Shit Done",
+            "BookAuthor" : "Ankur Warikoo",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/51I5OZ7Kb9L.jpg"
+        },
+        {
+            "BokName": "Linchpin",
+            "BookAuthor" : "Seth Godin",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/51nA8+LsIlL._SY344_BO1,204,203,200_.jpg"
+        },
+        {
+            "BokName": "Harry Portter",
+            "BookAuthor" : "J. K. Rowling",
+            "BookType": "Fictional Story",
+            "Bookimage": "https://m.media-amazon.com/images/I/41I7sX7X5mL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+        },
+        {
+            "BokName": "Do Epic Shit",
+            "BookAuthor" : "Ankur Warikoo",
+            "BookType": "Self Developmet"
+        }
+    ]
+}
