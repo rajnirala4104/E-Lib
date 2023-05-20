@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom"
-// import IMAGES from "./images/allImages"
 import bookData from '../mybooks.json'
-
+import { useState } from "react"
 
 function Card(props) {
-    console.log(bookData.Books)
+    const [perticularBookDetails, setPerticularBookDetails] = useState({})
     const addToCart = () => alert("ADDED TO CART")
-    // const buyNow = () => alert("This is not Availible")
+    const buyNow = (bookDetails) => {
+        setPerticularBookDetails(bookDetails)
+    }
 
     return (
         <>
-            {bookData.Books.map((bookDic, index)=> {
-                console.log(bookDic)
+            {bookData.Books.map((bookDic, index) => {
                 return (
                     <div className="card shadow" key={index}>
-                        <img className="card-img-top booksImage" src={bookDic.BookImage} alt="Oops!!"/>
+                        <img className="card-img-top booksImage" src={bookDic.BookImage} alt="Oops!!" />
                         <div className="card-body">
                             <h5 className="card-title">{bookDic.BokName}</h5>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the
                                 card's content.</p>
-                            <Link className="btn btn-warning" to="/buynow" >Buy Now</Link>
+                            <div className="prices flex">
+                                <h5 className="card-title">{bookDic.price} | <del style={{color: "green"}}>{bookDic.discountPrice}</del></h5>
+                            </div>
+                            <Link className="btn btn-warning" to="/buynow" onClick={() => { buyNow(bookDic) }} >Buy Now</Link>
                             <Link className="btn btn-outline-warning mx-2" to="addtocart" onClick={addToCart}>Add to card</Link>
                         </div>
                     </div>
@@ -30,4 +33,3 @@ function Card(props) {
 }
 
 export default Card
-

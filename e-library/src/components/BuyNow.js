@@ -28,32 +28,32 @@ function BuyNowPage(props) {
                         <div className="paymentContent">
                             <h2>Payment Details</h2>
                             <div className="paymentElements">
-                                <div class="form-group mx-sm-3 mb-2">
-                                    <input type="number" class="form-control" id="inputPassword2" placeholder="Card Number" />
+                                <div className="form-group mx-sm-3 mb-2">
+                                    <input type="number" className="form-control" id="cardNumber" placeholder="Card Number" />
                                 </div>
-                                <div class="form-group mx-sm-3 mb-2">
-                                    <input type="text" class="form-control" id="inputPassword2" placeholder="Cardholder Name" />
+                                <div className="form-group mx-sm-3 mb-2">
+                                    <input type="text" className="form-control" id="cardholdeName" placeholder="Cardholder Name" />
                                 </div>
                                 <div className="cardDateDetails">
 
-                                    <div class="form-group mx-sm-3 mb-2">
-                                        <input type="password" class="form-control" id="inputPassword2" placeholder="12" />
+                                    <div className="form-group mx-sm-3 mb-2">
+                                        <input type="password" className="form-control" id="exampleNum" placeholder="12" />
                                     </div>
 
 
-                                    <div class="form-group mx-sm-3 mb-2">
-                                        <input type="password" class="form-control" id="inputPassword2" placeholder="2023" />
+                                    <div className="form-group mx-sm-3 mb-2">
+                                        <input type="password" className="form-control" id="exampleYeat" placeholder="2023" />
                                     </div>
 
 
-                                    <div class="form-group mx-sm-3 mb-2">
-                                        <label for="inputPassword2" class="sr-only">Password</label>
-                                        <input type="password" class="form-control" id="inputPassword2" placeholder="CVV" />
+                                    <div className="form-group mx-sm-3 mb-2">
+                                        <label htmlFor="inputPassword2" className="sr-only">Password</label>
+                                        <input type="password" className="form-control" id="CVV" placeholder="CVV" />
                                     </div>
 
                                 </div>
                                 <div className="paymentBtns">
-                                    <button className="btn btn-warning" onClick={paymentMethod}>Confirm and Pay 300₹</button>
+                                    <button className="btn btn-warning mx-2" onClick={paymentMethod}>Confirm and Pay 300₹</button>
                                     <button className="btn btn-outline-warning">Cancel</button>
                                 </div>
                             </div>

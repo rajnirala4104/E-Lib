@@ -83,7 +83,7 @@ body {
 .productsCardContainer .card {
     margin: 30px auto;
     width: 20rem !important;
-    /* border: 2px  green; */
+    /* border: 2px solid green; */
 }
 
 .back {
@@ -94,6 +94,14 @@ body {
     align-items: center;
 }
 
+.prices{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    /* border: 1px solid red; */
+    text-align: center;
+}
 
 .booksImage {
     background: url('./components/images/linchPin.jpeg') no-repeat center/cover !important;
