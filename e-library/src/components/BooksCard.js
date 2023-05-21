@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom"
 import bookData from '../mybooks.json'
-import { useState } from "react"
 
 function Card(props) {
-    const [perticularBookDetails, setPerticularBookDetails] = useState({})
+    
     const addToCart = () => alert("ADDED TO CART")
-    const buyNow = (bookDetails) => {
-        setPerticularBookDetails(bookDetails)
-    }
-
+    
     return (
         <>
             {bookData.Books.map((bookDic, index) => {
@@ -22,7 +18,7 @@ function Card(props) {
                             <div className="prices flex">
                                 <h5 className="card-title">{bookDic.price} | <del style={{color: "green"}}>{bookDic.discountPrice}</del></h5>
                             </div>
-                            <Link className="btn btn-warning" to="/buynow" onClick={() => { buyNow(bookDic) }} >Buy Now</Link>
+                            <Link className="btn btn-warning" to="/buynow" onClick={() => { props.buyNow(bookDic) }} >Buy Now</Link>
                             <Link className="btn btn-outline-warning mx-2" to="addtocart" onClick={addToCart}>Add to card</Link>
                         </div>
                     </div>

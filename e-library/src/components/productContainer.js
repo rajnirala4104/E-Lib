@@ -1,9 +1,8 @@
 import Card from "./BooksCard";
 import Category from "./categorySection";
-import images from "./images/allImages"
 
 function ProductsContainer(props) {
-   
+    
     return (
         <>
             <div className="productsCardContainer" id="booksContainer">
@@ -13,7 +12,7 @@ function ProductsContainer(props) {
                 <br />
                 <Category />
                 <div className="productsCardContainer onlyCards">
-                    <Card imageSrc={images.book_1} />
+                    <Card buyNow={props.buyNow} />
                 </div>
             </div>
         </>

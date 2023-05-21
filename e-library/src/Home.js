@@ -1,14 +1,17 @@
+import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import ImageSection from "./components/frontPageImage";
 import ProductsContainer from "./components/productContainer";
 
 
-const Home = () => {
+const Home = (props) => {
+    
     return (
         <>
             <NavBar />
             <ImageSection />
-            <ProductsContainer />
+            <ProductsContainer buyNow={props.buyNow}/>
+            <Footer/>
         </>
     )
 }
