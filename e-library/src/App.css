@@ -84,6 +84,7 @@ body {
     margin: 30px auto;
     width: 20rem !important;
     /* border: 2px solid green; */
+    border-radius: 15px;
 }
 
 .back {
@@ -108,6 +109,7 @@ body {
     background: url('./components/images/linchPin.jpeg') no-repeat center/cover !important;
     height: 60vh;
     width: 100%;
+    border-radius: 15px;
 }
 
 @keyframes App-logo-spin {

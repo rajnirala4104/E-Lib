@@ -12,7 +12,7 @@ function ProductsContainer(props) {
                 <br />
                 <Category />
                 <div className="productsCardContainer onlyCards">
-                    <Card buyNow={props.buyNow} />
+                    <Card/>
                 </div>
             </div>
         </>

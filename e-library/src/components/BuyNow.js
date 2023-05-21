@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import NavBar from "./NavBar";
 import './css/buyNowPage.css'
 
@@ -63,6 +64,7 @@ function BuyNowPage(props) {
                     </div>
                 </div>
             </div>
+            {/* <Footer/> */}
         </>
     )
 }
