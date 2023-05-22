@@ -7,7 +7,7 @@ const Footer = (props) => {
                     E-<span>Library</span>
                 </div>
                 <div className="footerDescription">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium maiores exercitationem mollitia reprehenderit numquam veritatis nostrum adipisci, repudiandae fugit accusantium repellat eaque, eveniet et rem iste dignissimos magni? Error placeat doloribus iusto et! Excepturi minus eum unde! Animi sapiente quos doloribus expedita et id, veritatis aut necessitatibus voluptate sunt quasi.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium maiores exercitationem mollitia reprehenderit numquam veritatis nostrum adipisci, repudiandae fugit accusantium repellat eaque, eveniet et rem iste 
                 </div>
                 <div className="socialIcons">
                     <a href="https://www.instagram.com/_raj_nirala_/" target='_blank' className="fa fa-instagram"></a>

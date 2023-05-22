@@ -5,14 +5,13 @@ import { useState } from "react"
 function Card(props) {
     
     const addToCart = () => alert("ADDED TO CART")
-    const [perticularBookDetails, setPerticularBookDetails] = useState()
+    const [perticularBookDetails, setPerticularBookDetails] = useState({})
     const buyNow = (bookDetails) => {
       console.log(bookDetails)
       setPerticularBookDetails(bookDetails)
       console.log(perticularBookDetails)
       return bookDetails
     }
-  
     
     return (
         <>

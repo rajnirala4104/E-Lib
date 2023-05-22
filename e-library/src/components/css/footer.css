@@ -1,10 +1,9 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-footer{
+footer {
     /* border: 2px solid red; */
     background: rgb(54, 54, 54);
     display: flex;
@@ -16,7 +15,7 @@ footer{
     background-attachment: fixed;
 }
 
-.footerContent{
+.footerContent {
     /* border: 2px solid rgb(17, 0, 255); */
     display: flex;
     justify-content: space-evenly;
@@ -24,20 +23,20 @@ footer{
     flex-direction: column;
     /* margin: 30px auto; */
     /* padding: 20px auto; */
-    height: 40vh;
+    /* height: 40vh; */
 }
 
-.footerHeading span{
+.footerHeading span {
     font-family: 'Dancing Script', cursive;
 }
 
-.footerContent .footerDescription{
+.footerContent .footerDescription {
     /* border: 1px solid black; */
     text-align: center;
     width: 50%;
 }
 
-.socialIcons{
+.socialIcons {
     /* border: 2px solid white; */
     margin: 10px auto;
     width: 20%;
@@ -45,14 +44,36 @@ footer{
     justify-content: space-evenly;
     align-items: center;
 }
-.socialIcons a{
+
+.socialIcons a {
     color: white;
     font-size: 2rem;
     text-decoration: none;
 }
 
-.copyrigthDetails{
+.copyrigthDetails {
     /* border: 1px solid red; */
     width: 100%;
-    background: rgba(78, 78, 78, 0.473) ;
+    background: rgba(78, 78, 78, 0.473);
+}
+
+@media only screen and (max-width: 995px) {
+
+    .footerContent .footerDescription {
+        /* border: 1px solid white; */
+        width: 90%;
+    }
+
+    .socialIcons {
+        /* border: 2px solid white; */
+        margin: 10px auto;
+        width: 45%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .copyrigthDetails{
+        /* border: 1px solid red; */
+    }
+
 }
