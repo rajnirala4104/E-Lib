@@ -1,7 +1,7 @@
 {
     "Books": [
         {
-            "BokName": "Do Epic Shit",
+            "BookName": "Do Epic Shit",
             "BookAuthor" : "Ankur Warikoo",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/P/9391165486.01._SCLZZZZZZZ_SX500_.jpg",
@@ -9,7 +9,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "Get Epic Shit Done",
+            "BookName": "Get Epic Shit Done",
             "BookAuthor" : "Ankur Warikoo",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/51I5OZ7Kb9L.jpg",
@@ -17,7 +17,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "Linchpin",
+            "BookName": "Linchpin",
             "BookAuthor" : "Seth Godin",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/51nA8+LsIlL._SY344_BO1,204,203,200_.jpg",
@@ -25,7 +25,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "Mathmetics Class 9th NCERT",
+            "BookName": "Mathmetics Class 9th NCERT",
             "BookAuthor" : "Seth Godin",
             "BookType": "Education",
             "BookImage": "https://m.media-amazon.com/images/I/51WJ0DfTm7L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -33,7 +33,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "Eight Hours Five Six Friends Survive One Sniper",
+            "BookName": "Eight Hours Five Six Friends Survive One Sniper",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
             "BookImage": "https://m.media-amazon.com/images/P/B0B1TCK9NC.01._SCLZZZZZZZ_SX500_.jpg",
@@ -41,7 +41,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "The Last Town Wayward Pines Book Three Block Crouch",
+            "BookName": "The Last Town Wayward Pines Book Three Block Crouch",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
             "BookImage": "https://m.media-amazon.com/images/P/B0BHTHXTWF.01._SCLZZZZZZZ_SX500_.jpg",
@@ -49,7 +49,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "Think Like a Monk",
+            "BookName": "Think Like a Monk",
             "BookAuthor" : "Jay Shetty",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/41DtkrHawXL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -57,7 +57,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "Physics Class 12 NCERT",
+            "BookName": "Physics Class 12 NCERT",
             "BookAuthor" : "Jay Shetty",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/91MGjnYsatL._AC_UY218_.jpg",
@@ -65,12 +65,20 @@
             "discountPrice":"459₹"
         },
         {
-            "BokName": "The Monk Who Sold His Ferrarri",
+            "BookName": "The Monk Who Sold His Ferrarri",
             "BookAuthor" : "Robien Sharma",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg",
             "price":"249₹",
             "discountPrice":"459₹"
+        },
+        {
+            "BookName": "Deep Work",
+            "BookAuthor": "Raj Nirala",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/417yjF+Z5zL.jpg",
+            "price": "300",
+            "discountPrice": "499"
         }
     ]
 }

@@ -2,7 +2,6 @@ import Card from "./BooksCard";
 import Category from "./categorySection";
 
 function ProductsContainer(props) {
-    
     return (
         <>
             <div className="productsCardContainer" id="booksContainer">
