@@ -37,12 +37,11 @@ function NavBar(props) {
                                 Category
                             </Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <Link className="dropdown-item" to="/">Fictional Story</Link>
-                                <Link className="dropdown-item" to="/">Love Story</Link>
-                                <Link className="dropdown-item" to="/">Business</Link>
-                                <Link className="dropdown-item" to="/">Philosophy</Link>
-                                <Link className="dropdown-item" to="/">Self Development</Link>
-                                <Link className="dropdown-item" to="/">Edicational</Link>
+                            <button className="dropdown-item" >Fictional Story</button>
+                                <button className="dropdown-item" onClick={ ()=>props.getCat("Business")}>Business</button>
+                                <button className="dropdown-item" onClick={ ()=>props.getCat("Philosophy")}>Philosophy</button>
+                                <button className="dropdown-item" onClick={ ()=>props.getCat("Self Developmet")}>Self Development</button>
+                                <button className="dropdown-item" onClick={ ()=>props.getCat("Education")}>Educational</button>
                             </div>
                         </li>
                     </ul>

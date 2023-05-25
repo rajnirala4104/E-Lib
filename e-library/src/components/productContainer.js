@@ -1,11 +1,12 @@
 import Card from "./BooksCard";
 import Category from "./categorySection";
 import { useState } from "react";
+import bookData from '../mybooks.json'
 
 function ProductsContainer(props) {
 
     const [catText, setCatText] = useState("all")
-    const catClickedBtn = (catString)=>{
+    const catClickedBtn = (catString) => {
         setCatText(catString)
     }
 
@@ -17,9 +18,22 @@ function ProductsContainer(props) {
                     Books
                 </div>
                 <br />
-                <Category getCat={catClickedBtn}/>
+                <Category getCat={catClickedBtn} />
                 <div className="productsCardContainer onlyCards">
-                    <Card/>
+                    {bookData.Books.map((bookDic, index) => {
+                        if (bookDic.BookType === catText) {
+                            return (
+                                <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
+                            )
+                        }else if(catText === "all"){
+                            return (
+                                <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
+                            )
+                        }else{
+                            // alert("Oops!! no such books in this category")
+                        }
+                    })}
+                    {/* <Card nowCatText={catText} /> */}
                 </div>
             </div>
         </>
