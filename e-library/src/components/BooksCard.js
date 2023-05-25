@@ -12,6 +12,7 @@ function Card(props) {
         console.log(bookDetail)
         console.log(perticularBookDetails)
     }
+    
     return (
         <>
             {bookData.Books.map((bookDic, index) => {

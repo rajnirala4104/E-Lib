@@ -8,8 +8,6 @@ function BuyNowPage(props) {
         alert("Oops!! Backend developer ne kuchh galti ki hai")
     }
 
-    
-
     return (
         <>
             <NavBar />

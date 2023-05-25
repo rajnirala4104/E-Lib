@@ -58,8 +58,8 @@
         },
         {
             "BookName": "Physics Class 12 NCERT",
-            "BookAuthor" : "Jay Shetty",
-            "BookType": "Self Developmet",
+            "BookAuthor" : "R.D Sharma",
+            "BookType": "Education",
             "BookImage": "https://m.media-amazon.com/images/I/91MGjnYsatL._AC_UY218_.jpg",
             "price":"249₹",
             "discountPrice":"459₹"
