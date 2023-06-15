@@ -25,15 +25,12 @@ function ProductsContainer(props) {
                             return (
                                 <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
                             )
-                        }else if(catText === "all"){
+                        } else if (catText === "all") {
                             return (
                                 <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
                             )
-                        }else{
-                            // alert("Oops!! no such books in this category")
                         }
                     })}
-                    {/* <Card nowCatText={catText} /> */}
                 </div>
             </div>
         </>

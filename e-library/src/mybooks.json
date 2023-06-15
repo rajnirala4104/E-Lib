@@ -79,6 +79,14 @@
             "BookImage": "https://m.media-amazon.com/images/I/417yjF+Z5zL.jpg",
             "price": "300",
             "discountPrice": "499"
+        },
+        {
+            "BookName": "influence: The Psychology of Persuasion",
+            "BookAuthor": "Raj Nirala",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/P/0688128165.01._SCLZZZZZZZ_SX500_.jpg",
+            "price": "300",
+            "discountPrice": "499"
         }
     ]
 }

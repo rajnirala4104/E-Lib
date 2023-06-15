@@ -1,20 +1,5 @@
-import { Link } from "react-router-dom"
-import bookData from '../mybooks.json'
- 
+import { Link } from "react-router-dom" 
 function NavBar(props) {
-
-    const searchFunction = (e)=>{
-
-        bookData.Books.forEach(bookDic=>{
-            // console.log(`--${e.target.value} --${bookDic.BookName}`)
-            const bookN = bookDic.BookName.toLowerCase()
-            if(e.target.value === bookN){
-                console.log(console.log(`${bookDic.BookName}\n${e.target.value}`))
-            }
-        })
-        
-    }
-
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -38,16 +23,16 @@ function NavBar(props) {
                             </Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <button className="dropdown-item" >Fictional Story</button>
-                                <button className="dropdown-item" onClick={ ()=>props.getCat("Business")}>Business</button>
-                                <button className="dropdown-item" onClick={ ()=>props.getCat("Philosophy")}>Philosophy</button>
-                                <button className="dropdown-item" onClick={ ()=>props.getCat("Self Developmet")}>Self Development</button>
-                                <button className="dropdown-item" onClick={ ()=>props.getCat("Education")}>Educational</button>
+                                <Link className="dropdown-item" >Business</Link>
+                                <Link className="dropdown-item" >Philosophy</Link>
+                                <Link className="dropdown-item" >Self Development</Link>
+                                <Link className="dropdown-item" >Educational</Link>
                             </div>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        <input onChange={searchFunction} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button onClick={searchFunction} className="btn btn-outline-warning my-2 my-sm-0 searchBtn" type="submit">Search</button>
+                        <input  className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <button className="btn btn-outline-warning my-2 my-sm-0 searchBtn" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
