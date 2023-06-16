@@ -9,8 +9,6 @@ function ProductsContainer(props) {
     const catClickedBtn = (catString) => {
         setCatText(catString)
     }
-
-    // console.log(catText)
     return (
         <>
             <div className="productsCardContainer" id="booksContainer">

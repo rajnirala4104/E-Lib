@@ -5,7 +5,7 @@ export const BuyNowPage = (props) => {
 
     const paymentMethod = () => alert("Oops!! Backend developer ne kuchh galti ki hai")
     const { bookId } = useParams()
-    const books = bookData.Books.find(book => book.BookId == bookId)
+    const books = bookData.Books.find(book => book.BookId.toString() === bookId)
     if (!books) {
         return (
             <>

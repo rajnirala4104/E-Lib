@@ -107,6 +107,15 @@
             "BookImage": "https://m.media-amazon.com/images/I/41WYdSRkTBL._SX373_BO1,204,203,200_.jpg",
             "price": "1,759₹",
             "discountPrice": "2000₹"
+        },
+        {
+            "BookId": 13,
+            "BookName": "Courage to be Disliked",
+            "BookAuthor": " Ichiro Kishimi and Fumitake Koga",
+            "BookType": "Philosophy",
+            "BookImage": "https://m.media-amazon.com/images/I/51y34ZoVTTL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
+            "price": "179₹",
+            "discountPrice": "245₹"
         }
     ]
 }
