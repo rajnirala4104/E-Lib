@@ -87,17 +87,26 @@
             "BookAuthor": "Raj Nirala",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/417yjF+Z5zL.jpg",
-            "price": "300",
-            "discountPrice": "499"
+            "price": "300₹",
+            "discountPrice": "499₹"
         },
         {
             "BookId": 11,
-            "BookName": "influence: The Psychology of Persuasion",
-            "BookAuthor": "Raj Nirala",
+            "BookName": "Iinfluence: The Psychology of Persuasion",
+            "BookAuthor": "Robert Cialdini",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/P/0688128165.01._SCLZZZZZZZ_SX500_.jpg",
-            "price": "300",
-            "discountPrice": "499"
+            "price": "300₹",
+            "discountPrice": "499₹"
+        },
+        {
+            "BookId": 12,
+            "BookName": "Public Speaking and Influencing Men in Business",
+            "BookAuthor": "Dale Carnegie",
+            "BookType": "Soft Skills",
+            "BookImage": "https://m.media-amazon.com/images/I/41WYdSRkTBL._SX373_BO1,204,203,200_.jpg",
+            "price": "1,759₹",
+            "discountPrice": "2000₹"
         }
     ]
 }
