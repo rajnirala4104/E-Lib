@@ -5,11 +5,11 @@ export const BuyNowPage = (props) => {
 
     const paymentMethod = () => alert("Oops!! Backend developer ne kuchh galti ki hai")
     const { bookId } = useParams()
-    const books = bookData.Books.find(book => book.BookId == bookId.toString())
+    const books = bookData.Books.find(book => book.BookId == bookId)
     if (!books) {
         return (
             <>
-                <div className="container display3">
+                <div className="container d-flex shadow my-3 bg-warning text-white justify-content-center rounded display-2">
                     Oops!!
                 </div>
             </>
