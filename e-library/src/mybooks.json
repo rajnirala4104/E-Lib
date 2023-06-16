@@ -1,7 +1,7 @@
 {
     "Books": [
         {
-            "bookId": 1,            
+            "BookId": 1,            
             "BookName": "Do Epic Shit",
             "BookAuthor" : "Ankur Warikoo",
             "BookType": "Self Developmet",
@@ -10,7 +10,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 2,            
+            "BookId": 2,            
             "BookName": "Get Epic Shit Done",
             "BookAuthor" : "Ankur Warikoo",
             "BookType": "Self Developmet",
@@ -19,7 +19,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 3,            
+            "BookId": 3,            
             "BookName": "Linchpin",
             "BookAuthor" : "Seth Godin",
             "BookType": "Self Developmet",
@@ -28,7 +28,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 3,            
+            "BookId": 3,            
             "BookName": "Mathmetics Class 9th NCERT",
             "BookAuthor" : "Seth Godin",
             "BookType": "Education",
@@ -37,7 +37,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 4,            
+            "BookId": 4,            
             "BookName": "Eight Hours Five Six Friends Survive One Sniper",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
@@ -46,7 +46,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 5,            
+            "BookId": 5,            
             "BookName": "The Last Town Wayward Pines Book Three Block Crouch",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
@@ -55,7 +55,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 6,            
+            "BookId": 6,            
             "BookName": "Think Like a Monk",
             "BookAuthor" : "Jay Shetty",
             "BookType": "Self Developmet",
@@ -64,7 +64,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 7,            
+            "BookId": 7,            
             "BookName": "Physics Class 12 NCERT",
             "BookAuthor" : "R.D Sharma",
             "BookType": "Education",
@@ -73,7 +73,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 8,            
+            "BookId": 8,            
             "BookName": "The Monk Who Sold His Ferrarri",
             "BookAuthor" : "Robien Sharma",
             "BookType": "Self Developmet",
@@ -82,7 +82,7 @@
             "discountPrice":"459₹"
         },
         {
-            "bookId": 9,            
+            "BookId": 9,            
             "BookName": "Deep Work",
             "BookAuthor": "Raj Nirala",
             "BookType": "Self Developmet",
@@ -91,7 +91,7 @@
             "discountPrice": "499"
         },
         {
-            "bookId": 10,
+            "BookId": 10,
             "BookName": "influence: The Psychology of Persuasion",
             "BookAuthor": "Raj Nirala",
             "BookType": "Self Developmet",
