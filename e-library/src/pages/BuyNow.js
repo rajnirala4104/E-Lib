@@ -1,8 +1,8 @@
 // import Footer from "./Footer";
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 import './css/buyNowPage.css'
 
-function BuyNowPage(props) {
+export const BuyNowPage = (props)=>{
 
     const paymentMethod = () => {
         alert("Oops!! Backend developer ne kuchh galti ki hai")
@@ -10,7 +10,7 @@ function BuyNowPage(props) {
 
     return (
         <>
-            <NavBar />
+            {/* <NavBar /> */}
             <div className="buyknow">
                 <div className="container showBookDetailsContainer ">
                     <div className="bookDetails">

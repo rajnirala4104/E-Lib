@@ -89,7 +89,7 @@ body {
 
 .back {
     height: 95vh !important;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./components/images/backgroundImage.jpg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./assets/images/backgroundImage.jpg') no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,14 +106,14 @@ body {
 }
 
 .booksImage {
-    background: url('./components/images/linchPin.jpeg') no-repeat center/cover !important;
+    background: url('./assets/images/linchPin.jpeg') no-repeat center/cover !important;
     height: 60vh;
     width: 100%;
     border-radius: 15px;
 }
 
 
-/* ---------------- Raj Nirala ----------------- */
+/* ----------------  ----------------- */
 
 .categorySection{
 

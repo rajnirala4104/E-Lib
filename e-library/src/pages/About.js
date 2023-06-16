@@ -1,4 +1,4 @@
-function About(porps) {
+export const About = (porps) =>{
     return (
         <>
             <h1>This is About page</h1>
@@ -6,4 +6,3 @@ function About(porps) {
     )
 }
 
-export default About;

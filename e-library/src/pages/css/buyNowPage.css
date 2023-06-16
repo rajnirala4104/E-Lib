@@ -6,7 +6,7 @@
 .bookImg {
     width: 60%;
     height: 20rem;
-    background: url('../images/linchPin.jpeg') no-repeat center/cover;
+    background: url('../../assets/images/linchPin.jpeg') no-repeat center/cover;
     box-shadow: 0px 0px 10px black;
     border-radius: 10px;
 }
@@ -44,7 +44,7 @@
 /* ----------payment method------ */
 .paymentMethod {
     /* border: 2px solid blue; */
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bookPaymentBg.jpeg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/bookPaymentBg.jpeg') no-repeat center/cover;
     color: rgb(229, 229, 229);
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;

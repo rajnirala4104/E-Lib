@@ -1,22 +1,11 @@
 import './App.css';
-import About from './components/About'
-import BuyNowPage from './components/BuyNow';
-import NoPage from './components/NoPage';
-import { Routes, Route } from "react-router-dom";
-import Home from './Home';
+import { RouterProvider } from "react-router-dom";
+import { router } from './routes';
 
-function App() {
+export const App = ()=>{
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route exact path="/buynow" element={<BuyNowPage />} />
-        <Route exact path="/*" element={<NoPage />} />
-        <Route exact path="/" element={<Home/>} />
-      </Routes>
-    </div>
+    <RouterProvider router={router}/>
   );
 }
 
-export default App;

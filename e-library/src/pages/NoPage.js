@@ -1,7 +1,7 @@
 import './css/noPage.css'
 import { Link } from 'react-router-dom';
 
-function NoPage(props) {
+export const NoPage = (props) => {
     return (
         <>
             <div className="PageNotFound">
