@@ -1,5 +1,4 @@
-// import Footer from "./Footer";
-// import NavBar from "./NavBar";
+import { useParams } from 'react-router-dom'
 import './css/buyNowPage.css'
 
 export const BuyNowPage = (props)=>{
@@ -7,6 +6,8 @@ export const BuyNowPage = (props)=>{
     const paymentMethod = () => {
         alert("Oops!! Backend developer ne kuchh galti ki hai")
     }
+    const {bookId} = useParams()
+    console.log(bookId)
 
     return (
         <>

@@ -23,11 +23,23 @@ function ProductsContainer(props) {
                     {bookData.Books.map((bookDic, index) => {
                         if (bookDic.BookType === catText) {
                             return (
-                                <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
+                                <Card key={index}
+                                    bookName={bookDic.BookName}
+                                    bookPrice={bookDic.price}
+                                    bookType={bookDic.BookType}
+                                    bookDiscountPrice={bookDic.discountPrice}
+                                    bookImage={bookDic.BookImage}
+                                />
                             )
                         } else if (catText === "all") {
                             return (
-                                <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
+                                <Card key={index}
+                                    bookName={bookDic.BookName}
+                                    bookPrice={bookDic.price}
+                                    bookType={bookDic.BookType}
+                                    bookDiscountPrice={bookDic.discountPrice}
+                                    bookImage={bookDic.BookImage}
+                                />
                             )
                         }
                     })}

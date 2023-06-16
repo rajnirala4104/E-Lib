@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 function Card(props) {
 
     const addToCart = () => alert("ADDED TO CART")
-
-    // console.log(props.nowCatText)
     return (
         <>
             <div className="card shadow">
