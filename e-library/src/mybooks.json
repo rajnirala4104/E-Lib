@@ -28,7 +28,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 3,            
+            "BookId": 4,            
             "BookName": "Mathmetics Class 9th NCERT",
             "BookAuthor" : "Seth Godin",
             "BookType": "Education",
@@ -37,7 +37,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 4,            
+            "BookId": 5,            
             "BookName": "Eight Hours Five Six Friends Survive One Sniper",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
@@ -46,7 +46,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 5,            
+            "BookId": 6,            
             "BookName": "The Last Town Wayward Pines Book Three Block Crouch",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
@@ -55,7 +55,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 6,            
+            "BookId": 7,            
             "BookName": "Think Like a Monk",
             "BookAuthor" : "Jay Shetty",
             "BookType": "Self Developmet",
@@ -64,7 +64,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 7,            
+            "BookId": 8,            
             "BookName": "Physics Class 12 NCERT",
             "BookAuthor" : "R.D Sharma",
             "BookType": "Education",
@@ -73,7 +73,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 8,            
+            "BookId": 9,            
             "BookName": "The Monk Who Sold His Ferrarri",
             "BookAuthor" : "Robien Sharma",
             "BookType": "Self Developmet",
@@ -82,7 +82,7 @@
             "discountPrice":"459₹"
         },
         {
-            "BookId": 9,            
+            "BookId": 10,            
             "BookName": "Deep Work",
             "BookAuthor": "Raj Nirala",
             "BookType": "Self Developmet",
@@ -91,7 +91,7 @@
             "discountPrice": "499"
         },
         {
-            "BookId": 10,
+            "BookId": 11,
             "BookName": "influence: The Psychology of Persuasion",
             "BookAuthor": "Raj Nirala",
             "BookType": "Self Developmet",
