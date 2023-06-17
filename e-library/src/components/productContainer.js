@@ -9,12 +9,10 @@ function ProductsContainer(props) {
     const catClickedBtn = (catString) => {
         setCatText(catString)
     }
-
-    console.log(catText)
     return (
         <>
             <div className="productsCardContainer" id="booksContainer">
-                <div className="productsSectionHeading display-4">
+                <div className="container d-flex justify-content-center display-4">
                     Books
                 </div>
                 <br />
@@ -23,11 +21,11 @@ function ProductsContainer(props) {
                     {bookData.Books.map((bookDic, index) => {
                         if (bookDic.BookType === catText) {
                             return (
-                                <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
+                                <Card key={index} {...bookDic}/>
                             )
                         } else if (catText === "all") {
                             return (
-                                <Card key={index} bookName={bookDic.BookName} bookPrice={bookDic.price} bookType={bookDic.BookType} bookDiscountPrice={bookDic.discountPrice} bookImage={bookDic.BookImage} />
+                                <Card key={index} {...bookDic}/>
                             )
                         }
                     })}

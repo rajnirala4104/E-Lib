@@ -1,0 +1,5 @@
+export * from './About'
+export * from './BuyNow'
+export * from './Home'
+export * from './NoPage'
+export * from './Root'

@@ -1,4 +1,4 @@
-function ImageSection(props) {
+function FrontPageImage(props) {
     return (
         <>
             <div id="carouselExampleSlidesOnly" className="carousel back slide" data-ride="carousel">
@@ -20,5 +20,5 @@ function ImageSection(props) {
     )
 }
 
-export default ImageSection;
+export default FrontPageImage;
 

@@ -82,18 +82,35 @@ body {
 
 .productsCardContainer .card {
     margin: 30px auto;
-    width: 20rem !important;
+    width: 30%;
+    height: 5%;
     /* border: 2px solid green; */
     border-radius: 15px;
 }
 
 .back {
     height: 95vh !important;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./components/images/backgroundImage.jpg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./assets/images/backgroundImage.jpg') no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     background-attachment: fixed;
+}
+
+.cardDetails{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+}
+
+.aboutBookDiv{
+    /* border: 2px solid blue; */
+}
+
+.priceDetails{
+    /* border: 2px solid red; */
 }
 
 .prices{
@@ -106,14 +123,15 @@ body {
 }
 
 .booksImage {
-    background: url('./components/images/linchPin.jpeg') no-repeat center/cover !important;
-    height: 60vh;
+    background: url('./assets/images/linchPin.jpeg') no-repeat center/cover !important;
     width: 100%;
+    height: 50vh;
     border-radius: 15px;
+    /* border: 2px solid yellow; */
 }
 
 
-/* ---------------- Raj Nirala ----------------- */
+/* ----------------  ----------------- */
 
 .categorySection{
 
