@@ -116,6 +116,15 @@
             "BookImage": "https://m.media-amazon.com/images/I/51y34ZoVTTL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
             "price": "179₹",
             "discountPrice": "245₹"
+        },
+        {
+            "BookId": 14,
+            "BookName": "Can't Hurt Me: Master Your Mind and Defy the Odds Hardcover",
+            "BookAuthor": "David Goggins",
+            "BookType": "Self Developmet",
+            "BookImage": "https://m.media-amazon.com/images/I/41F4Pg6SumL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
+            "price": "209₹",
+            "discountPrice": "249₹"
         }
     ]
 }

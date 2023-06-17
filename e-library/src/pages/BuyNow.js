@@ -24,7 +24,7 @@ export const BuyNowPage = (props) => {
                                 <img src={books.BookImage} alt={books.BookName} />
                             </div>
                             <div className="bookContent">
-                                <div className="bookName display-4">{books.BookName}</div>
+                                <div className="bookName "><h3>{books.BookName}</h3></div>
                                 <div className="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim dolor fugiat placeat facilis atque temporibus tenetur, quae esse iure neque!</div>
                                 <div className="spacificDetails">
                                     <strong>Author</strong>: {books.BookAuthor}<br />

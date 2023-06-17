@@ -4,13 +4,20 @@
 }
 
 .bookImg {
-    width: 60%;
-    height: 20rem;
-    background: url('../../assets/images/linchPin.jpeg') no-repeat center/cover;
-    box-shadow: 0px 0px 10px black;
+    width: 50%;
+    /* background: url('../../assets/images/linchPin.jpeg') no-repeat center/cover; */
+    box-shadow: 0px 0px 6px -.20px rgba(90, 90, 90, 0.367);
+    display: flex;
+    justify-content: center;
     border-radius: 10px;
+    padding: 10px 0px;
 }
 
+.bookImg img{
+    margin: auto;
+    width: 70%;
+    height: 20rem;
+}
 .showBookDetailsContainer {
     /* border: 2px solid red; */
     background: rgba(255, 255, 255, 0.878);

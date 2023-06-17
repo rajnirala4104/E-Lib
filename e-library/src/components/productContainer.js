@@ -12,7 +12,7 @@ function ProductsContainer(props) {
     return (
         <>
             <div className="productsCardContainer" id="booksContainer">
-                <div className="productsSectionHeading display-4">
+                <div className="container d-flex justify-content-center display-4">
                     Books
                 </div>
                 <br />
