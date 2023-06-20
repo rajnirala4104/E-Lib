@@ -17,7 +17,7 @@ function ProductsContainer(props) {
                 </div>
                 <br />
                 <Category getCat={catClickedBtn} />
-                <div className="productsCardContainer onlyCards">
+                <div className=" onlyCards">
                     {bookData.Books.map((bookDic, index) => {
                         if (bookDic.BookType === catText) {
                             return (
