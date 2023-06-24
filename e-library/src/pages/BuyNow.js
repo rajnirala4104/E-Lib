@@ -8,7 +8,7 @@ export const BuyNowPage = (props) => {
     const books = bookData.Books.find(book => book.BookId.toString() === bookId)
     if (!books) {
         return (
-            <>
+            <> 
                 <div className="container d-flex shadow my-3 bg-warning text-white justify-content-center rounded display-2">
                     Oops!!
                 </div>
