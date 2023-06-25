@@ -75,17 +75,38 @@ body {
     width: 90%;
     margin: auto;
 }
-
+.productHeader{
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.productHeader input{
+    width: 70%;
+}
+.cardContainer{
+    /* border: 2px solid red; */
+    overflow-y:auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+}
 .productsSectionHeading{
     margin: auto;
 }
 
 .productsCardContainer .card {
     margin: 30px auto;
-    width: 30%;
-    height: 5%;
+    width: 45vh;
     /* border: 2px solid green; */
     border-radius: 15px;
+    margin: 10px 2px;
 }
 
 .back {
