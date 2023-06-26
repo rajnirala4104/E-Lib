@@ -1,13 +1,27 @@
 import Card from "./BooksCard";
 import Category from "./categorySection";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import bookData from "../mybooks.json";
 
 function ProductsContainer(props) {
   const [catText, setCatText] = useState("all");
-  const catClickedBtn = (catString) => {
-    setCatText(catString);
-  };
+  const catClickedBtn = catString => setCatText(catString)
+
+  const _BOOKNAMES = []
+  bookData.Books.forEach(bookDic => {
+    _BOOKNAMES.push(bookDic.BookName)
+  })
+
+  const [userBookInputName, setUseBookInputName] = useState("")
+  const [bookList, setBookList] = useState(_BOOKNAMES)
+
+  // console.log(userBookInputName)
+  console.log(bookList)
+
+  useEffect(()=>{
+      setBookList(_BOOKNAMES.filter(bookName => bookName.toLowerCase().includes(userBookInputName.toLowerCase())))
+  }, [userBookInputName])
+
   return (
     <>
       <div className="productsCardContainer" id="booksContainer">
@@ -18,6 +32,7 @@ function ProductsContainer(props) {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={(e)=> setUseBookInputName(e.target.value)}
           />
         </div>
         <br />
