@@ -86,17 +86,19 @@ body {
     width: 70%;
 }
 .cardContainer{
-    /* border: 2px solid red; */
-    overflow-y:auto;
-    overflow-x: hidden;
+    /* border: 2px solid red;  */
+    /* overflow-y: auto;
+    overflow-x: hidden; */
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     width: 90%;
-    height: 90vh;
-    margin: auto;
+    /* height: 90vh; */
+    margin: 10px 0px;
+    /* box-shadow: 4px 0px 21px -12px black; */
 }
+
 .productsSectionHeading{
     margin: auto;
 }

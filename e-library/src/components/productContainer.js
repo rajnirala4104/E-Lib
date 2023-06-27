@@ -4,23 +4,33 @@ import { useState, useEffect } from "react";
 import bookData from "../mybooks.json";
 
 function ProductsContainer(props) {
+  // ----- state for category ------
   const [catText, setCatText] = useState("all");
-  const catClickedBtn = catString => setCatText(catString)
+  const catClickedBtn = (catString) => setCatText(catString);
 
-  const _BOOKNAMES = []
-  bookData.Books.forEach(bookDic => {
-    _BOOKNAMES.push(bookDic.BookName)
-  })
+  const _BOOKNAMES = [];
+  bookData.Books.forEach((bookDic) => {
+    _BOOKNAMES.push(bookDic.BookName);
+  });
 
-  const [userBookInputName, setUseBookInputName] = useState("")
-  const [bookList, setBookList] = useState(_BOOKNAMES)
+  const [userBookInputName, setUseBookInputName] = useState("");
+  const [bookList, setBookList] = useState(_BOOKNAMES);
 
   // console.log(userBookInputName)
-  console.log(bookList)
+  // console.log(bookList)
 
-  useEffect(()=>{
-      setBookList(_BOOKNAMES.filter(bookName => bookName.toLowerCase().includes(userBookInputName.toLowerCase())))
-  }, [userBookInputName])
+  useEffect(() => {
+    setBookList(
+      _BOOKNAMES.filter((bookName) =>
+        bookName.toLowerCase().includes(userBookInputName.toLowerCase())
+      )
+    );
+  }, [userBookInputName]);
+
+  const _SEARCHBOOKDATA = bookList.map((book) =>
+    bookData.Books.find((boookDic) => boookDic.BookName === book)
+  );
+  // console.log(_SEARCHBOOKDATA)
 
   return (
     <>
@@ -32,16 +42,16 @@ function ProductsContainer(props) {
             type="search"
             placeholder="Search"
             aria-label="Search"
-            onChange={(e)=> setUseBookInputName(e.target.value)}
+            onChange={(e) => setUseBookInputName(e.target.value)}
           />
         </div>
         <br />
         <Category getCat={catClickedBtn} />
         <div className="cardContainer onlyCards">
-          {bookData.Books.map((bookDic, index) => {
+          {_SEARCHBOOKDATA.map((bookDic, index) => {
             if (bookDic.BookType === catText) {
               return <Card key={index} {...bookDic} />;
-            } else if(catText === "all") {
+            } else if (catText === "all") {
               return <Card key={index} {...bookDic} />;
             }
           })}
