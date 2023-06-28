@@ -3,6 +3,7 @@
         {
             "BookId": 1,            
             "BookName": "Do Epic Shit",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Ankur Warikoo",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/P/9391165486.01._SCLZZZZZZZ_SX500_.jpg",
@@ -10,8 +11,19 @@
             "discountPrice":"459₹"
         },
         {
+            "BookId":15,
+            "BookName": "A Manual for Living (A Little Book of Wisdom)",
+            "BookDescription":"This is Book's Description",
+            "BookType":"Philosophy",
+            "price": "1,119",
+            "BookAuthor":"Epictetus and Sharon Lebell",
+            "BookImage": "https://m.media-amazon.com/images/I/51vtqIzAEqL._SX412_BO1,204,203,200_.jpg",
+            "discountPrice": "1,149"
+        },
+        {
             "BookId": 2,            
             "BookName": "Get Epic Shit Done",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Ankur Warikoo",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/51I5OZ7Kb9L.jpg",
@@ -21,6 +33,7 @@
         {
             "BookId": 3,            
             "BookName": "Linchpin",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Seth Godin",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/51nA8+LsIlL._SY344_BO1,204,203,200_.jpg",
@@ -30,6 +43,7 @@
         {
             "BookId": 4,            
             "BookName": "Mathmetics Class 9th NCERT",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Seth Godin",
             "BookType": "Education",
             "BookImage": "https://m.media-amazon.com/images/I/51WJ0DfTm7L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -39,6 +53,7 @@
         {
             "BookId": 5,            
             "BookName": "Eight Hours Five Six Friends Survive One Sniper",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
             "BookImage": "https://m.media-amazon.com/images/P/B0B1TCK9NC.01._SCLZZZZZZZ_SX500_.jpg",
@@ -48,6 +63,7 @@
         {
             "BookId": 6,            
             "BookName": "The Last Town Wayward Pines Book Three Block Crouch",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Unknown",
             "BookType": "Fictional Story",
             "BookImage": "https://m.media-amazon.com/images/P/B0BHTHXTWF.01._SCLZZZZZZZ_SX500_.jpg",
@@ -57,6 +73,7 @@
         {
             "BookId": 7,            
             "BookName": "Think Like a Monk",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Jay Shetty",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/41DtkrHawXL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -66,6 +83,7 @@
         {
             "BookId": 8,            
             "BookName": "Physics Class 12 NCERT",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "R.D Sharma",
             "BookType": "Education",
             "BookImage": "https://m.media-amazon.com/images/I/91MGjnYsatL._AC_UY218_.jpg",
@@ -75,6 +93,7 @@
         {
             "BookId": 9,            
             "BookName": "The Monk Who Sold His Ferrarri",
+            "BookDescription":"This is Book's Description",
             "BookAuthor" : "Robien Sharma",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg",
@@ -84,6 +103,7 @@
         {
             "BookId": 10,            
             "BookName": "Deep Work",
+            "BookDescription":"This is Book's Description",
             "BookAuthor": "Raj Nirala",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/417yjF+Z5zL.jpg",
@@ -93,6 +113,7 @@
         {
             "BookId": 11,
             "BookName": "Iinfluence: The Psychology of Persuasion",
+            "BookDescription":"This is Book's Description",
             "BookAuthor": "Robert Cialdini",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/P/0688128165.01._SCLZZZZZZZ_SX500_.jpg",
@@ -102,6 +123,7 @@
         {
             "BookId": 12,
             "BookName": "Public Speaking and Influencing Men in Business",
+            "BookDescription":"This is Book's Description",
             "BookAuthor": "Dale Carnegie",
             "BookType": "Soft Skills",
             "BookImage": "https://m.media-amazon.com/images/I/41WYdSRkTBL._SX373_BO1,204,203,200_.jpg",
@@ -111,6 +133,7 @@
         {
             "BookId": 13,
             "BookName": "Courage to be Disliked",
+            "BookDescription":"This is Book's Description",
             "BookAuthor": " Ichiro Kishimi and Fumitake Koga",
             "BookType": "Philosophy",
             "BookImage": "https://m.media-amazon.com/images/I/51y34ZoVTTL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -120,6 +143,7 @@
         {
             "BookId": 14,
             "BookName": "Can't Hurt Me: Master Your Mind and Defy the Odds Hardcover",
+            "BookDescription":"This is Book's Description",
             "BookAuthor": "David Goggins",
             "BookType": "Self Developmet",
             "BookImage": "https://m.media-amazon.com/images/I/41F4Pg6SumL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",

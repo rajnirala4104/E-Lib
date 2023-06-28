@@ -16,9 +16,6 @@ function ProductsContainer(props) {
   const [userBookInputName, setUseBookInputName] = useState("");
   const [bookList, setBookList] = useState(_BOOKNAMES);
 
-  // console.log(userBookInputName)
-  // console.log(bookList)
-
   useEffect(() => {
     setBookList(
       _BOOKNAMES.filter((bookName) =>
@@ -30,6 +27,9 @@ function ProductsContainer(props) {
   const _SEARCHBOOKDATA = bookList.map((book) =>
     bookData.Books.find((boookDic) => boookDic.BookName === book)
   );
+
+  // console.log(userBookInputName)
+  // console.log(bookList)
   // console.log(_SEARCHBOOKDATA)
 
   return (
