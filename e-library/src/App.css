@@ -1,216 +1,231 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Mono:wght@200&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Mono:wght@200&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
+   margin: 0;
+   padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 body {
-    background: rgba(194, 194, 194, 0.248);
+   background: rgba(194, 194, 194, 0.248);
 }
 
 /* -------------NavBar-------------- */
 .navbar {
-    background: rgba(31, 31, 31, 0.681) !important;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 23 !important;
+   background: rgba(31, 31, 31, 0.681) !important;
+   position: sticky;
+   top: 0;
+   left: 0;
+   z-index: 23 !important;
+}
+
+.cart {
+   /* border: 1px solid #ffb835; */
+
+   margin: 0px 15px;
+   border-radius: 6px;
+   display: flex;
+   justify-content: start;
+   flex-direction: row-reverse;
+   > svg {
+      cursor: pointer;
+      /* margin: 0px 10px; */
+      /* padding: 5px; */
+   }
+   > .count {
+      /* border: 1px solid red; */
+      background: #ffb835;
+      width: 1rem;
+      height: 1rem;
+      font-size: 10px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(-10px);
+   }
 }
 
 .libText {
-    color: red;
+   color: red;
 }
 
 .searchBtn {
-    /* background: rgb(49, 49, 49) !important; */
-    color: #ffc800 !important;
+   /* background: rgb(49, 49, 49) !important; */
+   color: #ffc800 !important;
 }
 
 .searchBtn:hover {
-    /* background: rgb(91, 91, 91) !important; */
-    color: #ffe100 !important;
-    border: 1px solid transparent;
-    background: #ffc400 !important;
-    color: black !important;
-    box-shadow: 0px 0px 7px black !important;
+   /* background: rgb(91, 91, 91) !important; */
+   color: #ffe100 !important;
+   border: 1px solid transparent;
+   background: #ffc400 !important;
+   color: black !important;
+   box-shadow: 0px 0px 7px black !important;
 }
-
 
 /* -----------------FrontPageImage----------- */
 .liText {
-    font-family: 'Dancing Script', cursive;
+   font-family: "Dancing Script", cursive;
 }
 
-.e_text{
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 900;
+.e_text {
+   font-family: "Roboto Mono", monospace;
+   font-weight: 900;
 }
 
 .webContext {
-    /* border: 2px solid red; */
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 50%;
-    height: 40%;
-    align-items: center;
-    color: white;
-    text-align: center;
+   /* border: 2px solid red; */
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+   width: 50%;
+   height: 40%;
+   align-items: center;
+   color: white;
+   text-align: center;
 }
-
 
 .productsCardContainer {
-    /* border: 2px solid red; */
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: auto;
+   /* border: 2px solid red; */
+   display: flex;
+   justify-content: space-around;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 90%;
+   margin: auto;
 }
-.productHeader{
-    /* border: 2px solid green; */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.productHeader {
+   /* border: 2px solid green; */
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
 }
-.productHeader input{
-    width: 70%;
+.productHeader input {
+   width: 70%;
 }
-.cardContainer{
-    /* border: 2px solid red;  */
-    /* overflow-y: auto;
+.cardContainer {
+   /* border: 2px solid red;  */
+   /* overflow-y: auto;
     overflow-x: hidden; */
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 90%;
-    /* height: 90vh; */
-    margin: 10px 0px;
-    /* box-shadow: 4px 0px 21px -12px black; */
+   display: flex;
+   justify-content: space-around;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 90%;
+   /* height: 90vh; */
+   margin: 10px 0px;
+   /* box-shadow: 4px 0px 21px -12px black; */
 }
 
-.productsSectionHeading{
-    margin: auto;
+.productsSectionHeading {
+   margin: auto;
 }
 
 .productsCardContainer .card {
-    margin: 30px auto;
-    width: 45vh;
-    /* border: 2px solid green; */
-    border-radius: 15px;
-    margin: 10px 2px;
+   margin: 30px auto;
+   width: 45vh;
+   /* border: 2px solid green; */
+   border-radius: 15px;
+   margin: 10px 2px;
 }
 
 .back {
-    height: 95vh !important;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./assets/images/backgroundImage.jpg') no-repeat center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
+   height: 95vh !important;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./assets/images/backgroundImage.jpg") no-repeat center/cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-attachment: fixed;
 }
 
-.cardDetails{
-    /* border: 2px solid black; */
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    
+.cardDetails {
+   /* border: 2px solid black; */
+   display: flex;
+   justify-content: space-evenly;
+   flex-direction: column;
 }
 
-.aboutBookDiv{
-    /* border: 2px solid blue; */
+.aboutBookDiv {
+   /* border: 2px solid blue; */
 }
 
-.priceDetails{
-    /* border: 2px solid red; */
+.priceDetails {
+   /* border: 2px solid red; */
 }
 
-.prices{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 50%;
-    /* border: 1px solid red; */
-    text-align: center;
+.prices {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   width: 50%;
+   /* border: 1px solid red; */
+   text-align: center;
 }
 
 .booksImage {
-    background: url('./assets/images/linchPin.jpeg') no-repeat center/cover !important;
-    width: 100%;
-    height: 50vh;
-    border-radius: 15px;
-    /* border: 2px solid yellow; */
+   background: url("./assets/images/linchPin.jpeg") no-repeat center/cover !important;
+   width: 100%;
+   height: 50vh;
+   border-radius: 15px;
+   /* border: 2px solid yellow; */
 }
-
 
 /* ----------------  ----------------- */
 
-.categorySection{
-
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 15%;
-    margin: 10px auto;
-
+.categorySection {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding: 0 15%;
+   margin: 10px auto;
 }
-
-
 
 /* ----------- responsive ----------- */
 @media only screen and (max-width: 995px) {
-    .categorySection{
-        /* width: 55rem; */
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 10px auto;
-        /* border: 2px solid red; */
-        flex-wrap: wrap;
-    }
-    .categorySection button{
-        margin: 4px 4px;
-        width: 20rem !important;
-        /* border: 2px solid green; */
-    }
+   .categorySection {
+      /* width: 55rem; */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 10px auto;
+      /* border: 2px solid red; */
+      flex-wrap: wrap;
+   }
+   .categorySection button {
+      margin: 4px 4px;
+      width: 20rem !important;
+      /* border: 2px solid green; */
+   }
 
-    .webTheme{
-        /* border: 2px solid red; */
-        width: 90%;
-    }
-    .webContext{
-        /* border: 2px solid black; */
-        width: 100%;
-    }
+   .webTheme {
+      /* border: 2px solid red; */
+      width: 90%;
+   }
+   .webContext {
+      /* border: 2px solid black; */
+      width: 100%;
+   }
 
-    .onlyCards{
-        /* border: 2px solid blue; */
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+   .onlyCards {
+      /* border: 2px solid blue; */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
 
-    .card{
-        /* border: 2px sold red; */
-        width: 30%;
-    }
-
-
-  }
-
-
+   .card {
+      /* border: 2px sold red; */
+      width: 30%;
+   }
+}
