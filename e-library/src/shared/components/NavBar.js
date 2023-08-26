@@ -4,7 +4,7 @@ import { CartContext } from "../../context/cart.context";
 import { CartIcon } from "../../icos";
 function NavBar(props) {
    const { cart } = useContext(CartContext);
-   console.log(cart);
+   // console.log(cart);
    return (
       <>
          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,7 +65,11 @@ function NavBar(props) {
                   </li>
                </ul>
                <div className="cart">
-                  {cart ? <div className="count">{cart.length}</div> : ""}
+                  {cart.length !== 0 ? (
+                     <div className="count">{cart.length}</div>
+                  ) : (
+                     ""
+                  )}
                   <CartIcon height={"2rem"} width={"2rem"} />
                </div>
                <a
