@@ -8,6 +8,7 @@ import { router } from "./routes";
 
 export const App = () => {
    const [cart, setCart] = useState([]);
+
    return (
       <Fragment>
          <Provider store={redux}>

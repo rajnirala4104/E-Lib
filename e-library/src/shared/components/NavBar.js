@@ -4,7 +4,6 @@ import { CartContext } from "../../context/cart.context";
 import { CartIcon } from "../../icos";
 function NavBar(props) {
    const { cart } = useContext(CartContext);
-   // console.log(cart);
    return (
       <>
          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,12 +27,20 @@ function NavBar(props) {
                id="navbarSupportedContent"
             >
                <ul className="navbar-nav mr-auto">
-                  <li className="nav-item active">
+                  <li
+                     className={`nav-item ${
+                        props.pathname === "/" ? "active" : ""
+                     }`}
+                  >
                      <Link className="nav-link" to="/">
-                        Home <span className="sr-only">(current)</span>
+                        Home
                      </Link>
                   </li>
-                  <li className="nav-item">
+                  <li
+                     className={`nav-item ${
+                        props.pathname === "/about" ? "active" : ""
+                     }`}
+                  >
                      <Link className="nav-link" to="/about">
                         About
                      </Link>
@@ -64,14 +71,19 @@ function NavBar(props) {
                      </div>
                   </li>
                </ul>
-               <div className="cart">
+               <Link
+                  to={"/cart"}
+                  className={`cart text-decoration-none text-dark nav-item ${
+                     props.pathname === "/cart" ? "active" : ""
+                  }`}
+               >
                   {cart.length !== 0 ? (
                      <div className="count">{cart.length}</div>
                   ) : (
                      ""
                   )}
                   <CartIcon height={"2rem"} width={"2rem"} />
-               </div>
+               </Link>
                <a
                   className="btn btn-outline-warning my-2 my-sm-0 searchBtn"
                   href="#booksContainer"

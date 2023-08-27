@@ -1,8 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import bookData from "../mybooks.json";
 import "./css/buyNowPage.css";
 export const BuyNowPage = (props) => {
+   useEffect(() => {
+      document.title = "E-Lib Buy Now";
+   }, []);
+
    const paymentMethod = () =>
       alert("Oops!! Backend developer ne kuchh galti ki hai");
    const { bookId } = useParams();

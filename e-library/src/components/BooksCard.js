@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/cart.context";
 
@@ -11,11 +11,11 @@ function Card(props) {
    };
 
    const addToCart = () => {
-      setCart([...cart, props.BookId]);
+      setCart([...cart, props.BookName]);
    };
 
    return (
-      <>
+      <Fragment>
          <div className="card shadow">
             <img
                className="card-img-top booksImage"
@@ -51,7 +51,7 @@ function Card(props) {
                </div>
             </div>
          </div>
-      </>
+      </Fragment>
    );
 }
 
