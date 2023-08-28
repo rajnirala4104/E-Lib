@@ -130,7 +130,7 @@ body {
 .productsCardContainer .card {
    margin: 30px auto;
    width: 19rem;
-   border: 2px solid green;
+   /* border: 2px solid green; */
    /* height: 25rem; */
    border-radius: 15px;
    margin: 10px 2px;
