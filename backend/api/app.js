@@ -4,12 +4,13 @@ const { StatusCodes } = require("http-status-codes");
 const connectDatabase = require("./database/db.connection");
 const morgan = require("morgan");
 const fs = require("fs");
+const cors = require("cors");
 const path = require("path");
 const app = express();
 connectDatabase();
 
 app.use(express.json());
-
+app.use(cors());
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, "./logs/access.log"),
   { flags: "a" }
