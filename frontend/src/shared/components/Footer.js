@@ -14,7 +14,11 @@ const Footer = (props) => {
           eveniet et rem iste
         </div>
         <div className="socialIcons">
-          <Link href="/" target="_blank" className="fa fa-instagram"></Link>
+          <a
+            href="https://www.instagram.com/_raj_nirala_"
+            target="_blank"
+            className="fa fa-instagram"
+          ></a>
           <Link href="/" target="_blank" className="fa fa-github"></Link>
           <Link href="/" target="_blank" className="fa fa-facebook"></Link>
           <Link href="/" target="_blank" className="fa fa-twitter"></Link>
