@@ -71,11 +71,11 @@ const bookControllers = {
    }),
    updateBookData: asyncHandler(async (req, res) => {
       try {
-         const bookId = req.params;
+         const { id } = req.params;
          const data = req.body;
-         const bookExist = await BookModle.findOne({ _id: bookId.id })
+         const bookExist = await BookModle.findOne({ _id: id })
          if (bookExist) {
-            const updated = await BookModle.findByIdAndUpdate(bookId.id, data)
+            await BookModle.findByIdAndUpdate(bookId.id, data)
             return res.status(StatusCodes.OK).json({
                message: "book updated successfully ",
                status: StatusCodes.OK,
@@ -88,7 +88,28 @@ const bookControllers = {
          throw new Error(`status - ${StatusCodes.INTERNAL_SERVER_ERROR}, - ${error}`)
       }
    }),
-   deleteBookFromTheDatabase: asyncHandler(async (req, res) => { }),
+   deleteBookFromTheDatabase: asyncHandler(async (req, res) => {
+      try {
+         const { id } = req.params;
+         const bookExist = await BookModle.findOne({ _id: id });
+         if (bookExist) {
+            const response = await BookModle.findByIdAndDelete({ _id: id });
+            return res.status(StatusCodes.OK).json({
+               message: "deleted successfully",
+               data: bookExist
+            })
+         } else {
+            return res.status(StatusCodes.BAD_REQUEST).json({
+               message: "entity is not exist in our database",
+               data: null
+            })
+         }
+      } catch (error) {
+         res.status(StatusCodes.INTERNAL_SERVER_ERROR)
+         LOGGER.error(`status - ${StatusCodes.INTERNAL_SERVER_ERROR}, - can't delete data`);
+         throw new Error(`status - ${StatusCodes.INTERNAL_SERVER_ERROR}, - ${error}`)
+      }
+   }),
 };
 
 module.exports = { bookControllers };
