@@ -93,7 +93,7 @@ const bookControllers = {
          const { id } = req.params;
          const bookExist = await BookModle.findOne({ _id: id });
          if (bookExist) {
-            const response = await BookModle.findByIdAndDelete({ _id: id });
+            await BookModle.findByIdAndDelete({ _id: id });
             return res.status(StatusCodes.OK).json({
                message: "deleted successfully",
                data: bookExist
