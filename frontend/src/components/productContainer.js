@@ -13,7 +13,7 @@ function ProductsContainer(props) {
 
   const fetchBooks = async () => {
     const { data } = await getAllBooks();
-    console.log(data.data);
+    // console.log(data.data);
     setAllBooks(data.data);
   };
 
@@ -31,7 +31,7 @@ function ProductsContainer(props) {
             type="search"
             placeholder="Search"
             aria-label="Search"
-            // onChange={(e) => setUseBookInputName(e.target.value)}
+          // onChange={(e) => setUseBookInputName(e.target.value)}
           />
         </div>
         <br />

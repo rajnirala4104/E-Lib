@@ -2,13 +2,23 @@ const asyncHandler = require("express-async-handler");
 const { StatusCodes } = require("http-status-codes");
 const { BookModle } = require("./book.model");
 const { LOGGER } = require("../../common/logger");
+const { Books } = require('../../database/dummyData.json')
 const bookControllers = {
    getBooksData: asyncHandler(async (req, res) => {
       try {
+         const books = await BookModle.find({})
+         if (books.data.length === 0) {
+            await insertMany(Books)
+            return res.status(StatusCodes.CREATED).json({
+               message: "inserted all books",
+               status: StatusCodes.CREATED,
+               data: books
+            })
+         }
          return res.status(StatusCodes.OK).json({
             message: "ok",
             status: StatusCodes.OK,
-            data: await BookModle.find({}),
+            data: books,
          });
       } catch (error) {
          return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({

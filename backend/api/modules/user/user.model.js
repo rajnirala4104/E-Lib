@@ -18,7 +18,6 @@ const userSchema = Schema({
         validate: [validateEmail, 'please fill a valid email address'], //using a validateEmail function as an email validator 
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'please fill a valid email address']
     },
-
     password: {
         type: String,
         trim: true,
@@ -28,7 +27,6 @@ const userSchema = Schema({
         type: String,
         default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     }
-
 },
     { timestamps: true }
 )
