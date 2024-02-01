@@ -14,7 +14,7 @@ export const Home = (props) => {
    useEffect(() => {
       const userInfo = JSON.parse(localStorage.getItem('userInfo'))
       if (!userInfo) {
-         navigator('/login')
+         navigator('/account')
       }
       set_user(userInfo)
    }, [])
