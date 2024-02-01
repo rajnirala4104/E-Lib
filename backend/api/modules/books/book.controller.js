@@ -3,11 +3,12 @@ const { StatusCodes } = require("http-status-codes");
 const { BookModle } = require("./book.model");
 const { LOGGER } = require("../../common/logger");
 const { Books } = require('../../database/dummyData.json')
+
 const bookControllers = {
    getBooksData: asyncHandler(async (req, res) => {
       try {
          const books = await BookModle.find({})
-         if (books.data.length === 0) {
+         if (books.length === 0) {
             await insertMany(Books)
             return res.status(StatusCodes.CREATED).json({
                message: "inserted all books",

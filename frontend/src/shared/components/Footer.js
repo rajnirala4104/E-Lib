@@ -19,10 +19,10 @@ const Footer = (props) => {
             target="_blank"
             className="fa fa-instagram"
           ></a>
-          <Link href="/" target="_blank" className="fa fa-github"></Link>
+          <Link href="https://github.com/rajnirala4104" target="_blank" className="fa fa-github"></Link>
           <Link href="/" target="_blank" className="fa fa-facebook"></Link>
           <Link href="/" target="_blank" className="fa fa-twitter"></Link>
-          <Link href="/" target="_blank" className="fa fa-snapchat"></Link>
+          {/* <Link href="/" target="_blank" className="fa fa-snapchat"></Link> */}
         </div>
       </div>
       <div className="copyrigthDetails">
