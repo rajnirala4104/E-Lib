@@ -1,6 +1,8 @@
+import React from "react";
+
 function FrontPageImage(props) {
    return (
-      <>
+      <React.Fragment>
          <div
             id="carouselExampleSlidesOnly"
             className="carousel back slide"
@@ -27,7 +29,7 @@ function FrontPageImage(props) {
                </div>
             </div>
          </div>
-      </>
+      </React.Fragment>
    );
 }
 

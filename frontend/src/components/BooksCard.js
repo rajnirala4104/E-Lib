@@ -1,6 +1,7 @@
 import { Fragment, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/cart.context";
+import { AppState } from "../context/AppContext";
 
 function Card(props) {
   const { cart, setCart } = useContext(CartContext);
@@ -13,7 +14,6 @@ function Card(props) {
   const addToCart = () => {
     setCart([...cart, props.name]);
   };
-
   return (
     <Fragment>
       <div className="card shadow">
