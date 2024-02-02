@@ -6,9 +6,10 @@ const AppContextProvider = ({ children }) => {
 
   const [_user, set_user] = useState("raj nirala");
   const [cart, setCart] = useState([])
+  const [loginDesign, setLoginDesign] = useState(false)
 
   return (
-    <appContext.Provider value={{ _user, set_user, cart, setCart }}>
+    <appContext.Provider value={{ _user, set_user, cart, setCart, loginDesign, setLoginDesign }}>
       {children}
     </appContext.Provider>
   )
