@@ -1,8 +1,7 @@
-const { Router } = require('express')
-const { cartControllers } = require('./cart.controllers')
-const cartRouter = Router()
+const { Router } = require("express");
+const { cartControllers } = require("./cart.controllers");
+const cartRouter = Router();
 
-cartRouter.get('/', cartControllers.getCardItems)
-cartRouter.get('/:bookId', cartControllers.getSingleItemFromCart)
+cartRouter.get("/", (req, res) => {});
 
-module.exports = { cartRouter }
+module.exports = { cartRouter };
