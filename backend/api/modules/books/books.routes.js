@@ -1,11 +1,6 @@
-const { Router } = require("express")
-const { bookControllers } = require("./book.controller")
-const bookRouter = Router()
+const { Router } = require("express");
+const bookRouter = Router();
 
-bookRouter.get('/', bookControllers.getBooksData)
-bookRouter.get('/:id', bookControllers.getSingleBookById)
-bookRouter.post('/', bookControllers.insertBookInTheDatabase)
-bookRouter.put('/:id', bookControllers.updateBookData)
-bookRouter.delete(':id', bookControllers.deleteBookFromTheDatabase)
+bookRouter.get("/", (req, res) => {});
 
-module.exports = { bookRouter }
+module.exports = { bookRouter };

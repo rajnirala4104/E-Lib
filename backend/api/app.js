@@ -6,19 +6,25 @@ const morgan = require("morgan");
 const fs = require("fs");
 const cors = require("cors");
 const path = require("path");
+const { EXPRESS_RATE_LIMIT, CORS_ORIGIN } = require("./constants");
+const cookieParser = require("cookie-parser");
 const app = express();
 connectDatabase();
 
-app.use(express.json());
-app.use(cors());
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "./logs/access.log"),
-  { flags: "a" }
+   path.join(__dirname, "./logs/access.log"),
+   { flags: "a" },
 );
 
+// express middlewares
+app.use(cors({ origin: CORS_ORIGIN, credentials: true }));
+app.use(express.json({ limit: EXPRESS_RATE_LIMIT })); // limit helps to manage the rate of requests to a server in Express.js applications
+app.use(express.urlencoded({ limit: EXPRESS_RATE_LIMIT, extended: true }));
+app.use(express.static("public"));
+app.use(cookieParser());
 app.use(morgan("combined", { stream: accessLogStream }));
-
-app.get("/", (req, res) => res.status(StatusCodes.OK));
 app.use("/api", appRouter);
+
+app.get("/", (req, res) => {});
 
 module.exports = { app };
