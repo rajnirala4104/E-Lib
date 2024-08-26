@@ -1,5 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export const Home: React.FC = () => {
-  return <div>Home</div>;
+  return <Fragment></Fragment>;
 };
