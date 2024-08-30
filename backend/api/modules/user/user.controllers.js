@@ -1,5 +1,8 @@
-const expressAsyncHandler = require("express-async-handler");
+const { asyncHandler } = require("../../utils/asynHandler");
 
-const userControllers = {};
+const userControllers = {
+   register: asyncHandler(async (req, res) => {}),
+   login: asyncHandler(async (req, res) => {}),
+};
 
 module.exports = { userControllers };
