@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const { compare, genSalt, hash } = require("bcrypt");
+const jsonwebtoken = require("jsonwebtoken");
 
 const adminSchema = Schema(
    {
@@ -10,6 +11,9 @@ const adminSchema = Schema(
       password: {
          type: String,
          required: true,
+      },
+      refreshToken: {
+         type: String,
       },
    },
    { timestamps: true },

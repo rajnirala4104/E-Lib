@@ -4,6 +4,25 @@ const { ApiResponse } = require("../../utils/apiResponse");
 const { StatusCodes } = require("http-status-codes");
 const { Admin } = require("./admin.model");
 
+const generateAccessAndRefreshToken = async (adminId) => {
+   try {
+      const admin = await Admin.findById(adminId);
+      console.log(admin);
+      const accessToken = admin.generateAccessToken();
+      const refreshToken = admin.generateRefreshToken();
+
+      admin.refreshToken = refreshToken;
+      await admin.save({ validateBeforeSave: false });
+
+      return { accessToken, refreshToken };
+   } catch (error) {
+      throw new ApiError(
+         StatusCodes.INTERNAL_SERVER_ERROR,
+         "Something went wrong while generating tokens",
+      );
+   }
+};
+
 const adminControllers = {
    adminRegistration: asyncHandler(async (req, res) => {
       const { password } = req.body;
@@ -13,7 +32,6 @@ const adminControllers = {
 
       const adminDoesExist = await Admin.findOne({ name: "root" });
       if (adminDoesExist) {
-         console.log(adminDoesExist);
          throw new ApiError(StatusCodes.CONFLICT, "Admin is already exist");
       }
 
@@ -44,9 +62,27 @@ const adminControllers = {
          throw new ApiError(StatusCodes.CONFLICT, "password is wrong");
       }
 
+      const loggedUser = await Admin.findOne({ _id: admin._id }).select(
+         "-password -refreshToken",
+      );
+      const tokens = await generateAccessAndRefreshToken(loggedUser._id);
+
+      const option = {
+         httpOnly: true,
+         secure: true,
+      };
+
       return res
          .status(StatusCodes.OK)
-         .json(new ApiResponse(StatusCodes.OK, admin, "login successfully"));
+         .cookie("accessToken", tokens.accessToken, option)
+         .cookie("refreshToken", tokens.refreshToken, option)
+         .json(
+            new ApiResponse(StatusCodes.OK, {
+               admin: loggedUser,
+               accessToken: tokens.accessToken,
+               refreshToken: tokens.refreshToken,
+            }),
+         );
    }),
    logout: asyncHandler(async (req, res) => {}),
 };
