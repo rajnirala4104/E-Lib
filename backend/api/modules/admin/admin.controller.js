@@ -7,7 +7,6 @@ const { Admin } = require("./admin.model");
 const generateAccessAndRefreshToken = async (adminId) => {
    try {
       const admin = await Admin.findById(adminId);
-      console.log(admin);
       const accessToken = admin.generateAccessToken();
       const refreshToken = admin.generateRefreshToken();
 
