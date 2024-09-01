@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
         <div className="my-auto h-full cursor-pointer place-content-center px-5 bg-gradient-to-r from-[rgba(0,162,195,0.26)] to-[rgba(0,0,0,0)] backdrop:">
           <SearchIcon />
         </div>
-        <div className="flex overflow-x-auto ">
+        <div className="flex overflow-x-auto no-scrollbar">
           <Categories />
         </div>
       </div>
