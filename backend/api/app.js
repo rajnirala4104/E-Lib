@@ -17,7 +17,7 @@ const accessLogStream = fs.createWriteStream(
 );
 
 // express middlewares
-app.use(cors());
+app.use(cors({ origin: CORS_ORIGIN, credentials: true }));
 app.use(express.json({ limit: EXPRESS_RATE_LIMIT })); // limit helps to manage the rate of requests to a server in Express.js applications
 app.use(express.urlencoded({ limit: EXPRESS_RATE_LIMIT, extended: true }));
 app.use(express.static("public"));
