@@ -9,8 +9,10 @@ const connectDatabase = async () => {
          useUnifiedTopology: true,
       });
       LOGGER.info(`mongo has connected - ${connection.connection.host}`.blue);
+      console.log(`mongo has connected - ${connection.connection.host}`.blue);
    } catch (e) {
       LOGGER.error(`Oops!! something went wrong,  - ${e.message}`.red.bold);
+      console.log(`Oops!! something went wrong,  - ${e.message}`.red.bold);
       process.exit();
    }
 };

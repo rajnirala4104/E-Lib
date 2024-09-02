@@ -7,7 +7,5 @@ const connectDatabase = require("./api/database/db.connection");
 const PORT = process.env.PORT || 8000;
 
 createServer(app).listen(PORT, () => {
-   LOGGER.info(
-      `API is running.. http://127.0.0.1:${PORT}/api/v1/books`.yellow.bold,
-   );
+   LOGGER.info(`API is running.. [:${PORT}/api/v1/books]`.yellow.bold);
 });

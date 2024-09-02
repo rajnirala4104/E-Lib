@@ -4,6 +4,7 @@ const { Books } = require("./book.model");
 const { StatusCodes } = require("http-status-codes");
 const { ApiResponse } = require("../../utils/apiResponse");
 const { ApiError } = require("../../utils/apiError");
+const { capitalize } = require("../../utils/capitalizeText");
 
 const bookControllers = {
    getAllBooks: asyncHandler(async (req, res) => {
@@ -55,7 +56,9 @@ const bookControllers = {
          throw new ApiError(StatusCodes.NOT_FOUND, "category is neccessary");
       }
 
-      const books = await Books.find({ category: { $in: [catName] } });
+      const books = await Books.find({
+         category: { $in: [capitalize(catName)] },
+      });
 
       return res
          .status(StatusCodes.OK)
