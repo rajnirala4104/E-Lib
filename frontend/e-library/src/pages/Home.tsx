@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     getBooksByCategoryHandler("fiction", setFictionalBooks);
-    getBooksByCategoryHandler("non-fiction", setNonFictionalBooks);
+    getBooksByCategoryHandler("Nonfiction", setNonFictionalBooks);
   }, []);
 
   return (
