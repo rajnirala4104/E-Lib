@@ -8,6 +8,7 @@ const BookCard: React.FC<BookInterface> = (props) => {
         <img
           src={props.image}
           alt="E-Lib Book"
+          loading="lazy"
           className="w-full rounded-md "
         />
       </div>
@@ -16,7 +17,8 @@ const BookCard: React.FC<BookInterface> = (props) => {
           <h2 className="text-xl">{props.title}</h2>
         </div>
         <div className="my-2">
-          <p className="text-[12px] ">{props.description}</p>
+          {/* TODO: render some even number of char... */}
+          <p className="text-[12px] ">{props.description?.slice(0, 30)}...</p>
         </div>
         <div>
           <span>Price: ${props.price}</span>
