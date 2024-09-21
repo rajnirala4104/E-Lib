@@ -15,3 +15,8 @@ export interface BooksContainerInterface {
       categoryName: string,
       booksArray: BookInterface[];
 }
+
+export interface ShuffleArrayMethodsInterface {
+      stringArray?: string[],
+      booksArray?: BookInterface[],
+}

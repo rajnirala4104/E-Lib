@@ -12,7 +12,10 @@ const Navbar: React.FC = () => {
       <div className="sticky top-0 z-[100] bg-white shadow-lg">
         <section className="flex flex-col justify-evenly items-center ">
           <div className="mainNavbar py-5 w-full border-b h-[4rem] lg:h-[6rem] grid grid-cols-4 gap-4 place-content-center">
-            <div className="logo place-content-center text-4xl px-6">
+            <div
+              onClick={() => (window.location.href = "/")}
+              className="logo place-content-center text-4xl px-6 cursor-pointer"
+            >
               <span>e</span>
               <span className="text-cyan-600 font-bold">.Lib</span>
             </div>

@@ -1,12 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { BookCard } from ".";
-import { BooksContainerInterface } from "../types";
+import { BookInterface, BooksContainerInterface } from "../types";
+import { shuffleArray } from "../utils";
 
 const BooksContainer: React.FC<BooksContainerInterface> = ({
   booksArray,
   categoryName,
 }) => {
-  console.log(booksArray);
+  const [shuffledBooks, setShuffledArray] = useState<BookInterface[]>();
+
+  useEffect(() => {
+    setShuffledArray(shuffleArray(booksArray)?.slice(0, 9));
+  }, [booksArray]);
 
   return (
     <div className="w-full h-full">
@@ -16,8 +21,8 @@ const BooksContainer: React.FC<BooksContainerInterface> = ({
           ({booksArray?.length} Books)
         </span>
       </h1>
-      <div className="bookCardContainer flex w-screen max-h-[100%] overflow-x-auto overflow-y-hidden">
-        {booksArray?.map((singleBookObject, index) => (
+      <div className="bookCardContainer flex w-screen max-h-[100%] overflow-x-auto overflow-y-hidden no-scrollbar">
+        {shuffledBooks?.map((singleBookObject, index) => (
           <Fragment key={index}>
             <BookCard {...singleBookObject} />
           </Fragment>

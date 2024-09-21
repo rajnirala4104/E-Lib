@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
 
   return (
     <Fragment>
-      <section className="w-full grid place-content-center place-items-center">
+      <section className="w-full grid place-content-center place-items-center overflow-x-hidden no-scrollbar">
         <BooksContainer
           categoryName="Fictionals Books"
           booksArray={FictionalBooks!}
