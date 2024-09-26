@@ -25,6 +25,12 @@ app.use(cookieParser());
 app.use(morgan("combined", { stream: accessLogStream }));
 app.use("/api", appRouter);
 
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+   return res.status(StatusCodes.OK).json({
+      message: "api is running..",
+      status: StatusCodes.OK,
+      data: null,
+   });
+});
 
 module.exports = { app };
