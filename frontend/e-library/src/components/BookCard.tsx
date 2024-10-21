@@ -2,6 +2,8 @@ import React from "react";
 import { BookInterface } from "../types";
 
 const BookCard: React.FC<BookInterface> = (props) => {
+  console.log(props);
+
   return (
     <div className="mt-6 w-[20rem] my-4 mx-3 rounded-lg shadow-lg flex flex-col  justify-start items-center p-3">
       <div className="w-[13rem] -translate-y-10 shadow-lg rounded-lg">
@@ -9,7 +11,7 @@ const BookCard: React.FC<BookInterface> = (props) => {
           src={props.image}
           alt="E-Lib Book"
           loading="lazy"
-          className="w-full rounded-md "
+          className="w-full rounded-md h-[15rem]"
         />
       </div>
       <div className="">

@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { getBookByCategory } from "../api/services/books.service";
 import { BooksContainer } from "../components";
+import HeroSection from "../components/HeroSection";
 import { BookInterface } from "../types";
 
 export const Home: React.FC = () => {
@@ -26,6 +27,7 @@ export const Home: React.FC = () => {
   return (
     <Fragment>
       <section className="w-full grid place-content-center place-items-center overflow-x-hidden no-scrollbar">
+        <HeroSection />
         <BooksContainer
           categoryName="Fictionals Books"
           booksArray={FictionalBooks!}
