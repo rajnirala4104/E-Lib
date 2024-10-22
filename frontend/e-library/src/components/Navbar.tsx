@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
-import { Categories } from ".";
 
+import { Categories } from ".";
 import { SearchIcon, UserIcon } from "../icons";
 
 const Navbar: React.FC = () => {
@@ -10,8 +10,8 @@ const Navbar: React.FC = () => {
   return (
     <Fragment>
       <div className="sticky top-0 z-[100] bg-white shadow-lg">
-        <section className="flex flex-col justify-evenly items-center ">
-          <div className="mainNavbar py-5 w-full border-b h-[4rem] lg:h-[6rem] grid grid-cols-4 gap-4 place-content-center">
+        <section className="flex flex-col justify-evenly items-center boder border-blue-500">
+          <div className="mainNavbar py-3 w-full border-b h-[4rem] lg:h-[5rem] grid grid-cols-4 gap-4 place-content-center">
             <div
               onClick={() => (window.location.href = "/")}
               className="logo place-content-center text-4xl px-6 cursor-pointer"
@@ -48,15 +48,15 @@ const Navbar: React.FC = () => {
               <UserIcon classes="text-3xl lg:text-4xl ml-5 shadow-lg rounded-full cursor-pointer" />
             </div>
           </div>
+          <div className="lg:hidden w-full h-[4.5rem] border-b flex  relative">
+            <div className="my-auto h-full cursor-pointer place-content-center px-5 bg-gradient-to-r from-[rgba(0,162,195,0.26)] to-[rgba(0,0,0,0)] backdrop:">
+              <SearchIcon />
+            </div>
+            <div className="flex overflow-x-auto no-scrollbar">
+              <Categories />
+            </div>
+          </div>
         </section>
-        <div className="w-full h-[4.5rem] border-b flex  relative">
-          <div className="my-auto h-full cursor-pointer place-content-center px-5 bg-gradient-to-r from-[rgba(0,162,195,0.26)] to-[rgba(0,0,0,0)] backdrop:">
-            <SearchIcon />
-          </div>
-          <div className="flex overflow-x-auto no-scrollbar">
-            <Categories />
-          </div>
-        </div>
       </div>
     </Fragment>
   );

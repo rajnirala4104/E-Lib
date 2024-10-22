@@ -1,6 +1,4 @@
-import { BookInterface } from "../types";
-
-export const shuffleArray = (array: BookInterface[]) => {
+export const shuffleArray = (array) => {
       for (let i = array?.length - 1; i > 0; i--) {
 
             // Generate random number 
