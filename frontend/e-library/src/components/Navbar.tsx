@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
           <div className="mainNavbar py-3 w-full border-b h-[4rem] lg:h-[5rem] grid grid-cols-4 gap-4 place-content-center">
             <Link
               to={"/"}
-              className="logo place-content-center text-4xl px-6 cursor-pointer"
+              className="logo place-content-center text-4xl px-6 w-[40%]"
             >
               <span>e</span>
               <span className="text-cyan-600 font-bold">.Lib</span>
@@ -58,8 +58,9 @@ const Navbar: React.FC = () => {
         </section>
         {toggleSearchBarBorder && (
           <Suspense fallback={"loading.."}>
+            {/* BUG: this component is not clickable, because of blur event of input */}
             <div className="relative w-full flex justify-center items-center">
-              <SearchedBookContainer inputValue={inputValue} />
+              <SearchedBookContainer inputValue={inputValue} searchBoxToggleFunc={setToggleSearchBarBorder} />
             </div>
           </Suspense>
         )}
