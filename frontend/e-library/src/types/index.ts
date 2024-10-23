@@ -20,3 +20,7 @@ export interface ShuffleArrayMethodsInterface {
       stringArray?: string[],
       booksArray?: BookInterface[],
 }
+
+export interface SearchInputValue {
+      inputValue?: string
+}

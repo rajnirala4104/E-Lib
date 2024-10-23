@@ -22,9 +22,10 @@ export const Home: React.FC = () => {
 
   return (
     <Fragment>
-      <section className="w-full grid place-content-center place-items-center overflow-x-hidden no-scrollbar">
+      <section className="w-full grid place-content-center place-items-center overflow-x-hidden no-scrollbar relative">
         <HeroSection />
-        <div className="w-full hidden overflow-auto h-[4.5rem] border-b lg:flex relative">
+        {/* --- start --- (make this div sticky)  */}
+        <div className="w-full sticky top-0 bg-white hidden overflow-x-auto h-[4.5rem] border-b lg:flex">
           <div className="my-auto  h-full cursor-pointer place-content-center px-5 bg-gradient-to-r from-[rgba(0,162,195,0.26)] to-[rgba(0,0,0,0)] ">
             <SearchIcon />
           </div>
@@ -32,6 +33,7 @@ export const Home: React.FC = () => {
             <Categories />
           </div>
         </div>
+        {/* ---- end --- */}
         <BooksContainer categoryName="Fictionals Books" booksArray={FictionalBooks!} />
         <BooksContainer categoryName="Non-Fictional Book" booksArray={nonFictionalBooks!} />
       </section>

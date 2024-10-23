@@ -15,7 +15,7 @@ const BooksContainer: React.FC<BooksContainerInterface> = ({
 
   return (
     <div className="w-full h-full">
-      <h1 className="text-2xl px-4 font-bold my-3 text-start">
+      <h1 className="text-xl px-4 z-10 sticky top-0 lg:top-0 bg-blue-100 lg:text-2xl font-bold my-3 text-start">
         {categoryName}
         <span className="font-light mx-3 text-lg text-center">
           ({booksArray?.length} Books)

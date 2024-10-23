@@ -2,7 +2,6 @@ import React from "react";
 import { BookInterface } from "../types";
 
 const BookCard: React.FC<BookInterface> = (props) => {
-  console.log(props);
 
   return (
     <div className="mt-6 w-[20rem] my-4 mx-3 rounded-lg shadow-lg flex flex-col  justify-start items-center p-3">
