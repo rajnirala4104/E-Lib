@@ -5,9 +5,7 @@ import { BookInterface } from '../types';
 
 const BookPage: React.FC = () => {
 
-
     const [allTheInformation, setAllTheInformation] = useState<BookInterface>()
-
     const { id } = useParams();
 
     const getBookData = async () => {
@@ -18,8 +16,6 @@ const BookPage: React.FC = () => {
     useEffect(() => {
         getBookData()
     }, [])
-
-    console.log(allTheInformation);
 
     return (
         <Fragment>

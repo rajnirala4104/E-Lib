@@ -42,9 +42,7 @@ const bookControllers = {
       return res.status(StatusCodes.OK).json(
          new ApiResponse(
             StatusCodes.OK,
-            {
-               book,
-            },
+            { book },
             "single book information",
          ),
       );
@@ -70,6 +68,7 @@ const bookControllers = {
             ),
          );
    }),
+   createBook: asyncHandler(async (req, res) => { })
 };
 
 module.exports = { bookControllers };
