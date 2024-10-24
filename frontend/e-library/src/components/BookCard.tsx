@@ -1,10 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { BookInterface } from "../types";
 
 const BookCard: React.FC<BookInterface> = (props) => {
+  const navigator = useNavigate()
 
   return (
-    <div className="mt-6 w-[20rem] my-4 mx-3 rounded-lg shadow-lg flex flex-col  justify-start items-center p-3">
+    <div
+      onClick={() => navigator(`/book/${props._id}`)}
+      className="cursor-pointer mt-6 w-[20rem] my-4 mx-3 rounded-lg shadow-lg flex flex-col  justify-start items-center p-3">
       <div className="w-[13rem] -translate-y-10 shadow-lg rounded-lg">
         <img
           src={props.image}

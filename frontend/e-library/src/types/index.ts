@@ -3,6 +3,7 @@ export interface IconClasses {
 }
 
 export interface BookInterface {
+      _id?: string,
       title?: string,
       image?: string,
       price?: number

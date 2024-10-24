@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
           <Suspense fallback={"loading.."}>
             {/* BUG: this component is not clickable, because of blur event of input */}
             <div className="relative w-full flex justify-center items-center">
-              <SearchedBookContainer inputValue={inputValue} searchBoxToggleFunc={setToggleSearchBarBorder} />
+              <SearchedBookContainer inputValue={inputValue} />
             </div>
           </Suspense>
         )}
