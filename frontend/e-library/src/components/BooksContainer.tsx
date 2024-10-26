@@ -3,10 +3,7 @@ import { BookCard } from ".";
 import { BookInterface, BooksContainerInterface } from "../types";
 import { shuffleArray } from "../utils";
 
-const BooksContainer: React.FC<BooksContainerInterface> = ({
-  booksArray,
-  categoryName,
-}) => {
+const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categoryName }) => {
   const [shuffledBooks, setShuffledArray] = useState<BookInterface[]>();
 
   useEffect(() => {

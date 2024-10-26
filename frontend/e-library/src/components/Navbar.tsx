@@ -5,13 +5,13 @@ import { Categories, SearchedBookContainer } from ".";
 import { SearchIcon, UserIcon } from "../icons";
 
 const Navbar: React.FC = () => {
-  const [toggleSearchBarBorder, setToggleSearchBarBorder] =
-    useState<boolean>(false);
+  const [toggleSearchBarBorder, setToggleSearchBarBorder] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
 
   return (
     <Fragment>
-      <div className="sticky w-full top-0 z-[100] bg-white shadow-lg">
+      <div
+        className="sticky w-full top-0 z-[100] bg-white shadow-lg">
         <section className="flex flex-col justify-evenly items-center boder border-blue-500">
           <div className="mainNavbar py-3 w-full border-b h-[4rem] lg:h-[5rem] grid grid-cols-4 gap-4 place-content-center">
             <Link
@@ -23,12 +23,11 @@ const Navbar: React.FC = () => {
             </Link>
             <div className="searchBar col-span-2 place-content-center">
               <div
-                className={`border-2 hidden lg:grid grid-cols-9 place-content-center place-items-center ${toggleSearchBarBorder ? " border-[rgba(44,119,151,0.89)]" : ""
-                  } hover:borde-2 col-span-8 outline-none text-[rgb(11,42,55)] shadow-lg hover:borde-2  hover:border-[rgba(44,119,151,0.89)] rounded-full border transition duration-300 ease-in-out`}
+                className={`border-2 hidden lg:grid grid-cols-9 place-content-center place-items-center ${toggleSearchBarBorder ? " border-[rgba(44,119,151,0.89)]" : ""} 
+                hover:borde-2 col-span-8 outline-none text-[rgb(11,42,55)] shadow-lg hover:borde-2  hover:border-[rgba(44,119,151,0.89)] rounded-full border transition duration-300 ease-in-out`}
               >
                 <input
-                  onClick={() => setToggleSearchBarBorder(!toggleSearchBarBorder)}
-                  onBlur={() => setToggleSearchBarBorder(!toggleSearchBarBorder)}
+                  onClick={() => setToggleSearchBarBorder(true)}
                   onChange={(e) => setInputValue(e.target.value)}
                   value={inputValue}
                   type="text"
@@ -59,8 +58,8 @@ const Navbar: React.FC = () => {
         {toggleSearchBarBorder && (
           <Suspense fallback={"loading.."}>
             {/* BUG: this component is not clickable, because of blur event of input */}
-            <div className="relative w-full flex justify-center items-center">
-              <SearchedBookContainer inputValue={inputValue} />
+            <div className="relative w-full flex justify-center items-center bg-transparent">
+              <SearchedBookContainer inputValue={inputValue} setToggleSearchBarBorder={setToggleSearchBarBorder} toggleSearchBarBorder={toggleSearchBarBorder} />
             </div>
           </Suspense>
         )}

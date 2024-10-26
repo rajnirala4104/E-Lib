@@ -23,5 +23,7 @@ export interface ShuffleArrayMethodsInterface {
 }
 
 export interface SearchInputValue {
-      inputValue?: string
+      inputValue?: string,
+      toggleSearchBarBorder?: boolean,
+      setToggleSearchBarBorder?: React.Dispatch<React.SetStateAction<boolean>>,
 }
