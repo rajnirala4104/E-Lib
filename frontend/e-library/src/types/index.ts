@@ -14,6 +14,7 @@ export interface BookInterface {
 
 export interface BooksContainerInterface {
       categoryName: string,
+      title: string,
       booksArray: BookInterface[];
 }
 

@@ -5,6 +5,12 @@ import { BookInterface } from "../types";
 const BookCard: React.FC<BookInterface> = (props) => {
   const navigator = useNavigate()
 
+  const shortTextFunc = (title: string, minLength: number = 10) => {
+    if (title.length > minLength) {
+      return title.slice(0, 10) + "..."
+    }
+  }
+
   return (
     <div
       onClick={() => navigator(`/book/${props._id}`)}
@@ -19,7 +25,7 @@ const BookCard: React.FC<BookInterface> = (props) => {
       </div>
       <div className="">
         <div className="-mt-2 mb-2">
-          <h2 className="text-xl">{props.title}</h2>
+          <h2 className="text-xl">{shortTextFunc(props.title!)}</h2>
         </div>
         <div className="my-2">
           {/* TODO: render some even number of char... */}

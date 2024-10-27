@@ -5,7 +5,7 @@ import { RightArrowIcon } from "../icons";
 import { BookInterface, BooksContainerInterface } from "../types";
 import { shuffleArray } from "../utils";
 
-const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categoryName }) => {
+const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categoryName, title }) => {
   const [shuffledBooks, setShuffledArray] = useState<BookInterface[]>();
 
   const navigator = useNavigate()
@@ -17,7 +17,7 @@ const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categor
   return (
     <div className="w-full h-full">
       <h1 className="text-xl px-4 z-10 sticky top-0 lg:top-0 bg-blue-100 lg:text-2xl font-bold my-3 text-start">
-        {categoryName}
+        {title}
         <span className="font-light mx-3 text-lg text-center">
           ({booksArray?.length} Books)
         </span>
