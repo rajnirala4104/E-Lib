@@ -1,18 +1,52 @@
-import React, { Fragment, Suspense, useState } from "react";
+import React, { Fragment, Suspense, useEffect, useRef, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { Categories, SearchedBookContainer } from ".";
 import { SearchIcon, UserIcon } from "../icons";
 
+
 const Navbar: React.FC = () => {
   const [toggleSearchBarBorder, setToggleSearchBarBorder] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
+
+  const containerBox = useRef<HTMLDivElement>(null);
+
+  /**
+   * This function will be called whenever the user clicks anywhere on the page.
+   * It's used to close the search bar when the user clicks outside of it.
+   * @param {MouseEvent} event - The event that triggered this function, which is the click event.
+   */
+  const handleClickOutside = (event: MouseEvent) => {
+    // If the containerBox is not null and the target of the event (i.e., what was clicked) is not a child of the containerBox,
+    // then set toggleSearchBarBorder to false, which will close the search bar.
+    if (containerBox.current && !containerBox.current.contains(event.target as Node)) {
+      setToggleSearchBarBorder(false);
+    }
+  };
+
+  useEffect(() => {
+    // This function is called whenever the toggleSearchBarBorder state changes.
+    // We add an event listener to the document when toggleSearchBarBorder is true.
+    // This event listener will be called whenever the user clicks anywhere on the page.
+    if (toggleSearchBarBorder) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      // If toggleSearchBarBorder is false, we remove the event listener.
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    // This is the cleanup function that is called when the component is unmounted.
+    // It removes the event listener to prevent memory leaks.
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [toggleSearchBarBorder]);
 
   return (
     <Fragment>
       <div
         className="sticky w-full top-0 z-[100] bg-white shadow-lg">
-        <section className="flex flex-col justify-evenly items-center boder border-blue-500">
+        <section className="flex flex-col justify-evenly items-center">
           <div className="mainNavbar py-3 w-full border-b h-[4rem] lg:h-[5rem] grid grid-cols-4 gap-4 place-content-center">
             <Link
               to={"/"}
@@ -24,10 +58,10 @@ const Navbar: React.FC = () => {
             <div className="searchBar col-span-2 place-content-center">
               <div
                 className={`border-2 hidden lg:grid grid-cols-9 place-content-center place-items-center ${toggleSearchBarBorder ? " border-[rgba(44,119,151,0.89)]" : ""} 
-                hover:borde-2 col-span-8 outline-none text-[rgb(11,42,55)] shadow-lg hover:borde-2  hover:border-[rgba(44,119,151,0.89)] rounded-full border transition duration-300 ease-in-out`}
+                hover:border-2 col-span-8 outline-none text-[rgb(11,42,55)] shadow-lg hover:border-[rgba(44,119,151,0.89)] rounded-full border transition duration-300 ease-in-out`}
               >
                 <input
-                  onClick={() => setToggleSearchBarBorder(true)}
+                  onFocus={() => setToggleSearchBarBorder(true)}
                   onChange={(e) => setInputValue(e.target.value)}
                   value={inputValue}
                   type="text"
@@ -57,9 +91,8 @@ const Navbar: React.FC = () => {
         </section>
         {toggleSearchBarBorder && (
           <Suspense fallback={"loading.."}>
-            {/* BUG: this component is not clickable, because of blur event of input */}
-            <div className="relative w-full flex justify-center items-center bg-transparent">
-              <SearchedBookContainer inputValue={inputValue} setToggleSearchBarBorder={setToggleSearchBarBorder} toggleSearchBarBorder={toggleSearchBarBorder} />
+            <div ref={containerBox} className="relative w-full flex justify-center items-center bg-transparent">
+              <SearchedBookContainer inputValue={inputValue} />
             </div>
           </Suspense>
         )}
