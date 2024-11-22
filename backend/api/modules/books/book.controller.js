@@ -1,4 +1,4 @@
-const { asyncHandler } = require("../../utils/asynHandler");
+const { asyncHandler } = require("../../utils/asyncHandler");
 const bookData = require("../../data/dummyBookData.json");
 const { Books } = require("./book.model");
 const { StatusCodes } = require("http-status-codes");
@@ -47,11 +47,11 @@ const bookControllers = {
          ),
       );
    }),
-   getAllBookOfAPerticularCategory: asyncHandler(async (req, res) => {
+   getAllBookOfAParticularCategory: asyncHandler(async (req, res) => {
       const { catName } = req.params;
 
       if (!catName) {
-         throw new ApiError(StatusCodes.NOT_FOUND, "category is neccessary");
+         throw new ApiError(StatusCodes.NOT_FOUND, "category is necessary");
       }
 
       const books = await Books.find({

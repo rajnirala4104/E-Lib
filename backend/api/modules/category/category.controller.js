@@ -1,4 +1,4 @@
-const { asyncHandler } = require("../../utils/asynHandler");
+const { asyncHandler } = require("../../utils/asyncHandler");
 const { CategoryModel } = require("./category.model");
 const { categories } = require("../../data/allCategories.json");
 const { StatusCodes } = require("http-status-codes");

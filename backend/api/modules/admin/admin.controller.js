@@ -1,4 +1,4 @@
-const { asyncHandler } = require("../../utils/asynHandler");
+const { asyncHandler } = require("../../utils/asyncHandler");
 const { ApiError } = require("../../utils/apiError");
 const { ApiResponse } = require("../../utils/apiResponse");
 const { StatusCodes } = require("http-status-codes");
@@ -83,7 +83,7 @@ const adminControllers = {
             }),
          );
    }),
-   logout: asyncHandler(async (req, res) => {}),
+   logout: asyncHandler(async (req, res) => { }),
 };
 
 module.exports = { adminControllers };
