@@ -6,5 +6,9 @@ export const getBookByCategory = (category: string) => {
 }
 
 export const getSingleBookInformation = (id: string) => {
-      return http.get(`${ENDPOINTS.getSinglebook}/${id}`);
+      return http.get(`${ENDPOINTS.getSingleBook}/${id}`);
+}
+
+export const getSearchBookApiCall = (searchQuery?: string) => {
+      return http.get(`${ENDPOINTS.getSearchBook}?search=${searchQuery}`);
 }
