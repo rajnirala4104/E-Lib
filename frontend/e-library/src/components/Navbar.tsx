@@ -10,17 +10,25 @@ const Navbar: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("");
 
   const containerBox = useRef<HTMLDivElement>(null);
+  const searchInput = useRef<HTMLInputElement>(null);
 
   /**
-   * This function will be called whenever the user clicks anywhere on the page.
+   * This function is called whenever the user clicks anywhere on the page.
    * It's used to close the search bar when the user clicks outside of it.
    * @param {MouseEvent} event - The event that triggered this function, which is the click event.
    */
   const handleClickOutside = (event: MouseEvent) => {
-    // If the containerBox is not null and the target of the event (i.e., what was clicked) is not a child of the containerBox,
-    // then set toggleSearchBarBorder to false, which will close the search bar.
+    // If the containerBox is not null and the target of the event (i.e., what was clicked)
+    // is not a child of the containerBox, then set toggleSearchBarBorder to false, which
+    // will close the search bar.
     if (containerBox.current && !containerBox.current.contains(event.target as Node)) {
-      setToggleSearchBarBorder(false);
+      if (searchInput.current && searchInput.current.contains(event.target as Node)) {
+        // If the target of the event is a child of the search input, then set toggleSearchBarBorder to true, which will open the search bar.
+        setToggleSearchBarBorder(true);
+      } else {
+        // Set toggleSearchBarBorder to false, which will close the search bar.
+        setToggleSearchBarBorder(false);
+      }
     }
   };
 
@@ -62,6 +70,7 @@ const Navbar: React.FC = () => {
               >
                 <input
                   onFocus={() => setToggleSearchBarBorder(true)}
+                  ref={searchInput}
                   onChange={(e) => setInputValue(e.target.value)}
                   value={inputValue}
                   type="text"
