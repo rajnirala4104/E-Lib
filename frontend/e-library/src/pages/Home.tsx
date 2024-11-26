@@ -8,6 +8,9 @@ import { BookInterface } from "../types";
 export const Home: React.FC = () => {
   const [nonFictionalBooks, setNonFictionalBooks] = useState<BookInterface[]>();
   const [FictionalBooks, setFictionalBooks] = useState<BookInterface[]>();
+  const [mysteryBooks, setMysteryBooks] = useState<BookInterface[]>();
+  const [biographies, setBiographies] = useState<BookInterface[]>();
+  const [spaceBooks, setSpaceBooks] = useState<BookInterface[]>();
 
   const getBooksByCategoryHandler = async (categoryName: string, setterFunctionOfState: React.Dispatch<React.SetStateAction<BookInterface[] | undefined>>) => {
     const response = await getBookByCategory(categoryName);
@@ -18,6 +21,9 @@ export const Home: React.FC = () => {
   useEffect(() => {
     getBooksByCategoryHandler("fiction", setFictionalBooks);
     getBooksByCategoryHandler("Nonfiction", setNonFictionalBooks);
+    getBooksByCategoryHandler("mystery", setMysteryBooks);
+    getBooksByCategoryHandler("biography", setBiographies);
+    getBooksByCategoryHandler("space", setSpaceBooks);
   }, []);
 
   return (
@@ -35,8 +41,11 @@ export const Home: React.FC = () => {
             </div>
           </div>
           {/* ---- end --- */}
-          <BooksContainer categoryName="fiction" title="Fictionals Books" booksArray={FictionalBooks!} />
+          <BooksContainer categoryName="fiction" title="Fictional Books" booksArray={FictionalBooks!} />
           <BooksContainer categoryName="non-fiction" title="Non-Fictional Book" booksArray={nonFictionalBooks!} />
+          <BooksContainer categoryName="mystery" title="Mystery Book" booksArray={mysteryBooks!} />
+          <BooksContainer categoryName="biography" title="Biographies" booksArray={biographies!} />
+          <BooksContainer categoryName="space" title="Space" booksArray={spaceBooks!} />
         </section>
       </Suspense>
     </Fragment>

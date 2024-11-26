@@ -28,13 +28,15 @@ const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categor
             <BookCard {...singleBookObject} />
           </Fragment>
         ))}
-        <div className=" w-[20rem] h-full flex justify-center items-center my-auto">
-          <span
-            onClick={() => navigator(`/category/${categoryName}`)}
-            className={"border rounded-full p-3 text-3xl bg-blue-100 text-slate-500 transition duration-300 ease-in-out hover:text-black hover:bg-blue-200 cursor-pointer mr-5 mx-3 shadow-slate-300 shadow-xl"}>
-            <RightArrowIcon />
-          </span>
-        </div>
+        {booksArray.length < 6 ? ("") : (
+          <div className=" w-[20rem] h-full flex justify-center items-center my-auto">
+            <span
+              onClick={() => navigator(`/category/${categoryName}`)}
+              className={"border rounded-full p-3 text-3xl bg-blue-100 text-slate-500 transition duration-300 ease-in-out hover:text-black hover:bg-blue-200 cursor-pointer mr-5 mx-3 shadow-slate-300 shadow-xl"}>
+              <RightArrowIcon />
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
