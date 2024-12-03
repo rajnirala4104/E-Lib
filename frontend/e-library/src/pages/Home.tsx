@@ -42,7 +42,7 @@ export const Home: React.FC = () => {
           </div>
           {/* ---- end --- */}
           <BooksContainer categoryName="fiction" title="Fictional Books" booksArray={FictionalBooks!} />
-          <BooksContainer categoryName="non-fiction" title="Non-Fictional Book" booksArray={nonFictionalBooks!} />
+          <BooksContainer categoryName="nonfiction" title="Non-Fictional Book" booksArray={nonFictionalBooks!} />
           <BooksContainer categoryName="mystery" title="Mystery Book" booksArray={mysteryBooks!} />
           <BooksContainer categoryName="biography" title="Biographies" booksArray={biographies!} />
           <BooksContainer categoryName="space" title="Space" booksArray={spaceBooks!} />

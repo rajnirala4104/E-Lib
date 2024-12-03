@@ -15,6 +15,10 @@ export interface BookInterface {
       description?: string,
 }
 
+export interface BookCardInterface extends BookInterface {
+      genre?: boolean,
+}
+
 export interface BooksContainerInterface {
       categoryName: string,
       title: string,

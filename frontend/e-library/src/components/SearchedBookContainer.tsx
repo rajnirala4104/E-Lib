@@ -2,32 +2,33 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { BookCard } from '.';
 import { getSearchBookApiCall } from '../api/services/books.service';
 import { BookInterface, SearchInputValue } from '../types';
+import { shuffleArray } from '../utils';
 
 const SearchedBookContainer: React.FC<SearchInputValue> = (props) => {
 
     const [searchedBooks, setSearchedBooks] = useState<BookInterface[]>([]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
     const searchApiCallHandler = async () => {
         const response = await getSearchBookApiCall(props.inputValue);
-        setSearchedBooks(response.data.data.books);
+        setSearchedBooks(shuffleArray(response.data.data.books));
     }
 
     useEffect(() => {
         searchApiCallHandler();
-    }, [props.inputValue, searchApiCallHandler])
+    }, [props.inputValue])
 
     return (
         <div
             className="w-[70%] h-[34rem] rounded-lg my-3 flex justify-center items-center bg-blue-50  absolute top-0 shadow-2xl backdrop:bg-transparent">
-            <div className='w-full h-full flex flex-wrap justify-center items-center overflow-auto border border-black'>
+            <div className='w-full h-full flex flex-wrap justify-center items-center overflow-auto'>
                 {searchedBooks.length > 0 ? searchedBooks?.map((singleBookObject, index) => (
                     <Fragment key={index}>
                         <div
-                            className='flex w-[30%] h-[70%] m-2'
+                            className='flex w-[30%] h-[90%] m-2'
                             onClick={() => window.location.href = `/book/${singleBookObject._id}`}
                         >
-                            <BookCard {...singleBookObject} />
+                            <BookCard {...singleBookObject} genre={true} />
                         </div>
                     </Fragment>
                 )) : ""}

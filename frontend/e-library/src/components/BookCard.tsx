@@ -1,8 +1,8 @@
 import React, { Fragment, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-import { BookInterface } from "../types";
+import { BookCardInterface } from "../types";
 
-const BookCard: React.FC<BookInterface> = (props) => {
+const BookCard: React.FC<BookCardInterface> = (props) => {
   const navigator = useNavigate()
 
   return (
@@ -24,7 +24,7 @@ const BookCard: React.FC<BookInterface> = (props) => {
             <p className="text-sm text-gray-500 mb-2">by {props.author}</p>
             <p className="text-gray-700 text-sm line-clamp-3 mb-4">{props.description}</p>
           </div>
-          <div className="flex flex-wrap justify-start items-center mb-3 mx-3 -mt-5">
+          <div className={`${props.genre ? "" : "hidden"} flex flex-wrap justify-start items-center mb-3 mx-3 -mt-5`}>
             {props.category?.map((cat, index) => (
               <Fragment key={index}>
                 <span

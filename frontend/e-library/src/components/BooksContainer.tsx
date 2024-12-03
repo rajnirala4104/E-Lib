@@ -26,7 +26,7 @@ const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categor
         {shuffledBooks?.map((singleBookObject, index) => (
           <Fragment key={index}>
             <div className="mx-2 ">
-              <BookCard {...singleBookObject} />
+              <BookCard {...singleBookObject} genre={false} />
             </div>
           </Fragment>
         ))}
