@@ -1,49 +1,42 @@
-import React from "react";
+import React, { Fragment, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import { BookInterface } from "../types";
 
 const BookCard: React.FC<BookInterface> = (props) => {
   const navigator = useNavigate()
 
-  const shortTextFunc = (title: string, minLength: number = 10) => {
-    if (title.length > minLength) {
-      return title.slice(0, 10) + "..."
-    }
-  }
-
   return (
-    <div
-      onClick={() => navigator(`/book/${props._id}`)}
-      className="cursor-pointer mt-6 w-[20rem] my-4 mx-3 rounded-lg shadow-lg flex flex-col  justify-start items-center p-3">
-      <div className="w-[13rem] -translate-y-10 shadow-lg rounded-lg">
-        <img
-          src={props.image}
-          alt="E-Lib Book"
-          loading="lazy"
-          className="w-full rounded-md h-[15rem]"
-        />
-      </div>
-      <div className="">
-        <div className="-mt-2 mb-2">
-          <h2 className="text-xl">{shortTextFunc(props.title!)}</h2>
+    <Fragment>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div
+          onClick={() => navigator(`/book/${props._id}`)}
+          className="cursor-pointer max-w-sm w-[18rem] my-2 border rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300 group">
+          {/* Image with Zoom Effect */}
+          <div className="relative overflow-hidden">
+            <img
+              src={props.image}
+              alt={`${props.title} cover`}
+              className="w-full h-52 object-cover transition-transform duration-500 transform group-hover:scale-110"
+            />
+          </div>
+          <div className="p-4">
+            <h2 className="text-lg font-semibold text-gray-800 line-clamp-1">{props.title}</h2>
+            <p className="text-sm text-gray-500 mb-2">by {props.author}</p>
+            <p className="text-gray-700 text-sm line-clamp-3 mb-4">{props.description}</p>
+          </div>
+          <div className="flex flex-wrap justify-start items-center mb-3 mx-3 -mt-5">
+            {props.category?.map((cat, index) => (
+              <Fragment key={index}>
+                <span
+                  // BUG: not redirecting to category page
+                  // onClick={() => navigator(`/category/${cat}`)}
+                  className="text-xs m-1 text-gray-500 bg-blue-100 px-2 py-1 rounded-lg cursor-pointer hover:bg-blue-200">{cat}</span>
+              </Fragment>
+            ))}
+          </div>
         </div>
-        <div className="my-2">
-          {/* TODO: render some even number of char... */}
-          <p className="text-[12px] ">{props.description?.slice(0, 30)}...</p>
-        </div>
-        <div>
-          <span>Price: ${props.price}</span>
-        </div>
-        <div className="mt-2">
-          <button className="bg-blue-300 px-2 py-1 rounded-md text-sm">
-            Buy Now
-          </button>
-          <button className="border border-blue-800 rounded-md py-1 px-2 mx-2 text-sm">
-            Add To Cart
-          </button>
-        </div>
-      </div>
-    </div>
+      </Suspense>
+    </Fragment>
   );
 };
 

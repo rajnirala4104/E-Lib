@@ -25,10 +25,13 @@ const BooksContainer: React.FC<BooksContainerInterface> = ({ booksArray, categor
       <div className="bookCardContainer flex w-screen max-h-[100%] overflow-x-auto overflow-y-hidden no-scrollbar">
         {shuffledBooks?.map((singleBookObject, index) => (
           <Fragment key={index}>
-            <BookCard {...singleBookObject} />
+            <div className="mx-2 ">
+              <BookCard {...singleBookObject} />
+            </div>
           </Fragment>
         ))}
-        {booksArray.length < 6 ? ("") : (
+
+        {booksArray?.length < 6 ? ("") : (
           <div className=" w-[20rem] h-full flex justify-center items-center my-auto">
             <span
               onClick={() => navigator(`/category/${categoryName}`)}

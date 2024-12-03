@@ -1680,6 +1680,39 @@
     "price": 10.4
   },
   {
+      "title": "Do Epic Shit",
+      "description": "A collection of insights on life, work, and relationships, offering practical advice for building a fulfilling life and career.",
+      "publicationDate": "2021-12-17",
+      "image": "https://m.media-amazon.com/images/I/41oYp387k8L._SY445_SX342_.jpg",
+      "publisher": "Juggernaut Books",
+      "ISBN": "9789391165482",
+      "author": "Ankur Warikoo",
+      "categories": ["Self-Help", "Personal Development", "Motivation"],
+      "price": 10.99
+    },
+    {
+      "title": "Get Epic Shit Done",
+      "description": "A mentor-mentee conversation focusing on productivity, goal-setting, and overcoming challenges with actionable steps.",
+      "publicationDate": "2022-12-15",
+      "image": "https://m.media-amazon.com/images/I/51I5OZ7Kb9L._SL1500_.jpg",
+      "publisher": "Juggernaut Books",
+      "ISBN": "9789393986047",
+       "author": "Ankur Warikoo",
+      "categories": ["Productivity", "Self-Help", "Time Management"],
+      "price":12.99
+    },
+    {
+      "title": "Make Epic Money",
+      "description": "A guide to transforming your mindset about money, focusing on multiple income streams, investments, and financial freedom.",
+      "publicationDate": "2024-01-15",
+      "image": "https://m.media-amazon.com/images/I/718a74M1FNL._SL1500_.jpg",
+      "publisher": "Ebury Edge",
+      "ISBN": "9781529146868",
+       "author": "Ankur Warikoo",
+      "categories": ["Personal Finance", "Wealth Creation", "Financial Literacy"],
+      "price": 14.99
+    },
+  {
     "title": "Pathogenesis: A History of the World in Eight Plagues",
     "description": "An account of how the major transformations in history—from the rise of Homo sapiens to the birth of capitalism—have been shaped not by humans but by germsAccording to the accepted narrative of progress, humans have thrived thanks to their brains and brawn, collectively bending the arc of history. But in this revelatory book, Professor Jonathan Kennedy argues that the myth of human exceptionalism overstates the role that we play in social and political change. Instead, it is the humble microbe that wins wars and topples empires.Drawing on the latest research in fields ranging from genetics and anthropology to archaeology and economics,Pathogenesistakes us through sixty thousand years of history, exploring eight major outbreaks of infectious disease that have made the modern world. Bacteria and viruses were protagonists in the demise of the Neanderthals, the growth of Islam, the transition from feudalism to capitalism, the devastation wrought by European colonialism, and the evolution of the United States from an imperial backwater to a global superpower. Even Christianity rose to prominence in the wake of a series of deadly pandemics that swept through the Roman Empire in the second and third centuries: Caring for the sick turned what was a tiny sect into one of the world’s major religions.By placing disease at the center of his wide-ranging history of humankind, Kennedy challenges some of the most fundamental assumptions about our collective past—and urges us to view this moment as another disease-driven inflection point that will change the course of history. Provocative and brimming with insight,Pathogenesistransforms our understanding of the human story.",
     "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1656310837i/61327450.jpg",

@@ -8,7 +8,10 @@ export interface BookInterface {
       image?: string,
       price?: number
       author?: string,
-      cateogry?: string[],
+      category?: string[],
+      // ISBN?: string,
+      // publicationDate?: string,
+      // publisher?: string,
       description?: string,
 }
 
