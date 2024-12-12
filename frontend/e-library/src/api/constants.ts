@@ -5,5 +5,4 @@ export const ENDPOINTS = {
       getSingleBook: "/books", // :id
       getBookByCategory: "/books/category", // :catName
       getSearchBook: "/books/search", // :searchTerm
-
 }
