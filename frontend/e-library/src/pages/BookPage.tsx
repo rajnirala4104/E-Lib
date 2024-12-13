@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getSingleBookInformation } from '../api/services/books.service';
+import { getBookByCategory, getSingleBookInformation } from '../api/services/books.service';
+import { BooksContainer } from '../components';
 import { LeftArrowIcon, StarIcon } from '../icons';
 import { BookInterface } from '../types';
 import { capitalizeFirstLetter } from '../utils';
@@ -13,25 +14,34 @@ enum infoTabEnum {
 
 const BookPage: React.FC = () => {
 
-    const [allTheInformation, setAllTheInformation] = useState<BookInterface[]>()
+    const [allTheInformation, setAllTheInformation] = useState<BookInterface>();
+    const [allBooksWithSameCat, setAllBooksWithSameCat] = useState<BookInterface[]>();
+    const [quantity, setQuantity] = useState<string>(0);
     const [infoTab, setInfoTab] = useState<infoTabEnum>(infoTabEnum.description)
     const { id } = useParams();
     const navigator = useNavigate();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
     const getBookData = async () => {
         const response = await getSingleBookInformation(id as string);
-        setAllTheInformation([response.data.data.book]);
+        setAllTheInformation(response.data.data.book);
     }
+
+    const getBooksWithSameCategory = async (categoryName: string, setterFunctionOfState: React.Dispatch<React.SetStateAction<BookInterface[] | undefined>>) => {
+        const response = await getBookByCategory(categoryName);
+        setterFunctionOfState(response.data.data);
+        return response.data.data;
+    };
 
     useEffect(() => {
         getBookData()
-    }, [getBookData])
+        getBooksWithSameCategory("fiction", setAllBooksWithSameCat)
+    }, [])
 
     return (
         <Fragment>
             <div className="min-h-screen bg-gray-50 py-8">
-                {allTheInformation?.map((singleObject, index) => (
+                {[allTheInformation]?.map((singleObject, index) => (
                     <div key={index} className="container mx-auto px-4">
                         {/* Back Button */}
                         <button onClick={() => navigator("/")} className="flex items-center text-gray-600 hover:text-gray-800 mb-8">
@@ -46,7 +56,7 @@ const BookPage: React.FC = () => {
                                 <div className="space-y-4">
                                     <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden">
                                         <img
-                                            src={singleObject.image}
+                                            src={singleObject?.image}
                                             alt="Book cover"
                                             className="object-cover w-full h-full"
                                         />
@@ -57,9 +67,22 @@ const BookPage: React.FC = () => {
                                 <div className="space-y-6">
                                     <div>
                                         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                                            {singleObject.title}
+                                            {singleObject?.title}
                                         </h1>
-                                        <p className="text-lg text-gray-600">{singleObject.author}</p>
+                                        <p className="text-lg text-gray-600">{singleObject?.author}</p>
+                                        {/* categories */}
+                                        <div className='my-2'>
+                                            {allTheInformation?.category?.map((singleCat, key) => (
+                                                <Fragment key={key}>
+                                                    <span
+                                                        onClick={() => navigator(`/category/${singleCat}`)}
+                                                        className='cursor-pointer hover:bg-blue-200 transition duration-200 p-2 m-1 text-xs text-gray-500 bg-blue-100 rounded-lg'
+                                                    >
+                                                        {singleCat}
+                                                    </span>
+                                                </Fragment>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     {/* TODO: ----------------- Add a rating system ----------------------*/}
@@ -75,7 +98,7 @@ const BookPage: React.FC = () => {
 
                                     {/* Price */}
                                     <div className="space-y-2">
-                                        <p className="text-3xl font-bold text-gray-900">${singleObject.price}</p>
+                                        <p className="text-3xl font-bold text-gray-900">${singleObject?.price}</p>
                                         <p className="text-green-600 flex items-center">
                                             <span className="inline-block w-2 h-2 bg-green-600 rounded-full mr-2"></span>
                                             In Stock
@@ -89,14 +112,14 @@ const BookPage: React.FC = () => {
                                             <div className="flex items-center border rounded-lg">
                                                 <button
                                                     className="px-3 py-1 border-r hover:bg-gray-100"
-                                                // onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                                 >
                                                     -
                                                 </button>
-                                                {/* <span className="px-4 py-1">{quantity}</span> */}
+                                                <span className="px-4 py-1">{quantity}</span>
                                                 <button
                                                     className="px-3 py-1 border-l hover:bg-gray-100"
-                                                // onClick={() => setQuantity(quantity + 1)}
+                                                    onClick={() => setQuantity(quantity + 1)}
                                                 >
                                                     +
                                                 </button>
@@ -126,7 +149,7 @@ const BookPage: React.FC = () => {
                                         {[1, 2, 3, 4].map((i) => (
                                             <div key={i} className="aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
                                                 <img
-                                                    src={singleObject.image}
+                                                    src={singleObject?.image}
                                                     alt={`Preview ${i}`}
                                                     className="object-cover cursor-pointer hover:opacity-75"
                                                 />
@@ -160,13 +183,17 @@ const BookPage: React.FC = () => {
                                 <div className="py-6">
                                     <h2 className="text-xl font-semibold mb-4">About this book</h2>
                                     <p className="text-gray-600 leading-relaxed">
-                                        {singleObject.description}
+                                        {singleObject?.description}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 ))}
+
+                <div>
+                    <BooksContainer booksArray={allBooksWithSameCat!} categoryName='fiction' title='More Books' />
+                </div>
             </div>
         </Fragment >
     )
