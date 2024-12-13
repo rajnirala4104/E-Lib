@@ -1,15 +1,13 @@
 import React, { Fragment, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
 import { BookCardInterface } from "../types";
 
 const BookCard: React.FC<BookCardInterface> = (props) => {
-  const navigator = useNavigate()
 
   return (
     <Fragment>
       <Suspense fallback={<div>Loading...</div>}>
         <div
-          onClick={() => navigator(`/book/${props._id}`)}
+          onClick={() => window.location.href = `/book/${props._id}`}
           className="cursor-pointer max-w-sm w-[18rem] my-2 border rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300 group">
           {/* Image with Zoom Effect */}
           <div className="relative overflow-hidden">

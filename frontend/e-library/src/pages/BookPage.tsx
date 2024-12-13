@@ -71,12 +71,12 @@ const BookPage: React.FC = () => {
                                         </h1>
                                         <p className="text-lg text-gray-600">{singleObject?.author}</p>
                                         {/* categories */}
-                                        <div className='my-2'>
+                                        <div className='my-2 flex flex-wrap justify-start items-center'>
                                             {allTheInformation?.category?.map((singleCat, key) => (
                                                 <Fragment key={key}>
                                                     <span
                                                         onClick={() => navigator(`/category/${singleCat}`)}
-                                                        className='cursor-pointer hover:bg-blue-200 transition duration-200 p-2 m-1 text-xs text-gray-500 bg-blue-100 rounded-lg'
+                                                        className='my-1 cursor-pointer hover:bg-blue-200 transition duration-200 p-2 m-1 text-xs text-gray-500 bg-blue-100 rounded-lg'
                                                     >
                                                         {singleCat}
                                                     </span>
