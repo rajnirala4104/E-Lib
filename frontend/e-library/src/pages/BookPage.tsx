@@ -16,7 +16,7 @@ const BookPage: React.FC = () => {
 
     const [allTheInformation, setAllTheInformation] = useState<BookInterface>();
     const [allBooksWithSameCat, setAllBooksWithSameCat] = useState<BookInterface[]>();
-    const [quantity, setQuantity] = useState<string>(0);
+    const [quantity, setQuantity] = useState<string>("0");
     const [infoTab, setInfoTab] = useState<infoTabEnum>(infoTabEnum.description)
     const { id } = useParams();
     const navigator = useNavigate();

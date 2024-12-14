@@ -2,7 +2,7 @@ import React, { Fragment, Suspense, useEffect, useRef, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { Categories, SearchedBookContainer } from ".";
-import { SearchIcon, UserIcon } from "../icons";
+import { CartIcon, SearchIcon, UserIcon } from "../icons";
 
 
 const Navbar: React.FC = () => {
@@ -82,11 +82,15 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="loginBtn place-content-center place-items-center j grid lg:grid-cols-5 w-[40%] mx-auto ">
-              <span className="hidden lg:grid col-span-3 text-center text-[18px] font-semibold cursor-pointer py-2 px-4 bg-cyan-300 text-slate-700 shadow-lg hover:shadow-md hover:text-black rounded-full">
+            <div className=" loginBtn flex justify-between items-center w-[50%] mx-auto ">
+              <span className="hidden lg:block text-center text-[18px] font-semibold cursor-pointer py-2 px-4 bg-cyan-300 text-slate-700 shadow-lg hover:shadow-md hover:text-black rounded-full transition duration-300">
                 Login
               </span>
-              <UserIcon classes="text-3xl lg:text-4xl ml-5 shadow-lg rounded-full cursor-pointer" />
+              <UserIcon classes="text-3xl lg:text-4xl shadow-lg rounded-full cursor-pointer hover:shadow-md transition duration-300 text-black hover:text-slate-700" />
+              <div className="rounded-full h-[2.3rem] w-[2.3rem] my-2 cursor-pointer grid place-content-center shadow-lg border border-slate-200 p-2 hover:border-black hover:shadow-md transition duration-300 relative">
+                <span className={`absolute top-[-10%] right-[-26%] bg-red-600 text-white text-[10px] w-[1.2rem] h-[1.2rem] grid place-content-center rounded-full font-extrabold`}>4</span>
+                <CartIcon classes="text-[18px]" />
+              </div>
             </div>
           </div>
           <div className="lg:hidden w-full h-[4.5rem] border-b flex  relative">

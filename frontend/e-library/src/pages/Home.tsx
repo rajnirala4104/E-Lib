@@ -18,6 +18,7 @@ export const Home: React.FC = () => {
     return response.data.data;
   };
 
+  // TODO: don't fetch the data again when the use come back to this page
   useEffect(() => {
     getBooksByCategoryHandler("fiction", setFictionalBooks);
     getBooksByCategoryHandler("Nonfiction", setNonFictionalBooks);
