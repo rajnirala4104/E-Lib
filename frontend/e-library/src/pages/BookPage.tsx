@@ -2,7 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getBookByCategory, getSingleBookInformation } from '../api/services/books.service';
 import { BooksContainer } from '../components';
-import { LeftArrowIcon, StarIcon } from '../icons';
+import Tooltip from '../components/Tooltip';
+import { HeartIcon, LeftArrowIcon, StarIcon } from '../icons';
 import { BookInterface } from '../types';
 import { capitalizeFirstLetter } from '../utils';
 
@@ -125,14 +126,15 @@ const BookPage: React.FC = () => {
                                                 </button>
                                             </div>
                                         </div>
-
                                         <div className="flex space-x-4">
                                             <button className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
                                                 Add to Cart
                                             </button>
-                                            <button className="p-3 border rounded-lg hover:bg-gray-50">
-                                                {/* <Heart className="w-6 h-6 text-gray-600" /> */}
-                                            </button>
+                                            <Tooltip content='Add to Wishlist' position='bottom' >
+                                                <button className="p-3 border rounded-lg hover:bg-gray-50">
+                                                    <HeartIcon classes="w-6 h-6 text-gray-600" />
+                                                </button>
+                                            </Tooltip>
                                         </div>
                                     </div>
 
