@@ -1,5 +1,5 @@
 import React, { Fragment, Suspense, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Categories, SearchedBookContainer } from ".";
 import { CartIcon, SearchIcon, UserIcon } from "../icons";
 import Tooltip from "./Tooltip";
@@ -7,6 +7,8 @@ import Tooltip from "./Tooltip";
 const Navbar: React.FC = () => {
   const [toggleSearchBarBorder, setToggleSearchBarBorder] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
+
+  const navigator = useNavigate();
 
   const containerBox = useRef<HTMLDivElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
@@ -89,7 +91,9 @@ const Navbar: React.FC = () => {
                 <UserIcon classes="text-3xl lg:text-4xl shadow-lg rounded-full cursor-pointer hover:shadow-md transition duration-300 text-black hover:text-slate-700" />
               </Tooltip>
               <Tooltip content="Cart" position="bottom">
-                <div className="rounded-full h-[2.3rem] w-[2.3rem] my-2 cursor-pointer grid place-content-center shadow-lg border border-slate-200 p-2 hover:border-black hover:shadow-md transition duration-300 relative">
+                <div
+                  onClick={() => navigator("/cart")}
+                  className="rounded-full h-[2.3rem] w-[2.3rem] my-2 cursor-pointer grid place-content-center shadow-lg border border-slate-200 p-2 hover:border-black hover:shadow-md transition duration-300 relative">
                   <span className={`absolute top-[-10%] right-[-26%] bg-red-600 text-white text-[10px] w-[1.2rem] h-[1.2rem] grid place-content-center rounded-full font-extrabold`}>4</span>
                   <CartIcon classes="text-[18px]" />
                 </div>

@@ -64,10 +64,10 @@ const adminControllers = {
       const loggedUser = await Admin.findOne({ _id: admin._id }).select(
          "-password -refreshToken",
       );
+
       const tokens = await generateAccessAndRefreshToken(loggedUser._id);
 
       const option = {
-         httpOnly: true,
          secure: true,
       };
 

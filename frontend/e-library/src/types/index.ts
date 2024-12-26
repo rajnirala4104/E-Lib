@@ -35,3 +35,42 @@ export interface SearchInputValue {
       toggleSearchBarBorder?: boolean,
       setToggleSearchBarBorder?: React.Dispatch<React.SetStateAction<boolean>>,
 }
+
+export interface CartItemInterface extends BookInterface {
+      quantity: number;
+}
+
+export interface CartSummaryProps {
+      items?: CartItemInterface[];
+}
+
+export interface CartItemProps {
+      book: CartItemInterface;
+      onUpdateQuantity: (id: string, quantity: number) => void;
+      onRemove: (id: string) => void;
+}
+
+
+export interface FormData {
+      firstName: string;
+      lastName: string;
+      email: string;
+      password: string;
+      confirmPassword: string;
+      phone: string;
+      dateOfBirth: string;
+      gender: string;
+      terms: boolean;
+}
+
+export interface FormErrors {
+      firstName?: string;
+      lastName?: string;
+      email?: string;
+      password?: string;
+      confirmPassword?: string;
+      phone?: string;
+      dateOfBirth?: string;
+      gender?: string;
+      terms?: string;
+}
