@@ -10,7 +10,7 @@ import { capitalizeFirstLetter } from '../utils';
 enum infoTabEnum {
     description = "description",
     details = "details",
-    review = "review"
+    review = "reviews"
 }
 
 const BookPage: React.FC = () => {
@@ -113,7 +113,7 @@ const BookPage: React.FC = () => {
                                             <div className="flex items-center border rounded-lg">
                                                 <button
                                                     className="px-3 py-1 border-r hover:bg-gray-100"
-                                                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                                    onClick={() => setQuantity(Math.max(0, quantity - 1))}
                                                 >
                                                     -
                                                 </button>
@@ -183,10 +183,30 @@ const BookPage: React.FC = () => {
 
                                 {/* Description Content */}
                                 <div className="py-6">
-                                    <h2 className="text-xl font-semibold mb-4">About this book</h2>
-                                    <p className="text-gray-600 leading-relaxed">
-                                        {singleObject?.description}
-                                    </p>
+                                    {infoTab === 'description' && (
+                                        <Fragment>
+                                            <h2 className="text-xl font-semibold mb-4">About this book</h2>
+                                            <p className="text-gray-600 leading-relaxed">
+                                                {singleObject?.description}
+                                            </p>
+                                        </Fragment>
+                                    )}
+                                    {infoTab === 'details' && (
+                                        <Fragment>
+                                            <h2 className="text-xl font-semibold mb-4">Details</h2>
+                                            <p className="text-gray-600 leading-relaxed">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sapiente, molestiae cum sed inventore totam illo repellendus ab molestias aperiam officiis doloribus saepe. Error, perspiciatis expedita exercitationem nam placeat earum molestiae natus recusandae numquam eius velit modi totam veniam unde?
+                                            </p>
+                                        </Fragment>
+                                    )}
+                                    {infoTab === 'reviews' && (
+                                        <Fragment>
+                                            <h2 className="text-xl font-semibold mb-4">Reviews</h2>
+                                            <p className="text-gray-600 leading-relaxed">
+                                                No reviews yet
+                                            </p>
+                                        </Fragment>
+                                    )}
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { CartItem } from '../components/CartItem';
 import { EmptyCart } from '../components/EmptyCart';
 import { CartItemInterface } from '../types';
-import { CartItem } from './CartItem';
 import { CartSummary } from './CartSummary';
 
 export const Cart: React.FC = () => {
