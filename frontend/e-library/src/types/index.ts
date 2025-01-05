@@ -57,10 +57,6 @@ export interface FormData {
       email: string;
       password: string;
       confirmPassword: string;
-      phone: string;
-      dateOfBirth: string;
-      gender: string;
-      terms: boolean;
 }
 
 export interface FormErrors {
@@ -69,8 +65,4 @@ export interface FormErrors {
       email?: string;
       password?: string;
       confirmPassword?: string;
-      phone?: string;
-      dateOfBirth?: string;
-      gender?: string;
-      terms?: string;
 }

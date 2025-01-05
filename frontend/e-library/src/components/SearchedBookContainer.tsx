@@ -7,7 +7,6 @@ import { shuffleArray } from '../utils';
 const SearchedBookContainer: React.FC<SearchInputValue> = (props) => {
 
     const [searchedBooks, setSearchedBooks] = useState<BookInterface[]>([]);
-
     const searchApiCallHandler = async () => {
         const response = await getSearchBookApiCall(props.inputValue);
         setSearchedBooks(shuffleArray(response.data.data.books));

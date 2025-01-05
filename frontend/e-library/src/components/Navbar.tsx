@@ -84,7 +84,9 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             <div className=" loginBtn flex justify-between items-center w-[50%] mx-auto ">
-              <span className="hidden lg:block text-center text-[18px] font-semibold cursor-pointer py-2 px-4 bg-cyan-300 text-slate-700 shadow-lg hover:shadow-md hover:text-black rounded-full transition duration-300">
+              <span
+                onClick={() => navigator("/login")}
+                className="hidden lg:block text-center text-[18px] font-semibold cursor-pointer py-2 px-4 bg-cyan-300 text-slate-700 shadow-lg hover:shadow-md hover:text-black rounded-full transition duration-300">
                 Login
               </span>
               <Tooltip content="User Profile" position="bottom">
