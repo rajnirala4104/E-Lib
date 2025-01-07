@@ -1,10 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Root } from "../pages";
-import BookPage from "../pages/BookPage";
-import { Cart } from "../pages/Cart";
-import CategoryPage from "../pages/CategoryPage";
-import Login from "../pages/Login";
-import { Registration } from "../pages/Registration";
+import { ProtectedRoute } from "../components/ProtectedRoute";
+import {
+  AdminDashboard,
+  AdminLayout,
+  AdminLogin,
+  BookPage,
+  Cart,
+  CategoryPage,
+  Home,
+  Login,
+  Registration,
+  Root
+} from "../pages";
 
 export const _ROUTER = createBrowserRouter([
   {
@@ -12,29 +19,43 @@ export const _ROUTER = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Registration />,
       },
       {
-        path: "/category/:category",
+        path: "category/:category",
         element: <CategoryPage />,
       },
       {
-        path: "/book/:id",
+        path: "book/:id",
         element: <BookPage />
       },
       {
-        path: "/cart",
+        path: "cart",
         element: <Cart />,
       }
     ],
   },
+  {
+    path: "/admin",
+    element: <ProtectedRoute><AdminLayout /></ProtectedRoute>,
+    children: [
+      {
+        index: true,
+        element: <AdminDashboard />
+      }
+    ]
+  },
+  {
+    path: "/admin/login",
+    element: <AdminLogin />
+  }
 ]);

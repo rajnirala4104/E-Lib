@@ -12,7 +12,7 @@ interface ValidationErrors {
   password?: string;
 }
 
-const Login: React.FC = () => {
+export const Login: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: ''
@@ -137,5 +137,3 @@ const Login: React.FC = () => {
     </div >
   );
 };
-
-export default Login;

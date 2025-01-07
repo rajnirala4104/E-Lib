@@ -13,7 +13,7 @@ enum infoTabEnum {
     review = "reviews"
 }
 
-const BookPage: React.FC = () => {
+export const BookPage: React.FC = () => {
 
     const [allTheInformation, setAllTheInformation] = useState<BookInterface>();
     const [allBooksWithSameCat, setAllBooksWithSameCat] = useState<BookInterface[]>();
@@ -21,7 +21,6 @@ const BookPage: React.FC = () => {
     const [infoTab, setInfoTab] = useState<infoTabEnum>(infoTabEnum.description)
     const { id } = useParams();
     const navigator = useNavigate();
-
 
     const getBookData = async () => {
         const response = await getSingleBookInformation(id as string);
@@ -220,5 +219,3 @@ const BookPage: React.FC = () => {
         </Fragment >
     )
 }
-
-export default BookPage

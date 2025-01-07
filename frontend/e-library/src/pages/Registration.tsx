@@ -5,7 +5,7 @@ import { FormData, FormErrors } from '../types';
 
 
 
-const Registration: React.FC = () => {
+export const Registration: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -219,4 +219,3 @@ const Registration: React.FC = () => {
   );
 };
 
-export { Registration };

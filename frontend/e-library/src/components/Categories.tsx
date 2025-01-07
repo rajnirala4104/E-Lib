@@ -12,6 +12,7 @@ const Categories: React.FC = () => {
   const handleClick = (categoryName: string) => {
     // setSelectedCategory(categoryName);
     navigator(`/category/${categoryName}`);
+    window.location.reload();
   }
 
   useEffect(() => {

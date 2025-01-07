@@ -4,7 +4,7 @@ import { getBookByCategory } from "../api/services/books.service";
 import { BookCard } from "../components";
 import { BookInterface } from "../types";
 
-const CategoryPage: React.FC = () => {
+export const CategoryPage: React.FC = () => {
   const { category } = useParams();
   const [books, setBooks] = useState<BookInterface[]>([]);
 
@@ -39,4 +39,3 @@ const CategoryPage: React.FC = () => {
   );
 };
 
-export default CategoryPage;
