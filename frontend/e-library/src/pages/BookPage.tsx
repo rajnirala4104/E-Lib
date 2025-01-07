@@ -211,7 +211,6 @@ export const BookPage: React.FC = () => {
                         </div>
                     </div>
                 ))}
-
                 <div>
                     <BooksContainer booksArray={allBooksWithSameCat!} categoryName='fiction' title='More Books' />
                 </div>

@@ -15,6 +15,7 @@ export const CategoryPage: React.FC = () => {
 
   useEffect(() => {
     getBooks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

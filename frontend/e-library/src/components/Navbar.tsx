@@ -2,7 +2,7 @@ import React, { Fragment, Suspense, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Categories, SearchedBookContainer } from ".";
 import { CartIcon, SearchIcon, UserIcon } from "../icons";
-import Tooltip from "./Tooltip";
+import { Tooltip } from "./Tooltip";
 
 const Navbar: React.FC = () => {
   const [toggleSearchBarBorder, setToggleSearchBarBorder] = useState<boolean>(false);
