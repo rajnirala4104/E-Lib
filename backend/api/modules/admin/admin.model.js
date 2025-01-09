@@ -6,11 +6,20 @@ const adminSchema = Schema(
    {
       name: {
          type: String,
-         default: "root",
+         required: true,
       },
       password: {
          type: String,
          required: true,
+      },
+      email: {
+         type: String,
+         require: true,
+         unique: true,
+      },
+      roll: {
+         type: String,
+         require: true,
       },
       refreshToken: {
          type: String,

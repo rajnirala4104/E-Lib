@@ -24,34 +24,35 @@ const generateAccessAndRefreshToken = async (adminId) => {
 
 const adminControllers = {
    adminRegistration: asyncHandler(async (req, res) => {
-      const { password } = req.body;
-      if (!password) {
-         throw new ApiError(StatusCodes.NOT_FOUND, "password is necessary");
+      const { name, email, password, roll } = req.body;
+      if (!name || !email || !password || !roll) {
+         throw new ApiError(StatusCodes.NOT_FOUND, "All information is necessary");
       }
 
-      const adminDoesExist = await Admin.findOne({ name: "root" });
+      const adminDoesExist = await Admin.findOne({ name: "email" });
       if (adminDoesExist) {
          throw new ApiError(StatusCodes.CONFLICT, "Admin is already exist");
       }
 
-      const admin = await Admin.create({ password });
+      const user = await Admin.create({ name, email, password, roll });
       return res
          .status(StatusCodes.OK)
          .json(
             new ApiResponse(
                StatusCodes.CREATED,
-               admin,
-               "admin create successfully",
+               user,
+               `${user.roll} create successfully`,
+
             ),
          );
    }),
    login: asyncHandler(async (req, res) => {
-      const { name, password } = req.body;
-      if (!name || !password) {
+      const { email, password } = req.body;
+      if (!email || !password) {
          throw new ApiError(StatusCodes.NOT_FOUND, "all fields are necessary");
       }
 
-      const admin = await Admin.findOne({ name });
+      const admin = await Admin.findOne({ email });
       if (!admin) {
          throw new ApiError(StatusCodes.NOT_FOUND, "admin doesn't exist");
       }

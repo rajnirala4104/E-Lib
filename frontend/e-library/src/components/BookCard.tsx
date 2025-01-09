@@ -32,7 +32,7 @@ const BookCard: React.FC<BookCardInterface> = (props) => {
               <Fragment key={index}>
                 <span
                   // BUG: not redirecting to category page
-                  // onClick={() => navigator(`/category/${cat}`)}
+                  onClick={() => navigator(`/category/${cat}`)}
                   className="text-xs m-1 text-gray-500 bg-blue-100 px-2 py-1 rounded-lg cursor-pointer hover:bg-blue-200">{cat}</span>
               </Fragment>
             ))}
