@@ -12,7 +12,6 @@ const BookCard: React.FC<BookCardInterface> = (props) => {
         <div
           onClick={() => {
             navigator(`/book/${props._id}`);
-            window.location.reload();
           }}
           className="cursor-pointer max-w-sm w-[18rem] my-2 border rounded-lg shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300 group">
           {/* Image with Zoom Effect */}

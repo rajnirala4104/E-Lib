@@ -36,7 +36,14 @@ export const BookPage: React.FC = () => {
     useEffect(() => {
         getBookData()
         getBooksWithSameCategory("fiction", setAllBooksWithSameCat)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        return () => {
+            window.location.reload();
+        }
+    }, [id]);
 
     return (
         <Fragment>
@@ -44,7 +51,7 @@ export const BookPage: React.FC = () => {
                 {[allTheInformation]?.map((singleObject, index) => (
                     <div key={index} className="container mx-auto px-4">
                         {/* Back Button */}
-                        <button onClick={() => navigator("/")} className="flex items-center text-gray-600 hover:text-gray-800 mb-8">
+                        <button onClick={() => navigator(-1)} className="flex items-center text-gray-600 hover:text-gray-800 mb-8">
                             <LeftArrowIcon classes="w-5 h-5 mr-2" />
                             Back to Books
                         </button>
