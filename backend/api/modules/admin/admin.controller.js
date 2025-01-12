@@ -3,6 +3,9 @@ const { ApiError } = require("../../utils/apiError");
 const { ApiResponse } = require("../../utils/apiResponse");
 const { StatusCodes } = require("http-status-codes");
 const { Admin } = require("./admin.model");
+const { CacheService } = require("../../utils/cacheService");
+
+const cacheService = new CacheService();
 
 const generateAccessAndRefreshToken = async (adminId) => {
    try {
@@ -48,40 +51,39 @@ const adminControllers = {
    }),
    login: asyncHandler(async (req, res) => {
       const { email, password } = req.body;
+
       if (!email || !password) {
          throw new ApiError(StatusCodes.NOT_FOUND, "all fields are necessary");
       }
 
-      const admin = await Admin.findOne({ email });
-      if (!admin) {
+      const user = await Admin.findOne({ email }).select("-refreshToken");
+
+      if (!user) {
          throw new ApiError(StatusCodes.NOT_FOUND, "admin doesn't exist");
       }
 
-      const isPasswordTrue = await admin.isPasswordTrue(password);
-      if (!isPasswordTrue) {
+      if (!(await user.isPasswordTrue(password))) {
          throw new ApiError(StatusCodes.CONFLICT, "password is wrong");
       }
 
-      const loggedUser = await Admin.findOne({ _id: admin._id }).select(
-         "-password -refreshToken",
-      );
-
-      const tokens = await generateAccessAndRefreshToken(loggedUser._id);
-
-      const option = {
+      const tokens = await generateAccessAndRefreshToken(user._id);
+      res.cookie("accessToken", tokens.accessToken, {
          secure: true,
-      };
+         httpOnly: true,
+      });
+      res.cookie("refreshToken", tokens.refreshToken, {
+         secure: true,
+         httpOnly: true,
+      });
 
       return res
          .status(StatusCodes.OK)
-         .cookie("accessToken", tokens.accessToken, option)
-         .cookie("refreshToken", tokens.refreshToken, option)
          .json(
             new ApiResponse(StatusCodes.OK, {
-               admin: loggedUser,
+               admin: user.toObject({ getters: true }),
                accessToken: tokens.accessToken,
                refreshToken: tokens.refreshToken,
-            }),
+            }, "admin login successfully"),
          );
    }),
    logout: asyncHandler(async (req, res) => { }),

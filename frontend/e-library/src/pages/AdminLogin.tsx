@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { adminLoginApiCall } from '../api/services/admin.service';
 import Tooltip from "../components/Tooltip";
 import { CloseEyeIcon, LoadingSpinnerIcon, OpenEyeIcon } from '../icons';
 
@@ -42,8 +43,9 @@ export const AdminLogin: React.FC = () => {
     setIsLoading(true);
     // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Login successful', formData);
+      console.log(formData)
+      const response = await adminLoginApiCall(formData.email, formData.password);
+      console.log(response.data.data);
       // Handle successful login here
     } catch (error) {
       console.error('Login failed', error);

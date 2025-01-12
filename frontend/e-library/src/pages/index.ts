@@ -1,6 +1,7 @@
 export * from './AdminDashboard'
 export * from './AdminLayout'
 export * from './AdminLogin'
+export * from './AdminRegistration'
 export * from './BookPage'
 export * from './Cart'
 export * from './CartSummary'

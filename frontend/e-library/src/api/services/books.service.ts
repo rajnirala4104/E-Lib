@@ -1,14 +1,14 @@
-import { ENDPOINTS } from "../constants";
+import { BOOK_ENDPOINTS } from "../constants";
 import { http } from "../http";
 
 export const getBookByCategory = (category: string) => {
-      return http.get(`${ENDPOINTS.getBookByCategory}/${category}`);
+      return http.get(`${BOOK_ENDPOINTS.getBookByCategory}/${category}`);
 }
 
 export const getSingleBookInformation = (id: string) => {
-      return http.get(`${ENDPOINTS.getSingleBook}/${id}`);
+      return http.get(`${BOOK_ENDPOINTS.getSingleBook}/${id}`);
 }
 
 export const getSearchBookApiCall = (searchQuery?: string) => {
-      return http.get(`${ENDPOINTS.getSearchBook}?search=${searchQuery}`);
+      return http.get(`${BOOK_ENDPOINTS.getSearchBook}?search=${searchQuery}`);
 }

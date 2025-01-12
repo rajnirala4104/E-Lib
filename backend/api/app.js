@@ -8,6 +8,7 @@ const cors = require("cors");
 const path = require("path");
 const { EXPRESS_RATE_LIMIT, CORS_ORIGIN } = require("./constants");
 const cookieParser = require("cookie-parser");
+
 const app = express();
 connectDatabase();
 
