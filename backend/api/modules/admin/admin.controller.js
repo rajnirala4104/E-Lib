@@ -4,6 +4,7 @@ const { ApiResponse } = require("../../utils/apiResponse");
 const { StatusCodes } = require("http-status-codes");
 const { Admin } = require("./admin.model");
 const { CacheService } = require("../../utils/cacheService");
+const { encryptPassword } = require("../../utils/passwordEncryptionMethod");
 
 const cacheService = new CacheService();
 
@@ -31,6 +32,9 @@ const adminControllers = {
       if (!name || !email || !password || !roll) {
          throw new ApiError(StatusCodes.NOT_FOUND, "All information is necessary");
       }
+
+     // const encryptedPassword = encryptPassword(password);
+     // console.log(encryptedPassword);
 
       const adminDoesExist = await Admin.findOne({ name: "email" });
       if (adminDoesExist) {

@@ -58,7 +58,8 @@ export const _ROUTER = createBrowserRouter([
   {
     path: "/admin/login",
     element: <AdminLogin />
-  }, {
+  },
+    {
     path: "/admin/registration",
     element: <AdminRegistration />
   }

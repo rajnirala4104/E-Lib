@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 const { compare, genSalt, hash } = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
+const { encryptPassword } = require("../../utils/passwordEncryptionMethod.js");
 
 const adminSchema = Schema(
    {
@@ -31,8 +32,9 @@ const adminSchema = Schema(
 adminSchema.pre("save", async function (next) {
    try {
       if (this.isModified("password")) {
-         const salt = await genSalt(20);
+         const salt = await genSalt(5);
          this.password = await hash(this.password, salt);
+         //encryptPassword(this.password);
       }
       return next();
    } catch (error) {
