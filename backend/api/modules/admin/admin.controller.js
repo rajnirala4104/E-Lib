@@ -33,9 +33,6 @@ const adminControllers = {
          throw new ApiError(StatusCodes.NOT_FOUND, "All information is necessary");
       }
 
-     // const encryptedPassword = encryptPassword(password);
-     // console.log(encryptedPassword);
-
       const adminDoesExist = await Admin.findOne({ name: "email" });
       if (adminDoesExist) {
          throw new ApiError(StatusCodes.CONFLICT, "Admin is already exist");
