@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { adminLoginApiCall } from '../api/services/admin.service';
 import Tooltip from "../components/Tooltip";
 import { CloseEyeIcon, LoadingSpinnerIcon, OpenEyeIcon } from '../icons';
+import { useNavigate } from 'react-router-dom';
 
 interface FormData {
   email: string;
@@ -16,6 +17,7 @@ export const AdminLogin: React.FC = () => {
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [hidePassword, setHidePassword] = useState<boolean>(true);
+  const navigator = useNavigate();
 
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {};
@@ -43,16 +45,21 @@ export const AdminLogin: React.FC = () => {
     setIsLoading(true);
     // Simulate API call
     try {
-      console.log(formData)
       const response = await adminLoginApiCall(formData.email, formData.password);
-      console.log(response.data.data);
-      // Handle successful login here
+      localStorage.setItem("adminToken", JSON.stringify([response.data.data]));
     } catch (error) {
       console.error('Login failed', error);
     } finally {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    const localData = localStorage.getItem("adminToken");
+    if(localData){
+      navigator('/admin')
+    }
+  }, [isLoading])
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">

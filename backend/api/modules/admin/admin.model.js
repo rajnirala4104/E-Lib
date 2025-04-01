@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const { compare, genSalt, hash } = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
-const { encryptPassword } = require("../../utils/passwordEncryptionMethod.js");
+//const { encryptPassword } = require("../../utils/passwordEncryptionMethod.js");
 
 const adminSchema = Schema(
    {
@@ -48,18 +48,20 @@ adminSchema.methods.isPasswordTrue = async function (password) {
 
 // method to generate access token
 adminSchema.methods.generateAccessToken = function () {
-   return jsonwebtoken.sign({ _id: this._id }, process.env.ACCESS_JWT_SECRET, {
+   const token = jsonwebtoken.sign({ _id: this._id }, process.env.ACCESS_JWT_SECRET, {
       expiresIn: process.env.ACCESS_JWT_EXPIRY,
    });
+   return token;
 };
 
 // method to generate refresh token
 adminSchema.methods.generateRefreshToken = function () {
-   return jsonwebtoken.sign(
+   const refToken = jsonwebtoken.sign(
       { _id: this._id },
       process.env.REFRESH_TOKEN_SECRETE,
       { expiresIn: process.env.REFRESH_TOKEN_EXPIRY },
    );
+   return refToken;
 };
 
 const Admin = model("Admin", adminSchema);

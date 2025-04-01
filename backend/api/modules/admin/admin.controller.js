@@ -3,19 +3,18 @@ const { ApiError } = require("../../utils/apiError");
 const { ApiResponse } = require("../../utils/apiResponse");
 const { StatusCodes } = require("http-status-codes");
 const { Admin } = require("./admin.model");
-const { CacheService } = require("../../utils/cacheService");
+// const { CacheService } = require("../../utils/cacheService");
 const { encryptPassword } = require("../../utils/passwordEncryptionMethod");
-
-const cacheService = new CacheService();
 
 const generateAccessAndRefreshToken = async (adminId) => {
    try {
       const admin = await Admin.findById(adminId);
+      
       const accessToken = admin.generateAccessToken();
       const refreshToken = admin.generateRefreshToken();
-
+      
       admin.refreshToken = refreshToken;
-      await admin.save({ validateBeforeSave: false });
+      await admin.save({validateBeforeSave: false});
 
       return { accessToken, refreshToken };
    } catch (error) {
@@ -68,25 +67,26 @@ const adminControllers = {
       }
 
       const tokens = await generateAccessAndRefreshToken(user._id);
-      res.cookie("accessToken", tokens.accessToken, {
-         secure: true,
+      const option = {
          httpOnly: true,
-      });
-      res.cookie("refreshToken", tokens.refreshToken, {
          secure: true,
-         httpOnly: true,
-      });
+      };
+
+     const loggedUser = await Admin.findOne({ _id: user._id }).select(
+         "-password -refreshToken",
+      );
 
       return res
          .status(StatusCodes.OK)
+         .cookie("accessToken", tokens.accessToken, option)
+         .cookie("refreshToken", tokens.refreshToken, option)
          .json(
             new ApiResponse(StatusCodes.OK, {
-               admin: user.toObject({ getters: true }),
+               user: loggedUser,
                accessToken: tokens.accessToken,
                refreshToken: tokens.refreshToken,
-            }, "admin login successfully"),
-         );
-   }),
+            }),
+         );   }),
    logout: asyncHandler(async (req, res) => { }),
 };
 
