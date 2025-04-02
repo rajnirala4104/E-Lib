@@ -1,28 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CartItem } from '../components/CartItem';
 import { EmptyCart } from '../components/EmptyCart';
 import { CartItemInterface } from '../types';
 import { CartSummary } from './CartSummary';
+import { useNavigate } from 'react-router-dom';
 
 export const Cart: React.FC = () => {
-  const [cartItems, setCartItems] = useState<CartItemInterface[]>([
-    {
-      _id: '1',
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-      price: 9,
-      image: '/api/placeholder/150/200',
-      quantity: 1,
-    },
-    {
-      _id: '2',
-      title: '1984',
-      author: 'George Orwell',
-      price: 12,
-      image: '/api/placeholder/150/200',
-      quantity: 2,
-    },
-  ]);
+  const [cartItems, setCartItems] = useState<CartItemInterface[]>([]);
+
+  const navigator = useNavigate();
 
   const handleUpdateQuantity = (_id: string, quantity: number) => {
     setCartItems(items =>
@@ -39,6 +25,13 @@ export const Cart: React.FC = () => {
   if (cartItems.length === 0) {
     return <EmptyCart />;
   }
+
+  useEffect(() => {
+    const localUser = localStorage.getItem('userAdmin');
+    if(!localUser){
+      navigator('/login');
+    }
+  }, [])
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">

@@ -117,12 +117,12 @@ export const BookPage: React.FC = () => {
                                         <div className="flex items-center space-x-4">
                                             <label className="text-gray-700">Quantity:</label>
                                             <div className="flex items-center border rounded-lg">
-                                                <button
+                                                <span
                                                     className="px-3 py-1 border-r hover:bg-gray-100"
                                                     onClick={() => setQuantity(Math.max(0, quantity - 1))}
                                                 >
                                                     -
-                                                </button>
+                                                </span>
                                                 <span className="px-4 py-1">{quantity}</span>
                                                 <button
                                                     className="px-3 py-1 border-l hover:bg-gray-100"
@@ -133,7 +133,7 @@ export const BookPage: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className="flex space-x-4">
-                                            <button className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                                            <button onClick={() => navigator(`/cart`)} className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
                                                 Add to Cart
                                             </button>
                                             <Tooltip content='Add to Wishlist' position='bottom' >
