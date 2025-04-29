@@ -1,9 +1,24 @@
-import React, { Fragment } from 'react'
+import React from 'react';
+import { AdminDashboardHeader, AdminDashboardSideBar } from '../components';
 
-export const AdminDashboard: React.FC = () => {
+const AdminDashboard: React.FC = () => {
+  // Main application layout
   return (
-    <Fragment>
-      <div>AdminDashboard</div>
-    </Fragment>
-  )
-}
+    <div className="flex bg-gray-100">
+      <AdminDashboardSideBar />
+      <div className="flex-1 flex flex-col">
+        <AdminDashboardHeader/>
+        <main className="flex-1 p-6 bg-gray-100">
+          <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-xl font-bold mb-4">Content Area</h2>
+            <p className="text-gray-600">
+              This is where your main dashboard content would go. Currently showing: 
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default AdminDashboard;

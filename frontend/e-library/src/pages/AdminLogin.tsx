@@ -46,7 +46,7 @@ export const AdminLogin: React.FC = () => {
     // Simulate API call
     try {
       const response = await adminLoginApiCall(formData.email, formData.password);
-      localStorage.setItem("adminToken", JSON.stringify([response.data.data]));
+      localStorage.setItem("adminInfo", JSON.stringify([response.data.data]));
     } catch (error) {
       console.error('Login failed', error);
     } finally {
@@ -55,7 +55,7 @@ export const AdminLogin: React.FC = () => {
   };
 
   useEffect(() => {
-    const localData = localStorage.getItem("adminToken");
+    const localData = localStorage.getItem("adminInfo");
     if(localData){
       navigator('/admin')
     }
@@ -127,6 +127,7 @@ export const AdminLogin: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
+            onClick={(e) => handleSubmit(e)}
             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (

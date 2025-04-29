@@ -11,7 +11,7 @@ export const useAuth = () => {
   const checkAuthStatus = async () => {
     try {
       // Replace with your actual auth check logic
-      const token = localStorage.getItem('adminToken');
+      const token = localStorage.getItem('adminInfo');
       setIsAuthenticated(!!token);
     } finally {
       setIsLoading(false);
