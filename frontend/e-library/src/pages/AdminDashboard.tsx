@@ -1,8 +1,7 @@
 import React from 'react';
 import { AdminDashboardHeader, AdminDashboardSideBar } from '../components';
-
-const AdminDashboard: React.FC = () => {
-  // Main application layout
+ 
+export const AdminDashboard: React.FC = () => {
   return (
     <div className="flex bg-gray-100">
       <AdminDashboardSideBar />
@@ -21,4 +20,3 @@ const AdminDashboard: React.FC = () => {
   );
 };
 
-export default AdminDashboard;
