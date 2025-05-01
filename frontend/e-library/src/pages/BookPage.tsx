@@ -33,7 +33,7 @@ export const BookPage: React.FC = () => {
         return response.data.data;
     };
 
-    const cartClickBtnHandler = (bookId:string) => {
+    const cartBtnClickHandler = (bookId:string) => {
         const localData = localStorage.getItem('userInfo');
             if(!localData){
                 console.error("user is not loged in");
@@ -150,7 +150,7 @@ export const BookPage: React.FC = () => {
                                         <div className="flex space-x-4">
                                             <button onClick={() => {
                                                  navigator(`/cart`);
-                                                cartClickBtnHandler(singleObject?._id);  
+                                                cartBtnClickHandler(singleObject?._id as string);  
                                             }} className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
                                                 Add to Cart
                                             </button>
