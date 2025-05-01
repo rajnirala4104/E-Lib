@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Users, ShoppingBag, BookOpen, DollarSign, TrendingUp, Package } from 'lucide-react';
+import { Users, BookOpen, DollarSign, TrendingUp, Package } from 'lucide-react';
 
 enum menuValueEnum {
   dashboard="dashboard",

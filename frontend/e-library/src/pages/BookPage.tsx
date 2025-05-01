@@ -33,6 +33,21 @@ export const BookPage: React.FC = () => {
         return response.data.data;
     };
 
+    const cartClickBtnHandler = (bookId:string) => {
+        const localData = localStorage.getItem('userInfo');
+            if(!localData){
+                console.error("user is not loged in");
+            return;
+        }
+
+        // add to cart api logic.
+        try {
+          // api call  
+        } catch (error) {
+            // error
+        }
+    }
+
     useEffect(() => {
         getBookData()
         getBooksWithSameCategory("fiction", setAllBooksWithSameCat)
@@ -133,7 +148,10 @@ export const BookPage: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className="flex space-x-4">
-                                            <button onClick={() => navigator(`/cart`)} className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                                            <button onClick={() => {
+                                                 navigator(`/cart`);
+                                                cartClickBtnHandler(singleObject?._id);  
+                                            }} className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
                                                 Add to Cart
                                             </button>
                                             <Tooltip content='Add to Wishlist' position='bottom' >
