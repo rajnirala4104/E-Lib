@@ -15,3 +15,10 @@ export const shuffleArray = (array) => {
 export const capitalizeFirstLetter = (str: string) => {
       return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export const isNumber = (input: string): boolean  => {
+    return input === "" || /^[0-9]+$/.test(input);
+}
+
+
+

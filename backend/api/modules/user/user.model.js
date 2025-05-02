@@ -23,7 +23,7 @@ const userSchema = Schema({
       require: true
    },
    phonenumber: {
-      type:Number,
+      type:String,
       require: true,
       unique: true
    }

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CloseEyeIcon, OpenEyeIcon } from '../icons';
 import { FormData, FormErrors } from '../types';
-
-
+import { isNumber } from '../utils';
 
 export const Registration: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     email: '',
+    phoneNumber: '',
     password: '',
     confirmPassword: '',
   });
@@ -35,6 +35,12 @@ export const Registration: React.FC = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email';
     }
+
+    if (!formData.phoneNumber.trim()){
+      newErrors.phoneNumber = "Phone Number is required";
+    } else if (formData.phoneNumber.length < 11 || formData.phoneNumber.length > 11) {
+      newErrors.phoneNumber = "Phone Number should be a 10 digit number"
+    }   
 
     if (!formData.password) {
       newErrors.password = 'Password is required';
@@ -64,6 +70,7 @@ export const Registration: React.FC = () => {
           firstName: '',
           lastName: '',
           email: '',
+          phoneNumber: '',
           password: '',
           confirmPassword: '',
         });
@@ -139,6 +146,23 @@ export const Registration: React.FC = () => {
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+            )}
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={(e) => isNumber(e.target.value) ? handleChange(e) : ""}
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              placeholder="9999999999"
+            />
+            {errors.phoneNumber && (
+              <p className="mt-1 text-sm text-red-600">{errors.phoneNumber}</p>
             )}
           </div>
 
