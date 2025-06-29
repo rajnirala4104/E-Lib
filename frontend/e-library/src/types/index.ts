@@ -68,3 +68,18 @@ export interface FormErrors {
       password?: string;
       confirmPassword?: string;
 }
+
+export interface UserProfileInfoPopupContextInterface {
+  userInfoProfilePopupON: boolean,
+  setUserInfoProfilePopupOn: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export interface AdminInfoInterface {
+  _id: string,
+  name: string,
+  email:string,
+  roll:string,
+  createdAt?: string,
+  updatedAt?: string,
+}
+
