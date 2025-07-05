@@ -15,15 +15,28 @@ const adminSchema = Schema(
       },
       email: {
          type: String,
-         require: true,
+         require: [true, "Please Fill all the Fields"],
          unique: true,
       },
-      roll: {
+      avatar: {
+         type:String,
+         default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+      },
+      role: {
+         type: String,
+         require: true,
+      },
+      bio: {
+         type: String,
+         default: "---bio---"
+      },
+      location: {
          type: String,
          require: true,
       },
       refreshToken: {
          type: String,
+         require: true
       },
    },
    { timestamps: true },

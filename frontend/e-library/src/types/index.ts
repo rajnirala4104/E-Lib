@@ -75,11 +75,17 @@ export interface UserProfileInfoPopupContextInterface {
 }
 
 export interface AdminInfoInterface {
-  _id: string,
   name: string,
   email:string,
   roll:string,
-  createdAt?: string,
-  updatedAt?: string,
+  location: string,
+}
+
+export interface AdminRegistrationFormData {
+  name: string;
+  email: string;
+  password: string;
+  location: string,
+  role: string;
 }
 
