@@ -61,6 +61,7 @@ const adminControllers = {
 
 
       // Step 7: Send response
+      // TODO: store the user's image to the database
       res.status(201).json({
          admin: {
             id: newAdmin._id,
@@ -68,6 +69,7 @@ const adminControllers = {
             email: newAdmin.email,
             role: newAdmin.role,
             bio: newAdmin.bio,
+            avatar:"https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg", 
             location: newAdmin.location,
          },
          tokens: {
@@ -122,7 +124,7 @@ const adminControllers = {
          .cookie("refreshToken", tokens.refreshToken, option)
          .json(
             new ApiResponse(StatusCodes.OK, {
-               user: loggedUser,
+               admin: loggedUser,
                accessToken: tokens.accessToken,
                refreshToken: tokens.refreshToken,
             }),
