@@ -82,32 +82,40 @@ const adminControllers = {
    }   }),
 
    login: asyncHandler(async (req, res) => {
+      // step 1 - get the data from request body or the user.
       const { email, password } = req.body;
 
+      // step 2 - check the if all the fields are given or not
       if (!email || !password) {
          throw new ApiError(StatusCodes.NOT_FOUND, "all fields are necessary");
       }
-
+      
+      // step 3 - find the user or admin using the email
       const user = await Admin.findOne({ email }).select("-refreshToken");
 
+      // step 4 - check user is already in database.
       if (!user) {
          throw new ApiError(StatusCodes.NOT_FOUND, "admin doesn't exist");
       }
 
+      // step 5 - check password is right or not.
       if (!(await user.isPasswordTrue(password))) {
          throw new ApiError(StatusCodes.CONFLICT, "password is wrong");
       }
-
+      
+      // step 6 - generate Access And Refresh Tokens  
       const tokens = await generateAccessAndRefreshToken(user._id);
       const option = {
          httpOnly: true,
          secure: true,
       };
 
+      // step 7 - get the user's data from the database. and remove the password and refreshToken from the Response.
      const loggedUser = await Admin.findOne({ _id: user._id }).select(
          "-password -refreshToken",
       );
 
+      // step 8 - send the response.
       return res
          .status(StatusCodes.OK)
          .cookie("accessToken", tokens.accessToken, option)

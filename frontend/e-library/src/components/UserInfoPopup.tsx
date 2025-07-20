@@ -9,12 +9,10 @@ const UserInfoPopup: React.FC = () => {
   const {userInfoProfilePopupON, setUserInfoProfilePopupOn} = useContext(UserProfileInfoPopupContext)
 
   useEffect(() => {
-   // TODO : get more information of admin. change the backend code. 
     const localAdminData = JSON.parse(localStorage.getItem('adminInfo') as string);
-    setAdmin([localAdminData.user as AdminInfoInterface]);
-
+    setAdmin([localAdminData[0].admin as AdminInfoInterface]);
   }, [])
-  console.log(admin)
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden transform animate-fade-in">
@@ -37,6 +35,7 @@ const UserInfoPopup: React.FC = () => {
               {/* Profile Image */}
           <div className="flex justify-center mb-4">
             <div className="relative">
+              {/* TODO: add avtar attribute to the backend */}
               <img
                 src={singleObj.avatar}
                 alt={singleObj.name}

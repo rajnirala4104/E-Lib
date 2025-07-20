@@ -6,8 +6,8 @@ import { UserProfileInfoPopupContext } from "../context";
 const AdminDashboardHeader:React.FC = () => {
 
   const {userInfoProfilePopupON, setUserInfoProfilePopupOn} = useContext(UserProfileInfoPopupContext)
-
-return (
+  console.log(userInfoProfilePopupON)
+  return (
     <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
       <div className="flex items-center">
         <div className="flex items-center rounded-md border border-gray-300 px-3 py-2 w-64 md:w-80">
