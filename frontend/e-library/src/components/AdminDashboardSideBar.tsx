@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Users, BookOpen, DollarSign, TrendingUp, Package } from 'lucide-react';
+import { AdminInfoInterface } from '../types';
 
 enum menuValueEnum {
   dashboard="dashboard",
@@ -12,7 +13,13 @@ enum menuValueEnum {
 // Sidebar component
 const AdminDashboardSideBar:React.FC = () => {
   const [view, setView] = useState<menuValueEnum>(menuValueEnum.dashboard);
-  
+   const [localData, setLocalData] = useState<AdminInfoInterface>()
+ 
+  useEffect(() => {
+    const localAdminData = JSON.parse(localStorage.getItem('adminInfo') as string);
+    setLocalData(localAdminData[0].admin)
+  },[])
+ 
    return(
     <Fragment>
     <div className="bg-cyan-900 text-white w-64 py-6 flex flex-col h-screen">
@@ -60,11 +67,11 @@ const AdminDashboardSideBar:React.FC = () => {
       <div className="px-6 mt-auto pt-6 border-t border-cyan-800">
         <div className="flex items-center">
           <div className="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center mr-3">
-            <span className="font-bold">A</span>
+            <span className="font-bold">{localData?.name[0]}</span>
           </div>
           <div>
-            <p className="text-sm font-medium">Admin User</p>
-            <p className="text-xs text-cyan-300">admin@bookstore.com</p>
+            <p className="text-sm font-medium">{localData?.name}</p>
+            <p className="text-xs text-cyan-300">{localData?.email}</p>
           </div>
         </div>
       </div>

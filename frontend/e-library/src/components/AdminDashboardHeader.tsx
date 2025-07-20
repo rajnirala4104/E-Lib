@@ -1,12 +1,19 @@
 import { Bell, Search } from "lucide-react";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Tooltip from "./Tooltip";
 import { UserProfileInfoPopupContext } from "../context";
+import { AdminInfoInterface } from "../types";
 
 const AdminDashboardHeader:React.FC = () => {
 
   const {userInfoProfilePopupON, setUserInfoProfilePopupOn} = useContext(UserProfileInfoPopupContext)
-  console.log(userInfoProfilePopupON)
+  const [localData, setLocalData] = useState<AdminInfoInterface>()
+ 
+  useEffect(() => {
+    const localAdminData = JSON.parse(localStorage.getItem('adminInfo') as string);
+    setLocalData(localAdminData[0].admin)
+  },[])
+
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
       <div className="flex items-center">
@@ -35,10 +42,10 @@ const AdminDashboardHeader:React.FC = () => {
             onClick={() => setUserInfoProfilePopupOn(!userInfoProfilePopupON)}
           >
             <div className="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center text-white mr-2">
-              <span className="font-bold">A</span>
+              <span className="font-bold">{localData?.name[0]}</span>
             </div>
             <div className="hidden md:block">
-              <p className="text-sm font-medium text-gray-700">Admin User</p>
+              <p className="text-sm font-medium text-gray-700">{localData?.name}</p>
               <p className="text-xs text-gray-500">Administrator</p>
             </div>
           </div>
