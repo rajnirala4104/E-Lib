@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, Suspense, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getBookByCategory, getSingleBookInformation } from '../api/services/books.service';
 import { BooksContainer } from '../components';
@@ -40,7 +40,7 @@ export const BookPage: React.FC = () => {
             return;
         }
 
-        // add to cart api logic.
+        // TODO: add to cart api logic.
         try {
           // api call  
         } catch (error) {
@@ -61,6 +61,7 @@ export const BookPage: React.FC = () => {
     }, [id]);
 
     return (
+        <Suspense fallback="loading..">
         <Fragment>
             <div className="min-h-screen bg-gray-50 py-8">
                 {[allTheInformation]?.map((singleObject, index) => (
@@ -240,6 +241,7 @@ export const BookPage: React.FC = () => {
                     <BooksContainer booksArray={allBooksWithSameCat!} categoryName='fiction' title='More Books' />
                 </div>
             </div>
-        </Fragment >
+        </Fragment>
+        </Suspense>
     )
 }

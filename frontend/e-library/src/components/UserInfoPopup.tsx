@@ -1,6 +1,8 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { UserProfileInfoPopupContext } from '../context';
 import { AdminInfoInterface } from '../types';
+import { FaUserEdit } from "react-icons/fa";
+import Tooltip from './Tooltip';
 
 const UserInfoPopup: React.FC = () => {
 
@@ -51,8 +53,16 @@ const UserInfoPopup: React.FC = () => {
           </div>
         </div>
         {/* Card Content */}
-        <div className="px-6 py-6">
+        <div className="px-6 py-6 relative">
           {/* Contact Info */}
+          {/* TODO: make the logic */}
+          <div
+              onClick={() => alert("We'll build this feature soon..")}
+              className="text-gray-400 text-2xl absolute bottom-[5%] right-[3%] cursor-pointer hover:text-gray-500">
+            <Tooltip content='Edit Profile' position='left'>
+              <FaUserEdit />
+            </Tooltip>
+          </div>
           <div className="mb-6 space-y-3">
             <div className="flex items-center text-gray-600">
               <svg className="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
