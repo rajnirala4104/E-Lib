@@ -20,5 +20,3 @@ export const isNumber = (input: string): boolean  => {
     return input === "" || /^[0-9]+$/.test(input);
 }
 
-
-

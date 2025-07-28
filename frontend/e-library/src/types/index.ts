@@ -89,3 +89,10 @@ export interface AdminRegistrationFormData {
   role: string;
 }
 
+export enum menuValueEnum {
+  dashboard="dashboard",
+  inventory="inventory",
+  orders="orders",
+  customers="customers",
+  finance="finance",
+}

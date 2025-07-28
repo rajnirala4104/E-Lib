@@ -50,6 +50,7 @@ export const _ROUTER = createBrowserRouter([
     element: <ProtectedRoute><AdminLayout /></ProtectedRoute>,
     children: [
       {
+        path: "/admin/:tab",
         index: true,
         element: <AdminDashboard />
       }

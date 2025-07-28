@@ -1,25 +1,24 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Users, BookOpen, DollarSign, TrendingUp, Package } from 'lucide-react';
-import { AdminInfoInterface } from '../types';
+import { AdminInfoInterface, menuValueEnum } from '../types';
+import { useNavigate } from 'react-router-dom';
 
-enum menuValueEnum {
-  dashboard="dashboard",
-  inventory="inventory",
-  orders="orders",
-  customers="customers",
-  finance="finance",
-}
 
 // Sidebar component
 const AdminDashboardSideBar:React.FC = () => {
   const [view, setView] = useState<menuValueEnum>(menuValueEnum.dashboard);
-   const [localData, setLocalData] = useState<AdminInfoInterface>()
+  const [localData, setLocalData] = useState<AdminInfoInterface>()
+  const navigator = useNavigate()
  
   useEffect(() => {
     const localAdminData = JSON.parse(localStorage.getItem('adminInfo') as string);
     setLocalData(localAdminData[0].admin)
   },[])
- 
+
+  useEffect(() => {
+    navigator(`/admin/${view}`)    
+  }, [view])
+
    return(
     <Fragment>
     <div className="bg-cyan-900 text-white w-64 py-6 flex flex-col h-screen">
