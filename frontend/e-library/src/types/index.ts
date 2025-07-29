@@ -96,3 +96,11 @@ export enum menuValueEnum {
   customers="customers",
   finance="finance",
 }
+
+export interface TotalsBoxInterface {
+  icon?: JSX.Element,
+  title?: string,
+  totalNumber?: string
+  navigato?: string
+}
+

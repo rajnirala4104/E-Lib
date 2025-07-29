@@ -7,6 +7,7 @@ export const BookCard = lazy(() => import('./BookCard'));
 export const Inventory = lazy(() => import('./Inventory'))
 export const Customers = lazy(() => import('./Customers'))
 export const Dashboard = lazy(() => import('./Dashboard'))
+export const TotalsBox = lazy(() => import('./TotalsBox'));
 export const Categories = lazy(() => import('./Categories'));
 export const UserInfoPopup = lazy(() => import('./UserInfoPopup'));
 export const BooksContainer = lazy(() => import('./BooksContainer'));
