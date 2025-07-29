@@ -1,5 +1,5 @@
 import React, { Fragment, Suspense, useContext } from 'react';
-import { AdminDashboardHeader, AdminDashboardSideBar } from '../components';
+import { AdminDashboardHeader, AdminDashboardSideBar, Customers, Dashboard, Finance, Inventory, Orders } from '../components';
 import { UserProfileInfoPopupContext } from '../context';
 import UserInfoPopup from '../components/UserInfoPopup';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -35,12 +35,11 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex-1 flex flex-col">
             <AdminDashboardHeader/>
             <main className="flex-1 p-6 bg-gray-100">
-              <div className="bg-white rounded-lg shadow p-6">
-                <h2 className="text-xl font-bold mb-4">Content Area</h2>
-                <p className="text-gray-600">
-                  This is where your main dashboard content would go. Currently showing {tab}
-                </p>
-              </div>
+              {tab === menuValueEnum.dashboard ? (<Dashboard />) : ("")}  
+              {tab === menuValueEnum.inventory ? (<Inventory />) : ("")}
+              {tab === menuValueEnum.customers ? (<Customers />) : ("")}
+              {tab === menuValueEnum.orders ? (<Orders />) : ("")}
+              {tab === menuValueEnum.finance ? (<Finance />) : ("")}
             </main>
           </div>
         </div>
