@@ -74,6 +74,11 @@ export interface UserProfileInfoPopupContextInterface {
   setUserInfoProfilePopupOn: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+export interface AdminSideBarViewStateInterface {
+  view: menuValueEnum | string,
+  setView: React.Dispatch<React.SetStateAction<menuValueEnum | string>>
+}
+
 export interface AdminInfoInterface {
   name: string,
   email:string,

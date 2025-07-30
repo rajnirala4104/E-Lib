@@ -1,13 +1,15 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { Users, BookOpen, DollarSign, TrendingUp, Package } from 'lucide-react';
 import { AdminInfoInterface, menuValueEnum } from '../types';
 import { useNavigate } from 'react-router-dom';
+import { AdminSideBarViewStateContext } from '../context';
 
 
 // Sidebar component
 const AdminDashboardSideBar:React.FC = () => {
-  const [view, setView] = useState<menuValueEnum>(menuValueEnum.dashboard);
   const [localData, setLocalData] = useState<AdminInfoInterface>()
+  const {view, setView} = useContext(AdminSideBarViewStateContext);
+
   const navigator = useNavigate()
  
   useEffect(() => {
@@ -18,6 +20,8 @@ const AdminDashboardSideBar:React.FC = () => {
   useEffect(() => {
     navigator(`/admin/${view}`)    
   }, [view])
+
+  console.log(view)
 
    return(
     <Fragment>

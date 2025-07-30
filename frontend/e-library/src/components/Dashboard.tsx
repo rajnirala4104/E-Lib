@@ -39,7 +39,7 @@ const Dashboard:React.FC = () => {
       <Suspense fallback={"loading.."}>
         <section className="w-full h-full">
           <div className="bg-white rounded-lg shadow p-6">
-            <div className="flex justify-evenly items-center">
+            <div className="flex flex-wrap justify-evenly items-center">
               {totalBoxArr.map((singleObj:TotalsBoxInterface, index) => (
                 <Fragment key={index}>
                   <TotalsBox {...singleObj}/>
