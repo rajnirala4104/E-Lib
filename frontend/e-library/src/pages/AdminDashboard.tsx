@@ -32,9 +32,9 @@ export const AdminDashboard: React.FC = () => {
         {userInfoProfilePopupON ? <UserInfoPopup /> : ""}
         <div className="flex bg-gray-100">
           <AdminDashboardSideBar />
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 w-[80%] h-screen flex flex-col overflow-auto">
             <AdminDashboardHeader/>
-            <main className="flex-1 p-6 bg-gray-100">
+            <main className="flex-1 p-3 bg-gray-100">
               {tab === menuValueEnum.dashboard ? (<Dashboard />) : ("")}  
               {tab === menuValueEnum.inventory ? (<Inventory />) : ("")}
               {tab === menuValueEnum.customers ? (<Customers />) : ("")}

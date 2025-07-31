@@ -10,6 +10,7 @@ export const Dashboard = lazy(() => import('./Dashboard'))
 export const TotalsBox = lazy(() => import('./TotalsBox'));
 export const Categories = lazy(() => import('./Categories'));
 export const UserInfoPopup = lazy(() => import('./UserInfoPopup'));
+export const SalesLineChart = lazy(() => import('./SalesLineChart'));
 export const BooksContainer = lazy(() => import('./BooksContainer'));
 export const SearchedBookContainer = lazy(() => import('./SearchedBookContainer'));
 export const AdminDashboardSideBar = lazy(() => import('./AdminDashboardSideBar'));

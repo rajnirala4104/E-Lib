@@ -15,7 +15,7 @@ const AdminDashboardHeader:React.FC = () => {
   },[])
 
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
       <div className="flex items-center">
         <div className="flex items-center rounded-md border border-gray-300 px-3 py-2 w-64 md:w-80">
           <Search className="w-4 h-4 text-gray-500 mr-2" />
