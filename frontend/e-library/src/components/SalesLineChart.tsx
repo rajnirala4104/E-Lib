@@ -24,7 +24,7 @@ const SalesLineChart:React.FC = () => {
   return (
     <div className="p-4 bg-white">
       <h2 className="text-xl font-semibold mb-4">Sales Over Time</h2>
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />

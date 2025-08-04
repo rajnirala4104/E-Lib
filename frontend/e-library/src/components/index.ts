@@ -12,6 +12,7 @@ export const Categories = lazy(() => import('./Categories'));
 export const UserInfoPopup = lazy(() => import('./UserInfoPopup'));
 export const SalesLineChart = lazy(() => import('./SalesLineChart'));
 export const BooksContainer = lazy(() => import('./BooksContainer'));
+export const BestSellingProducts = lazy(() => import('./BestSellingProducts'));
 export const SearchedBookContainer = lazy(() => import('./SearchedBookContainer'));
 export const AdminDashboardSideBar = lazy(() => import('./AdminDashboardSideBar'));
 export const AdminDashboardHeader = lazy(() => import('./AdminDashboardHeader'));

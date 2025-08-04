@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Fragment } from "react/jsx-runtime"
-import { SalesLineChart, TotalsBox } from "."
+import { BestSellingProducts, SalesLineChart, TotalsBox } from "."
 import { TotalsBoxInterface } from "../types"
 import { AiFillProduct } from "react-icons/ai";
 import { PiUsersThreeFill } from "react-icons/pi";
@@ -37,7 +37,7 @@ const Dashboard:React.FC = () => {
   return (
     <Fragment>
       <Suspense fallback={"loading.."}>
-        <section className="w-full h-full">
+        <section className="w-full h-full flex flex-col">
           <div className="bg-white rounded-lg shadow p-6">
             <div className="flex flex-wrap justify-evenly items-center">
               {totalBoxArr.map((singleObj:TotalsBoxInterface, index) => (
@@ -47,8 +47,13 @@ const Dashboard:React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow p-6 my-2 w-[50%]">
-           <SalesLineChart />  
+          <div className="flex w-full justify-evenly items-start">
+            <div className="bg-white rounded-lg shadow p-6 my-2 w-[50%]">
+             <SalesLineChart />  
+            </div>
+            <div className="bg-white rounded-lg shadow p-6 my-2 w-[50%] m-2">
+              <BestSellingProducts /> 
+            </div>
           </div>
         </section>
       </Suspense>
