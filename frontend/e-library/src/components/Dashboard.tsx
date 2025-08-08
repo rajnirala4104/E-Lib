@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { Fragment } from "react/jsx-runtime"
-import { BestSellingProducts, SalesLineChart, TotalsBox } from "."
+import { BestSellingProducts, LowStockBox, SalesLineChart, TotalsBox } from "."
 import { TotalsBoxInterface } from "../types"
 import { AiFillProduct } from "react-icons/ai";
 import { PiUsersThreeFill } from "react-icons/pi";
@@ -51,11 +51,16 @@ const Dashboard:React.FC = () => {
             <div className="bg-white rounded-lg shadow p-6 my-2 w-[50%]">
              <SalesLineChart />  
             </div>
-            <div className="bg-white rounded-lg shadow p-6 my-2 w-[50%] m-2">
-              <BestSellingProducts /> 
+            <div className="w-[50%] h-full">
+              <div className="bg-white rounded-lg shadow p-6 m-2 h-[47%]">
+                <BestSellingProducts /> 
+              </div>
+              <div className="bg-white rounded-lg shadow p-6 m-2 h-[47%]">
+                <LowStockBox />  
+              </div>
             </div>
           </div>
-        </section>
+       </section>
       </Suspense>
     </Fragment>
   )

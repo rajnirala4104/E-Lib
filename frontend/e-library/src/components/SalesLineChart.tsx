@@ -33,7 +33,7 @@ const SalesLineChart:React.FC = () => {
           <Line
             type="monotone"
             dataKey="sales"
-            stroke="#0891B2" // Tailwind blue-500
+            stroke="#0891B2" 
             strokeWidth={2}
             dot={{ r: 4 }}
             activeDot={{ r: 6 }}

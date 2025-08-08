@@ -1,15 +1,14 @@
-import React, { Fragment, Suspense } from "react";
+import { Suspense } from "react"
+import { Fragment } from "react/jsx-runtime"
 
-const BestSellingProducts:React.FC = () => {
+const LowStockBox:React.FC = () => {
 
-
-  const bestSellingProductsArr = [
-    { title: 'The Alchemist', soldUnits: 134 },
-    { title: 'Sapiens', soldUnits: 112 },
-    { title: 'Atomic Habits', soldUnits: 95 },
-    { title: 'Rich Dad Poor Dad', soldUnits: 87 },
-    { title: 'Ikigai', soldUnits: 78 },
-    { title: 'The Psychology of Money', soldUnits: 73 },
+  const lowStockProducts = [
+    { name: "The Art of Minimalism", quantity: 5 },
+    { name: "Deep Work", quantity: 3 },
+    { name: "Sapiens: A Brief History of Humankind", quantity: 2 },
+    { name: "The Subtle Art of Not Giving a F*ck", quantity: 4 },
+    { name: "Atomic Habits", quantity: 1 },
   ];
 
   return (
@@ -17,16 +16,16 @@ const BestSellingProducts:React.FC = () => {
       <Suspense>
         <section className="flex flex-col w-full h-full">
           <div className="heading text-xl font-semibold pb-3 text-cyan-950 border-b border-cyan-950 shadow-sm">
-            <span>Best Selling Products</span>
+            <span>Low Stock Products</span>
           </div>
           <div className="bestSellingProductsContainer flex flex-col justify-ceter items-center overflow-y-auto h-[20vh] py-2">
-            {bestSellingProductsArr.map((singleObje, index) => (
+            {lowStockProducts.map((singleObje, index) => (
               <Fragment key={index}>
                 <div
                   onClick={() => alert("we'll make this functionality")}
                   className="hover:text-black cursor-pointer flex justify-between items-center w-full text-lg text-cyan-950 ">
-                  <span>{singleObje.title}</span>
-                  <span className="mx-3">{singleObje.soldUnits}</span>
+                  <span>{singleObje.name}</span>
+                  <span className="mx-3">{singleObje.quantity}</span>
                 </div>
               </Fragment>
             ))}          
@@ -37,4 +36,4 @@ const BestSellingProducts:React.FC = () => {
   );
 }
 
-export default BestSellingProducts;
+export default LowStockBox;
