@@ -8,10 +8,7 @@ const Inventory:React.FC = () => {
       <Suspense fallback={"loading.."}>
         <section>
           <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-bold mb-4">Content Area</h2>
-              <p className="text-2xl text-gray-600">
-                Inventory
-              </p>
+            <span>Inventory</span>
           </div>
         </section>
       </Suspense>

@@ -134,14 +134,14 @@ export const BookPage: React.FC = () => {
                                             <label className="text-gray-700">Quantity:</label>
                                             <div className="flex items-center border rounded-lg">
                                                 <span
-                                                    className="px-3 py-1 border-r hover:bg-gray-100"
+                                                    className="px-3 py-1 border-r hover:bg-gray-100 cursor-pointer"
                                                     onClick={() => setQuantity(Math.max(0, quantity - 1))}
                                                 >
                                                     -
                                                 </span>
                                                 <span className="px-4 py-1">{quantity}</span>
                                                 <button
-                                                    className="px-3 py-1 border-l hover:bg-gray-100"
+                                                    className="px-3 py-1 border-l hover:bg-gray-100 cursor-pointer"
                                                     onClick={() => setQuantity(quantity + 1)}
                                                 >
                                                     +

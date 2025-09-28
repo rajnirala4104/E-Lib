@@ -83,6 +83,7 @@ export interface AdminInfoInterface {
   name: string,
   email:string,
   roll:string,
+  avatar: string,
   location: string,
 }
 
