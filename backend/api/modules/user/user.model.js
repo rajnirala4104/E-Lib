@@ -32,6 +32,17 @@ const userSchema = Schema({
    orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }],
 }, { timestamps: true });
 
+userSchema.pre("save", async function(next){
+   try{
+      if(this.isModified("password")){
+         const salt = await genSalt(5);
+         this.password = await hash(this.password, salt);
+      }
+   }catch(error){
+      next(error)
+   }
+})
+
 // method to check the password
 userSchema.methods.isPasswordTrue = async function(password){
    return await compare(password, this.password)
